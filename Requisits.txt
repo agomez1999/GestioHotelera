@@ -1,0 +1,5 @@
+- Servidor web que allotjarà la nostre pàgina.
+- Controlador de versions per a guardar cada canvi que es vagi realitzant.
+- Base de dades per a desar dades de les reserves.
+- IDE per a desenvolupar la web.
+- Conexió FTP per a transmetre fitxers al servidor i des del servidor.
