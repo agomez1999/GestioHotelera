@@ -5,7 +5,7 @@ Disseny del Model ER ✓
 Disseny del diagrama de classes
 Planificació del projecte ✓
 Esquemes “wireframes” de la pàgina principal, dels resultats de les cerques i del detall d’una habitació. ✓
-Entorn de desenvolupament (Realització de proves)
+Entorn de desenvolupament (Realització de proves) ✓
 Servidor de proves configurat per poder allotjar més d’un domini. 
 
 Etapa 2
