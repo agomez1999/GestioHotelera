@@ -1,0 +1,46 @@
+Etapa 1
+Hauríeu de tenir:
+Anàlisi de requisits ✓
+Disseny del Model ER ✓
+Disseny del diagrama de classes
+Planificació del projecte ✓
+Esquemes “wireframes” de la pàgina principal, dels resultats de les cerques i del detall d’una habitació. ✓
+Entorn de desenvolupament (Realització de proves)
+Servidor de proves configurat per poder allotjar més d’un domini. 
+
+Etapa 2
+Hauríeu de tenir:
+Maquetació de l’eina de gestió hotelera (a partir dels wireframes).
+La maquetació haurà de ser amb tècniques Flexbox i/o CSS Grid.
+Gestió d’usuaris.
+Gestió d’habitacions.
+Automatitzar l’alta de nous dominis al servidor de proves
+
+Etapa 3
+Hauríeu de tenir:
+Codi actualitzat amb la llibreria jQuery / jQuery-UI
+Gestió de preus.
+Inici del motor de reserves
+El codi backend organitzat amb el patró MVC.
+
+Etapa 4
+Hauríeu de tenir:
+Motor de reserves operatiu.
+El codi backend reorganitzat amb un patró MVC bàsic amb Middleware per controlar l’accés d’usuaris a accions restringides.
+Adaptació inicial a un disseny RWD (vista de mòbil).
+Efectes JS incorporats (Slider al HOME, imatges amb LightBox en la fitxa de detall d’una habitació).
+
+Etapa 5
+Hauríeu de tenir:
+Gestió de reserves.
+Enviament de confirmacions.
+Disseny responsive funcional per a dispositius mòbils.
+Definir rols.  Els usuaris normals podran accedir a la seva reserva i el seu perfil, els administradors podran gestionar les reserves, habitacions….
+Utilitzar certificats SSL en el servidor de proves per assegurar les comunicacions. 
+
+Etapa 6
+Hauríeu de tenir:
+Implementació d’algun punt de reforç / ampliació
+Proves de funcionament
+Generar automàticament la documentació del codi
+Implementar les correccions
