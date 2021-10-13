@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0px;
 }
 
 /* HEADER */
@@ -59,7 +60,7 @@ body {
 /* PÀGINA 1 - BODY */
 
 .slider-container {
-    margin-top: 100px;
+    top: 0
 }
 
 .slider-container img{

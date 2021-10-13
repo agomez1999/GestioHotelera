@@ -10,7 +10,7 @@
         include "nav.php";
     ?>
     <div class="slider-container">
-          <img src="Imatges/foto1.jpg">
+          <img src="Imatges/foto3.jpg">
     </div>
     <div class="body-container">
           <div class="body-border">
