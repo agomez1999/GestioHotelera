@@ -6,7 +6,7 @@
      <title>Hotel Trampolín</title>
 </head>
 <body>
-    <?php 
+    <?php
         include "nav.php";
     ?>
     <div class="slider-container">
