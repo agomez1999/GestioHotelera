@@ -6,14 +6,9 @@
      <title>Hotel Trampolín</title>
 </head>
 <body>
-    <div class="header-container">
-     <div class="header-nav">
-          <a class="active" href="#">Inici</a>
-          <a href="#">Qui som?</a>
-          <a href="#">Reservar</a>
-          <a href="#">Contacte</a>
-        </div>
-    </div>
+    <?php 
+        include "nav.php";
+    ?>
     <div class="slider-container">
           <img src="Imatges/foto1.jpg">
     </div>
