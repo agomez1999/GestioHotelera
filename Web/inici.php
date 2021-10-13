@@ -11,6 +11,9 @@
     ?>
     <div class="slider-container">
           <img src="Imatges/foto3.jpg">
+          <div class="slider-form">
+               <h1>PROVA</h1>
+          </div>
     </div>
     <div class="body-container">
           <div class="body-border">
