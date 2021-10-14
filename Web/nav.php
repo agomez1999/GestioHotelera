@@ -5,10 +5,10 @@
           <h3 class="title">Hotel Trampolín</h3>
      </div>
      <div class="header-nav">
-          <a class="nav-items" id="home" href="inici.php">Home</a>
-          <a class="nav-items" id="hotel" href="aboutus.php">Our hotel</a>
-          <a class="nav-items" id="rooms" href="rooms.php">Rooms</a>
-          <a class="nav-items" id="contact" href="contact.php">Contact</a>
+          <a id="home" href="inici.php">Home</a>
+          <a id="hotel" href="aboutus.php">Our hotel</a>
+          <a id="rooms" href="rooms.php">Rooms</a>
+          <a id="contact" href="contact.php">Contact</a>
      </div>
 </div>
 <script href="script.js"></script>
