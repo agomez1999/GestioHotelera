@@ -40,4 +40,9 @@
      </div>
 <script href="script.js"></script>
 </body>
+<footer>
+    <?php
+        include "foot.php";
+    ?>
+</footer>
 </html>
