@@ -43,6 +43,9 @@
                 </div> 
             </div>
     </div>
+    <?php
+        include "nav.php";
+    ?>
 
 <script href="script.js"></script>
 </body>
