@@ -9,6 +9,10 @@
     <?php
         include "nav.php";
     ?>
+    <script>
+     let nav = document.getElementById('home');
+     nav.classList.add('active');
+     </script>
     <div class="slider-container">
           <img src="Imatges/foto3.jpg">
           <div class="slider-form">
@@ -25,5 +29,6 @@
                </div> 
           </div>  
      </div>
+<script href="script.js"></script>
 </body>
 </html>

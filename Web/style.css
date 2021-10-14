@@ -60,7 +60,7 @@ body {
     width: 22.02%;
 }
 
-/* PÀGINA 1 - BODY */
+/* HOME - BODY */
 
 .slider-container {
     display: flex;
@@ -121,7 +121,7 @@ body {
     padding: 10px;
 }
 
-/* PÀGINA 2 - BODY */
+/* ROOMS - BODY */
 
 .p2-body-container {
     margin-top:10%;
@@ -143,7 +143,7 @@ body {
     background: #F5F5F5;
 }
 
-.p2-black-body-row {
+.p2-green-body-row {
     width: 100%;
     display:flex;
     flex-direction: row;
@@ -152,4 +152,29 @@ body {
 
 .p2-black-body-row p {
     color: #F5F5F5;
+}
+
+/* CONTACT - BODY */
+
+.p3-body-container {
+    margin-top:10%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    align-items: center;
+}
+
+.form {
+    height: 15px;
+}
+
+.f1 {
+    margin: auto;
+}
+
+.contact-body-row {
+    display:flex;
+    flex-direction: row;
+    margin:10px;
 }

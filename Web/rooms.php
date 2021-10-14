@@ -9,6 +9,10 @@
     <?php
         include "nav.php";
     ?>
+    <script>
+     let nav = document.getElementById('rooms');
+     nav.classList.add('active');
+     </script>
     <div class="p2-body-container">
             <div class="p2-gray-body-row">
                 <div class="body-border">
@@ -18,7 +22,7 @@
                 <img href="">
                 </div> 
             </div>
-            <div class="p2-black-body-row">
+            <div class="p2-green-body-row">
                 <div class="body-border">
                 <img href="">
                 </div>
@@ -35,5 +39,7 @@
                 </div> 
             </div>
     </div>
+
+<script href="script.js"></script>
 </body>
 </html>
