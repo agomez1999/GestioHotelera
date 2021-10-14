@@ -1,7 +1,7 @@
 <?php?>
 <link href="style.css" rel="stylesheet" type="text/css">
 <div class="footer-container">
-     <div class="header-nav">
+     <div class="footer-nav">
           <div class="footer-row1">
             <a id="home" href="inici.php">Home</a>
           </div>
