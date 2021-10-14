@@ -16,13 +16,13 @@
     <div class="p3-body-container">
         <form method="post">
             <div class="contact-body-row">
-                <input type="text" name="name" class="form f1" placeholder="Name">
+                <input type="text" name="name" class="form f1" placeholder="Name" required>
             </div>
             <div class="contact-body-row">
-                <input type="text" name="surname" class="form f1" placeholder="Surname">
+                <input type="text" name="surname" class="form f1" placeholder="Surname" required>
             </div>
             <div class="contact-body-row">
-                <input type="email" name="email" class="form f1" placeholder="Email">
+                <input type="email" name="email" class="form f1" placeholder="Email" required>
             </div>
             <div class="contact-body-row">
                 <textarea name="message">Your message here.</textarea>

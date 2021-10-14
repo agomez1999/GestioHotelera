@@ -2,7 +2,6 @@
     
     //include "conex_db.php";
 
-
     if (isset($_POST['send'])) {
     
         if (strlen($_POST['name']) >= 1 && 
