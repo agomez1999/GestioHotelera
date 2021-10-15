@@ -64,6 +64,9 @@
                 <option>10</option>
             </select>
             </div> 
+            <div class="slider-column-items">
+                <a href="#" class="a2">Comprovar disponibilitat</a>
+            </div>
         </div>
     </div>
     <div class="p1-body-container">
