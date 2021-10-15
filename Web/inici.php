@@ -13,7 +13,10 @@
      <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
      <script>
      $( function() {
-     $( "#datepicker" ).datepicker();
+     $( "#arrivaldate" ).datepicker();
+     } );
+     $( function() {
+     $( "#departuredate" ).datepicker();
      } );
      </script>
 </head>
@@ -26,10 +29,42 @@
      nav.classList.add('active');
      </script>
     <div class="slider-container">
-          <img src="Imatges/foto3.jpg">
+          <img src="Imatges/foto4.jpg">
           <div class="slider-form">
-          <p>Date: <input type="text" id="datepicker"></p>
-          </div>
+              <div class="slider-column-items">
+          <h3 class="slider-form-items">Arrivada</h3>
+          <input type="text" id="arrivaldate" placeholder="01/05/1999">
+            </div>
+            <div class="slider-column-items">
+          <h3 class="slider-form-items">Sortida</h3>
+          <input type="text" id="departuredate" placeholder="01/05/1999">
+            </div>
+            <div class="slider-column-items">
+          <h3 class="slider-form-items">Habitacions</h3>
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            </div>
+            <div class="slider-column-items">
+          <h3 class="slider-form-items">Persones</h3>
+          <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+            </div> 
+        </div>
     </div>
     <div class="p1-body-container">
 

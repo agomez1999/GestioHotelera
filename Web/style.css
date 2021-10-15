@@ -90,8 +90,20 @@ body {
     top: 0
 }
 
+.slider-form-items {
+    color: white;
+}
+
+.slider-column-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5%;
+}
+
 .slider-container img{
     width: 100%;
+    height: 100%;
     margin: auto;
 }
 
@@ -103,8 +115,8 @@ body {
     z-index: 1000;
     width: 80%;
     margin: 0 auto;
-    border: 1px solid black;
     background: none;
+    justify-content: space-between;
 }
 
 .slider-form h1 {
