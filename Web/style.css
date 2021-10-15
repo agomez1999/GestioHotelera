@@ -356,6 +356,10 @@ body {
 
 /* FOOTER MENU */
 
+footer {
+    width: 100%;
+}
+
 .footer-nav {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
