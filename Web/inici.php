@@ -29,11 +29,11 @@
                </div> 
 
      </div>
-<script href="script.js"></script>
-</body>
-<footer>
+     <footer>
     <?php
         include "foot.php";
     ?>
 </footer>
+<script href="script.js"></script>
+</body>
 </html>
