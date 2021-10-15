@@ -14,15 +14,16 @@
      nav.classList.add('active');
      </script>
     <div class="p3-body-container">
+        <h3>Contacta'ns!</h3>
         <form method="post">
             <div class="contact-body-row">
-                <input type="text" name="name" class="form f1" placeholder="Name" required>
+                <input type="text" name="name" class="form f1" placeholder="Name">
             </div>
             <div class="contact-body-row">
-                <input type="text" name="surname" class="form f1" placeholder="Surname" required>
+                <input type="text" name="surname" class="form f1" placeholder="Surname">
             </div>
             <div class="contact-body-row">
-                <input type="email" name="email" class="form f1" placeholder="Email" required>
+                <input type="email" name="email" class="form f1" placeholder="Email">
             </div>
             <div class="contact-body-row">
                 <textarea name="message">Your message here.</textarea>

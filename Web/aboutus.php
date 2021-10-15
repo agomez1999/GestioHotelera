@@ -22,4 +22,9 @@
           </div>     
      </div>
 </body>
+<footer>
+    <?php
+        include "foot.php";
+    ?>
+</footer>
 </html>
