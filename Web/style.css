@@ -120,6 +120,32 @@ body {
     height: 60%;
 }
 
+.p1-body-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.p1-div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    padding: 0.5%;
+}
+
+.p1-div1 img {
+    width: 500px;
+}
+
+.p1-div2 {
+    grid-area: 1 / 2 / 2 / 3;
+    padding: 0.5%;
+}
+
+.p1-div2 p {
+    width: 100%;
+}
+
 .body-row {
     display:flex;
     flex-direction: row;
@@ -292,6 +318,10 @@ body {
 .a1 span {
     position: relative;
     z-index: 3;
+}
+
+.rooms-title {
+    text-align: center;
 }
 
 
