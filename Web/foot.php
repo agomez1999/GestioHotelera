@@ -5,6 +5,7 @@
      <div class="footer-nav">
           <div class="footer-row1">
             <a id="home" href="inici.php">Home</a>
+            <a id="home" href="inici.php">Home</a>
           </div>
           <div class="footer-row2">
             <a><i class="fab fa-instagram"></i></a>
