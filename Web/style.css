@@ -443,3 +443,10 @@ footer {
     background-color: #FBF7F5;
     color: black;
 }
+
+/* PAGINA LOGIN */
+
+.login-div {
+    display: flex;
+    flex-direction: column;
+}
