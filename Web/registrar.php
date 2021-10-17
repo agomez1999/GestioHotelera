@@ -6,18 +6,26 @@
 
     include "conex_db.php";
 
-    $consulta = "INSERT INTO usuari(usuari, contrasenya) VALUES ('$usuari','$contrasenya')";
-    $resultat = mysqli_query($loginConex,$consulta);
-
+    $isRegistred = "SELECT * FROM loginDB WHERE usuari = '$usuari'";
+    $resultat = mysqli_query($conex, $isRegistred);
     $nFila = mysqli_num_rows($resultat);
 
     include("login.php");
 
+    if($nFila < 1) {
+        $consulta = "INSERT INTO loginDB(usuari, contrasenya) VALUES ('$usuari','$contrasenya')";
+        $resultat = mysqli_query($conex,$consulta);
+        echo "<h1>REGISTRAT CORRECTAMENT</h1>";       
+    } else {
+        echo "<h1>USUARI JA REGISTRAT</h1>";
+    } 
 ?>
-    <h1>REGISTRAT CORRECTAMENT</h1>
+
+
+    
 
 <?php
 mysqli_free_result($resultat);
-mysqli_close($loginConex);
+mysqli_close($conex);
 
 ?>

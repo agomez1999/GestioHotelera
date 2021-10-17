@@ -4,23 +4,76 @@
 <head>
      <meta charset="UTF-8" />
      <title>Hotel Trampolín</title>
+    <style>
+        .td {
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="login-div">
         <!-- REGISTER -->
-        <form method="post" action="registrar.php">
-            <h1>Sistema de Register</h1>
-            <p>Usuari<input type="text" name="usuariR"></p>
-            <p>Contrasenya<input type="password" name="contrasenyaR"></p>
-            <input type="submit" name="enviar" value="Entrar">
-        </form>
-        <!-- LOGIN -->
-        <form method="post" action="validar.php">
-            <h1>Sistema de login</h1>
-            <p>Usuari<input type="text" name="usuari"></p>
-            <p>Contrasenya<input type="password" name="contrasenya"></p>
-            <input type="submit" name="enviar" value="Entrar">
-        </form>
+        <table>
+            <form method="post" action="registrar.php">
+                <tr>
+                    <td colspan="2" valign="center">
+                        <h1>Sistema de register</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Usuari</p>
+                    </td>
+                    <td>
+                        <input type="text" name="usuariR">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Contrasenya</p>
+                    </td>
+                    <td>
+                        <input type="password" name="contrasenyaR">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td">
+                        <input type="submit" name="enviar" value="Entrar">
+                    </td>
+                </tr>
+                
+            </form>
+            <!-- LOGIN -->
+            <form method="post" action="validar.php">
+                <tr>
+                    <td colspan="2">
+                        <h1>Sistema de login</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Usuari</p>
+                    </td>
+                    <td>
+                        <input type="text" name="usuariR">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Contrasenya</p>
+                    </td>
+                    <td>
+                        <input type="password" name="contrasenyaR">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td">
+                        <input type="submit" name="enviar" value="Entrar">
+                    </td>
+                </tr>
+            </form>
+        </table>
     </div>
 </body>
 </html>
