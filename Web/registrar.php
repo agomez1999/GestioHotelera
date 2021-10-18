@@ -21,9 +21,6 @@
     } 
 ?>
 
-
-    
-
 <?php
 mysqli_free_result($resultat);
 mysqli_close($conex);
