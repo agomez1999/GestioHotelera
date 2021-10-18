@@ -19,13 +19,13 @@
       </ul>
     <ul>
         <li>
-          <a href="#">INSTAGRAM</a>
+          <a href="#"><i class="fab fa-instagram"></i> INSTAGRAM</a>
         </li>
         <li>
-          <a href="#">FACEBOOK</a>
+          <a href="#"><i class="fab fa-facebook-square"></i> FACEBOOK</a>
         </li>
         <li>
-          <a href="#">LINKED IN</a>
+          <a href="#"><i class="fab fa-linkedin"></i> LINKED IN</a>
         </li>
       </ul><ul>
         <li>
