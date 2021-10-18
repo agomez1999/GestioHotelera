@@ -70,15 +70,18 @@
         </div>
     </div>
     <div class="p1-body-container">
-
-               <div class="p1-div1">
-                    <img src="Imatges/foto2.jpg">
-               </div>
-               <div class="p1-div2">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate varius elit quis vestibulum. Aenean at libero non neque rutrum malesuada nec eu dolor. Maecenas pulvinar velit a enim ullamcorper bibendum. Nulla nec ligula vel dui ultricies fringilla. Quisque tempor posuere diam a convallis. In sed lorem at turpis blandit fringilla. Nam tempus vitae libero faucibus maximus. Maecenas id nisi aliquet, auctor dolor non, rhoncus massa. Etiam malesuada sollicitudin elit, at bibendum quam consequat et. Sed lacus arcu, sagittis nec pharetra eget, venenatis id nibh.</p>
-               </div> 
-
+            <div class="p1-div1">
+                <h3>CONTROLEM EL PH DE LA TEVA AIGUA!</h3>
+                <img src="Habitacions/Extras/24.jpg">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, expedita.</p>
+            </div>
+            <div class="p1-div1">
+                <h3>VISTES DE LA PARRA!</h3>
+                <img src="Habitacions/Extras/23.jpg">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, expedita.</p>
+            </div> 
      </div>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11808.903015056347!2d2.9646852!3d42.2737041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe8dfb11cd9cdef78!2sInstitut%20Cendrassos!5e0!3m2!1sca!2ses!4v1634578229030!5m2!1sca!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
      <footer>
     <?php
         include "foot.php";

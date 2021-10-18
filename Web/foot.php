@@ -36,10 +36,10 @@
         </li>
       </ul><ul>
         <li>
-          <a href="#">+34 666 666 666</a>
+          <a href="tel:+34666666666">+34 666 666 666</a>
         </li>
         <li>
-          <a href="#">master@mail.com</a>
+          <a href="mailto:master@mail.com">master@mail.com</a>
         </li>
       </ul>
 </div>
