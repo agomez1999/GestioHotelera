@@ -1,3 +1,7 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
 /* HEADER & NAVBAR */
 
 .title {
@@ -68,36 +72,6 @@
     width: 22.02%;
 }
 
-
-/* CONTACT - BODY */
-
-.p3-body-container {
-    margin-top:10%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 60%;
-    align-items: center;
-}
-
-.form {
-    height: 15px;
-}
-
-.f1 {
-    margin: auto;
-}
-
-.contact-body-row {
-    display:flex;
-    flex-direction: row;
-    margin:10px;
-}
-
-.map {
-    margin-top:5%;
-}
-
 /* FOOTER MENU */
 
 footer {
@@ -131,106 +105,3 @@ a {
     color: #F5F5F5;
     text-decoration: none;
 }
-
-/* PAGINA LOGIN */
-
-.login-div {
-    display: flex;
-    flex-direction: column;
-}
-
-/* CONTACT PAGE */
-
-.container {
-    max-width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5em;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-.logo {
-    text-align: center;
-    font-size: 3em;
-}
-
-.logo span {
-    color: #B70E21;
-}
-
-.contact-form {
-    background: #222222;
-}
-
-.contact-form form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.contact-form form label {
-    display: block;
-}
-
-.contact-form form p {
-    margin: 0;
-    padding: 1em;
-}
-
-.contact-form form .block {
-    grid-column: 1 / 3;
-}
-
-.contact-form form button,
-.contact-form form input,
-.contact-form form textarea {
-    width: 100%;
-    padding: .7em;
-    border: none;
-    background: none;
-    outline: 0;
-    color: #fff;
-    border-bottom: 1px solid #d63031;
-}
-
-.contact-form form button {
-    background: #B70E21;
-    border: 0;
-    text-transform: uppercase;
-    padding: 1em;
-}
-
-.contact-form form button:hover,
-.contact-form form button:focus {
-    background: #d63031;
-    color: #fff;
-    transition: background-color 1s ease-out;
-    outline: 0;
-}
-
-/* CONTACT INFO */
-.contact-info {
-    background: #000;
-}
-
-.contact-info h4, .contact-info ul, .contact-info p {
-    text-align: center;
-    margin: 0 0 1rem 0;
-}
-
-    .contact-wrapper {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
-    .contact-wrapper > * {
-        padding: 2em;
-    }
-    .contact-info h4,
-    .contact-info ul,
-    .contact-info p {
-        text-align: left;
-    }
-
