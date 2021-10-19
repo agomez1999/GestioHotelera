@@ -1,16 +1,14 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
-    background: #181818;
+    box-sizing: border-box;
+    background: rgb(242,239,231);
     color: #fff;
     line-height: 1.6;
     font-family: 'Quicksand', sans-serif;
-    padding: 0 1.5em;
+    padding: 0;
+    margin: auto;
 }
 
-.container {
+.content {
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
@@ -33,7 +31,7 @@ ul {
 }
 
 .contact-wrapper {
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+    box-shadow: 0 0 20px 0 rgba(22, 98, 105, 1);
 }
 
 .contact-wrapper > * {
@@ -91,7 +89,7 @@ ul {
 
 /* CONTACT INFO */
 .contact-info {
-    background: #000;
+    background: #166269;
 }
 
 .contact-info h4, .contact-info ul, .contact-info p {

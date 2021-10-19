@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Website with a contact Form 01</title>
+    <title>Hotel Trampolín</title>
     <link rel="stylesheet" href="contact_style.css">
     <!-- GOOGLE FONTs -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
@@ -13,8 +13,12 @@
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
+<header>
+</header>
 <body>
-    
+    <?php
+        include "nav.php";
+    ?>
     <div class="content">
 
         <h1 class="logo">Contact <span>Us</span></h1>
@@ -24,28 +28,28 @@
                 <h3>Contact us</h3>
                 <form action="">
                     <p>
-                        <label>FullName</label>
+                        <label>Nom complet</label>
                         <input type="text" name="fullname">
                     </p>
                     <p>
-                        <label>Email Adress</label>
+                        <label>Email</label>
                         <input type="email" name="email">
                     </p>
                     <p>
-                        <label>Phone Number</label>
+                        <label>Telèfon</label>
                         <input type="tel" name="phone">
                     </p>
                     <p>
-                        <label>Affair</label>
+                        <label>Asumpte</label>
                         <input type="text" name="affair">
                     </p>
                     <p class="block">
-                       <label>Message</label> 
+                       <label>Missatge</label> 
                         <textarea name="message" rows="3"></textarea>
                     </p>
                     <p class="block">
                         <button>
-                            Send
+                            Enviar
                         </button>
                     </p>
                 </form>
@@ -61,12 +65,12 @@
                 <p>Company.com</p>
             </div>
         </div>
-
     </div>
+    
+</body>
 <footer>
     <?php
         include "foot.php";
     ?>
 </footer>
-</body>
 </html>
