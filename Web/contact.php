@@ -1,49 +1,72 @@
 <!DOCTYPE html>
-<link href="style.css" rel="stylesheet" type="text/css">
-<html>
+<html lang="en">
 <head>
-     <meta charset="UTF-8" />
-     <title>Hotel Trampolín</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with a contact Form 01</title>
+    <link rel="stylesheet" href="contact_style.css">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 <body>
-    <?php
-        include "nav.php";
-    ?>
-    <script>
-     let nav = document.getElementById('contact');
-     nav.classList.add('active');
-     </script>
-    <div class="p3-body-container">
-        <h3>Contacta'ns!</h3>
-        <form method="post">
-            <div class="contact-body-row">
-                <input type="text" name="name" class="form f1" placeholder="Name">
+    
+    <div class="content">
+
+        <h1 class="logo">Contact <span>Us</span></h1>
+
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form">
+                <h3>Contact us</h3>
+                <form action="">
+                    <p>
+                        <label>FullName</label>
+                        <input type="text" name="fullname">
+                    </p>
+                    <p>
+                        <label>Email Adress</label>
+                        <input type="email" name="email">
+                    </p>
+                    <p>
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone">
+                    </p>
+                    <p>
+                        <label>Affair</label>
+                        <input type="text" name="affair">
+                    </p>
+                    <p class="block">
+                       <label>Message</label> 
+                        <textarea name="message" rows="3"></textarea>
+                    </p>
+                    <p class="block">
+                        <button>
+                            Send
+                        </button>
+                    </p>
+                </form>
             </div>
-            <div class="contact-body-row">
-                <input type="text" name="surname" class="form f1" placeholder="Surname">
+            <div class="contact-info">
+                <h4>More Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Baker Street</li>
+                    <li><i class="fas fa-phone"></i> (111) 111 111 111</li>
+                    <li><i class="fas fa-envelope-open-text"></i> contact@website.com</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero provident ipsam necessitatibus repellendus?</p>
+                <p>Company.com</p>
             </div>
-            <div class="contact-body-row">
-                <input type="email" name="email" class="form f1" placeholder="Email">
-            </div>
-            <div class="contact-body-row">
-                <textarea name="message">Your message here.</textarea>
-            </div>
-            <div class="contact-body-row">
-                <input type="submit" class="f1" name="send">
-            </div>
-        </form>
-        <?php
-            include "dades.php";
-        ?>
-        <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.2255688067894!2d2.9624965149576226!3d42.273708048543966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8dd91251e3ff%3A0xe8dfb11cd9cdef78!2sInstitut%20Cendrassos!5e0!3m2!1sca!2ses!4v1634205262146!5m2!1sca!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-     </div>
-<script href="script.js"></script>
-</body>
+
+    </div>
 <footer>
     <?php
         include "foot.php";
     ?>
 </footer>
+</body>
 </html>
