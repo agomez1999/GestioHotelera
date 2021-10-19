@@ -5,6 +5,7 @@
      <title>Hotel Trampolín</title>
      <link href="style.css" rel="stylesheet" type="text/css">
     <link href="rooms_style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 <body>
     <?php
@@ -14,7 +15,7 @@
      let nav = document.getElementById('rooms');
      nav.classList.add('active');
      </script>
-    <div class="p2-body-container">
+    <div class="p2-body-container animated bounceInUp">
             <div class="p2-gray-body-row">
                 <div class="body-border">
                     <h2 class="rooms-title">Individual room</h2>
