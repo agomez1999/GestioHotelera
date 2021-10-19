@@ -1,0 +1,132 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    flex-wrap: wrap;
+    background-color: #F5F5F5;
+}
+
+/* HOME - BODY */
+
+.a2 {
+    transition: 0.4s ease-in-out;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: 750;
+    margin-top: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.a2:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #166269;
+}
+
+.slider-container {
+    display: flex;
+    z-index: 5;
+    align-items: center;
+    top: 0
+}
+
+select {
+    background: rgb(255,255,255,0);
+    border: solid 1px white;
+    border-radius: 2px;
+    font-size: 14px;
+    height: 42px;
+    padding: 5px;
+    width: 150px;
+    color: white;
+}
+
+.slider-form-items {
+    color: white;
+}
+
+.slider-column-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5%;
+}
+
+.slider-container img{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.slider-form {
+    left: 10%;
+    right: 10%;
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+    width: 80%;
+    margin: 0 auto;
+    background: none;
+    justify-content: space-between;
+}
+
+.slider-form h1 {
+    background: none;
+    margin: auto;
+}
+
+.body-container {
+    margin-top:100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+}
+
+.p1-body-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.p1-div1 {
+    text-align: center;
+    margin: auto;
+}
+
+.p1-div1 img {
+    width: 90%;
+    height: auto;
+}
+
+.body-row {
+    display:flex;
+    flex-direction: row;
+}
+
+.body-border {
+    width: 50%;
+    height: 100%;
+    margin: 2%;
+}
+
+.body-border img{
+    float: right;
+    padding: 10px;
+    width: 50%;
+    height: 100%;
+}
+
+.body-border p {
+    text-align: justify;
+    padding: 10px;
+}

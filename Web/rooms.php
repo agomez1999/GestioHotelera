@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<link href="style.css" rel="stylesheet" type="text/css">
 <html>
 <head>
      <meta charset="UTF-8" />
      <title>Hotel Trampolín</title>
+     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="rooms_style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <?php
@@ -16,7 +17,7 @@
     <div class="p2-body-container">
             <div class="p2-gray-body-row">
                 <div class="body-border">
-                    <h3 class="rooms-title">Individual room</h3>
+                    <h2 class="rooms-title">Individual room</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate varius elit quis vestibulum. Aenean at libero non neque rutrum malesuada nec eu dolor. Maecenas pulvinar velit a enim ullamcorper bibendum. Nulla nec ligula vel dui ultricies fringilla. Quisque tempor posuere diam a convallis. In sed lorem at turpis blandit fringilla. Nam tempus vitae libero faucibus maximus. Maecenas id nisi aliquet, auctor dolor non, rhoncus massa. Etiam malesuada sollicitudin elit, at bibendum quam consequat et. Sed lacus arcu, sagittis nec pharetra eget, venenatis id nibh.</p>
                     <a href="#" class="a"><span>More info</span></a>
                 </div>
@@ -27,7 +28,7 @@
                     <!-- Full-width images with number and caption text -->
                     <div class="mySlides fade">
                         <div class="numbertext">1 / 3</div>
-                        <img src="Habitacions\Deluxe Room\4.jpg" style="width:100%">
+                        <img class="slider-img" src="Habitacions\Deluxe Room\4.jpg" style="width:100%">
                         <div class="text">Caption Text</div>
                     </div>
 
@@ -56,14 +57,14 @@
                 <img href="">
                 </div>
                 <div class="body-border">
-                <h3 class="rooms-title">Double room</h3>
+                <h2 class="rooms-title">Double room</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate varius elit quis vestibulum. Aenean at libero non neque rutrum malesuada nec eu dolor. Maecenas pulvinar velit a enim ullamcorper bibendum. Nulla nec ligula vel dui ultricies fringilla. Quisque tempor posuere diam a convallis. In sed lorem at turpis blandit fringilla. Nam tempus vitae libero faucibus maximus. Maecenas id nisi aliquet, auctor dolor non, rhoncus massa. Etiam malesuada sollicitudin elit, at bibendum quam consequat et. Sed lacus arcu, sagittis nec pharetra eget, venenatis id nibh.</p>
                 <a href="#" class="a1"><span>More info</span></a>    
             </div> 
             </div>
             <div class="p2-gray-body-row">
                 <div class="body-border">
-                <h3 class="rooms-title">Double room with views</h3>
+                <h2 class="rooms-title">Double room with views</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate varius elit quis vestibulum. Aenean at libero non neque rutrum malesuada nec eu dolor. Maecenas pulvinar velit a enim ullamcorper bibendum. Nulla nec ligula vel dui ultricies fringilla. Quisque tempor posuere diam a convallis. In sed lorem at turpis blandit fringilla. Nam tempus vitae libero faucibus maximus. Maecenas id nisi aliquet, auctor dolor non, rhoncus massa. Etiam malesuada sollicitudin elit, at bibendum quam consequat et. Sed lacus arcu, sagittis nec pharetra eget, venenatis id nibh.</p>
                 <a href="#" class="a"><span>More info</span></a>    
             </div>

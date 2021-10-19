@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link href="inici_style.css" rel="stylesheet" type="text/css">
 <link href="style.css" rel="stylesheet" type="text/css">
 <html>
 <head>
