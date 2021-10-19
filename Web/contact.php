@@ -19,6 +19,10 @@
     <?php
         include "nav.php";
     ?>
+    <script>
+     let nav = document.getElementById('contact');
+     nav.classList.add('active');
+     </script>
     <div class="content">
 
         <h1 class="logo">Contact <span>Us</span></h1>
