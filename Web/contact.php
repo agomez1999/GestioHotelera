@@ -23,13 +23,12 @@
      let nav = document.getElementById('contact');
      nav.classList.add('active');
      </script>
-    <div class="content">
+    <div class="content animated bounceInUp">
 
         <h1 class="logo">Contact <span>Us</span></h1>
 
-        <div class="contact-wrapper animated bounceInUp">
+        <div class="contact-wrapper">
             <div class="contact-form">
-                <h3>Contact us</h3>
                 <form action="">
                     <p>
                         <label>Nom complet</label>

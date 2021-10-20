@@ -6,10 +6,10 @@
           <h3 class="title">Hotel Trampolín</h3>
      </div>
      <div class="header-nav">
-          <a id="home" href="inici.php">Home</a>
-          <a id="hotel" href="aboutus.php">Our hotel</a>
-          <a id="rooms" href="rooms.php">Rooms</a>
-          <a id="contact" href="contact.php">Contact</a>
+          <a id="home" href="inici.php">Inici</a>
+          <a id="hotel" href="aboutus.php">Hotel</a>
+          <a id="rooms" href="rooms.php">Habitacions</a>
+          <a id="contact" href="contact.php">Contacte</a>
      </div>
 </div>
 <script href="script.js"></script>
