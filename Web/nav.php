@@ -4,6 +4,7 @@
 <div class="header-container">
      <div>
           <h3 class="title">Hotel Trampolín</h3>
+          <a class="login-text" href="/Login/login_form.php">Iniciar sessió</a>
      </div>
      <div class="header-nav">
           <a id="home" href="inici.php">Inici</a>

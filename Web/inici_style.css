@@ -1,3 +1,8 @@
+::-webkit-input-placeholder { color: white; } 
+:-moz-placeholder { /* Firefox 18- */ color: white; } 
+::-moz-placeholder { /* Firefox 19+ */ color: white; } 
+:-ms-input-placeholder { color: white; }
+
 body {
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
@@ -37,12 +42,23 @@ body {
     top: 0
 }
 
-select {
+.hasDatepicker {
     background: rgb(255,255,255,0);
     border: solid 1px white;
     border-radius: 2px;
     font-size: 14px;
     height: 42px;
+    padding: 5px;
+    width: 150px;
+    color: white;
+}
+
+select {
+    background: rgb(255,255,255,0);
+    border: solid 1px white;
+    border-radius: 2px;
+    font-size: 14px;
+    height: 55px;
     padding: 5px;
     width: 150px;
     color: white;
