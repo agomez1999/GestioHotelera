@@ -74,7 +74,28 @@
                 </div> 
             </div>
     </div>
+    <div>
+        <?php
+        include "conex_db.php";
 
+        $query = "SELECT * FROM habitacions";
+        $result = mysqli_query($conex, $query);
+        $nRow = mysqli_num_rows($result);
+
+        while ($row = mysqli_fetch_array($result)){
+            echo "<div class='p2-green-body-row'>
+            <div class='body-border'>
+            <img href=''>
+            </div>
+            <div class='body-border'>
+                <h2 class='rooms-title'>"; echo $row["tipus"]; echo "</h2>
+                <p>"; echo $row["descripcio"]; echo "</p>
+                <a href='#' class='a1'><span>More info</span></a>    
+            </div> 
+        </div>";
+            }
+        ?>
+    </div>
 <footer>
     <?php
         include "foot.php";
