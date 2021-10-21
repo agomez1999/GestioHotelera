@@ -20,95 +20,95 @@
      nav.classList.add('active');
      </script>
     <div class="p2-body-container animated bounceInUp">
-            <div class="p2-gray-body-row">
-                <div class="body-border">
-                    <h2 class="rooms-title">Individual room</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate varius elit quis vestibulum. Aenean at libero non neque rutrum malesuada nec eu dolor. Maecenas pulvinar velit a enim ullamcorper bibendum. Nulla nec ligula vel dui ultricies fringilla. Quisque tempor posuere diam a convallis. In sed lorem at turpis blandit fringilla. Nam tempus vitae libero faucibus maximus. Maecenas id nisi aliquet, auctor dolor non, rhoncus massa. Etiam malesuada sollicitudin elit, at bibendum quam consequat et. Sed lacus arcu, sagittis nec pharetra eget, venenatis id nibh.</p>
-                    <a href="#" class="a"><span>More info</span></a>
-                </div>
-                <div class="body-border">
-
-                <div class="slideshow-container">
-
-                    <!-- Full-width images with number and caption text -->
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img class="slider-img" src="Habitacions\Deluxe Room\4.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="Habitacions\Deluxe Room\5.jpg" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="Habitacions\Deluxe Room\6.jpg" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
-
-                    <!-- Next and previous buttons -->
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                    <br>
-                </div> 
-            </div>
-
-            <div class="p2-green-body-row">
-                <div class="body-border">
-                <img href="">
-                </div>
-                <div class="body-border">
-                    <h2 class="rooms-title">Double room</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate varius elit quis vestibulum. Aenean at libero non neque rutrum malesuada nec eu dolor. Maecenas pulvinar velit a enim ullamcorper bibendum. Nulla nec ligula vel dui ultricies fringilla. Quisque tempor posuere diam a convallis. In sed lorem at turpis blandit fringilla. Nam tempus vitae libero faucibus maximus. Maecenas id nisi aliquet, auctor dolor non, rhoncus massa. Etiam malesuada sollicitudin elit, at bibendum quam consequat et. Sed lacus arcu, sagittis nec pharetra eget, venenatis id nibh.</p>
-                    <a href="#" class="a1"><span>More info</span></a>    
-                </div> 
-            </div>
-            <div class="p2-gray-body-row">
-                <div class="body-border">
-                <h2 class="rooms-title">Double room with views</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate varius elit quis vestibulum. Aenean at libero non neque rutrum malesuada nec eu dolor. Maecenas pulvinar velit a enim ullamcorper bibendum. Nulla nec ligula vel dui ultricies fringilla. Quisque tempor posuere diam a convallis. In sed lorem at turpis blandit fringilla. Nam tempus vitae libero faucibus maximus. Maecenas id nisi aliquet, auctor dolor non, rhoncus massa. Etiam malesuada sollicitudin elit, at bibendum quam consequat et. Sed lacus arcu, sagittis nec pharetra eget, venenatis id nibh.</p>
-                <a href="#" class="a"><span>More info</span></a>    
-            </div>
-                <div class="body-border">
-                <img href="">
-                </div> 
-            </div>
-    </div>
-    <div>
-        <?php
+    <?php
         include "conex_db.php";
 
         $query = "SELECT * FROM habitacions";
         $result = mysqli_query($conex, $query);
         $nRow = mysqli_num_rows($result);
+        $counter = 0;
 
         while ($row = mysqli_fetch_array($result)){
-            echo "<div class='p2-green-body-row'>
+            if ($counter % 2 == 0) {
+                echo "<div class='p2-gray-body-row'>
             <div class='body-border'>
-            <div id='carouselExampleSlidesOnly' class='carousel slide' data-ride='carousel'>
+
+                <div id='carouselExampleIndicators"; echo $row['id']; echo "' class='carousel slide' data-ride='carousel'>
+                <ol class='carousel-indicators'>
+                    <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='0' class='active'></li>
+                    <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='1'></li>
+                    <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='2'></li>
+                </ol>
                 <div class='carousel-inner'>
                     <div class='carousel-item active'>
-                    <img class='d-block w-100' src=' '' alt='First slide'>
+                    <img class='d-block w-100' src='"; echo $row["img1"]; echo "' alt='First slide'>
                     </div>
-                    <div class='carousel-item active'>
-                    <img class='d-block w-100' src='...'' alt='First slide'>
+                    <div class='carousel-item'>
+                    <img class='d-block w-100' src='"; echo $row["img2"]; echo "' alt='Second slide'>
                     </div>
-                    <div class='carousel-item active'>
-                    <img class='d-block w-100' src='...'' alt='First slide'>
+                    <div class='carousel-item'>
+                    <img class='d-block w-100' src='"; echo $row["img3"]; echo "' alt='Third slide'>
                     </div>
                 </div>
+                <a class='carousel-control-prev' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='prev'>
+                    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                    <span class='sr-only'>Previous</span>
+                </a>
+                <a class='carousel-control-next' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='next'>
+                    <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                    <span class='sr-only'>Next</span>
+                </a>
                 </div>
             </div>
+
             <div class='body-border'>
-                <h2 class='rooms-title'>"; echo $row["tipus"]; echo "</h2>
+                <h2 class='rooms-title'>Habitació "; echo $row["tipus"]; echo "</h2>
                 <p>"; echo $row["descripcio"]; echo "</p>
-                <a href='#' class='a1'><span>More info</span></a>    
+                <a href='#' class='a'><span>More info</span></a>    
             </div> 
-        </div>";
+            </div>";
+            $counter++;
+            
+            } else {
+                echo "<div class='p2-green-body-row'>
+            <div class='body-border'>
+                <h2 class='rooms-title'>Habitació "; echo $row["tipus"]; echo "</h2>
+                <p>"; echo $row["descripcio"]; echo "</p>
+                <a href='#' class='a1'><span>More info</span></a>   
+                
+            </div>
+
+            <div class='body-border'>
+            <div id='carouselExampleIndicators"; echo $row['id']; echo "'' class='carousel slide' data-ride='carousel'>
+            <ol class='carousel-indicators'>
+                <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='0' class='active'></li>
+                <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='1'></li>
+                <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='2'></li>
+            </ol>
+            <div class='carousel-inner'>
+                <div class='carousel-item active'>
+                <img class='d-block w-100' src='"; echo $row["img1"]; echo "' alt='First slide'>
+                </div>
+                <div class='carousel-item'>
+                <img class='d-block w-100' src='"; echo $row["img2"]; echo "' alt='Second slide'>
+                </div>
+                <div class='carousel-item'>
+                <img class='d-block w-100' src='"; echo $row["img3"]; echo "' alt='Third slide'>
+                </div>
+            </div>
+            <a class='carousel-control-prev' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='prev'>
+                <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                <span class='sr-only'>Previous</span>
+            </a>
+            <a class='carousel-control-next' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='next'>
+                <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                <span class='sr-only'>Next</span>
+            </a>
+            </div>
+            </div> 
+            </div>";
+            $counter++;
+            }
             }
         ?>
     </div>

@@ -41,6 +41,11 @@ body {
     height: auto;
 }
 
+.body-border {
+    height: 100%;
+    padding: 10px;
+}
+
 .body-border p {
     padding: 50px;
     text-align: justify;
@@ -70,7 +75,6 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 20px;
-    margin-bottom: 10px;
     cursor: pointer;
     margin-left: 35%;
 }
@@ -86,6 +90,16 @@ body {
     transition: 0.5s ease-in-out;
     transform: scaleY(1);
     transition-delay: 0.5s;
+}
+
+.a:hover {
+    text-decoration: none;
+    color: #166269;
+}
+
+.a1:hover {
+    text-decoration: none;
+    color: white;
 }
 
 .a:hover:before {
