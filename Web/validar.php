@@ -7,7 +7,7 @@
     include "conex_db.php";
 
     $consulta = "SELECT * FROM usuari WHERE usuari = '$usuari' and contrasenya = '$contrasenya'";
-    $resultat = mysqli_query($loginConex,$consulta);
+    $resultat = mysqli_query($conex,$consulta);
 
     $nFila = mysqli_num_rows($resultat);
 

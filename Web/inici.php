@@ -32,7 +32,7 @@
      let nav = document.getElementById('home');
      nav.classList.add('active');
      </script>
-    <div class="slider-container c2 animated bounceInUp" style="background: url('Imatges/foto4.jpg'); background-repeat: no-repeat;">
+    <div class="slider-container c2 animated bounceInUp" style="background: url('Imatges/1.jpg'); background-repeat: no-repeat;">
         <div class="slider-form">
               <div class="slider-column-items">
                 <h3 class="slider-form-items">Arrivada</h3>
@@ -94,6 +94,7 @@
         </div>
      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11808.903015056347!2d2.9646852!3d42.2737041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe8dfb11cd9cdef78!2sInstitut%20Cendrassos!5e0!3m2!1sca!2ses!4v1634578229030!5m2!1sca!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
      <footer>
+     </div>
     <?php
         include "foot.php";
     ?>

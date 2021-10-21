@@ -10,8 +10,8 @@ Servidor de proves configurat per poder allotjar més d’un domini. ✓
 
 Etapa 2
 Hauríeu de tenir:
-Maquetació de l’eina de gestió hotelera (a partir dels wireframes).
-La maquetació haurà de ser amb tècniques Flexbox i/o CSS Grid.
+Maquetació de l’eina de gestió hotelera (a partir dels wireframes). ✓
+La maquetació haurà de ser amb tècniques Flexbox i/o CSS Grid. ✓
 Gestió d’usuaris.
 Gestió d’habitacions.
 Automatitzar l’alta de nous dominis al servidor de proves

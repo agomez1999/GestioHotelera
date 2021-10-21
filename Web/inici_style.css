@@ -62,7 +62,7 @@ select {
 .c2{
     width: 100%;
     height: 500px;
-    margin: auto;
+    margin: 0;
 }
 
 .slider-form {
