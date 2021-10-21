@@ -32,7 +32,7 @@
      let nav = document.getElementById('home');
      nav.classList.add('active');
      </script>
-    <div class="slider-container c2 animated bounceInUp" style="background: url('Imatges/1.jpg'); background-repeat: no-repeat;">
+    <div class="slider-container c2 animated bounceInUp" style="background: url('Imatges/2.jpg'); background-repeat: no-repeat;">
         <div class="slider-form">
               <div class="slider-column-items">
                 <h3 class="slider-form-items">Arrivada</h3>

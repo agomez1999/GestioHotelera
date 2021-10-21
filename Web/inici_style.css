@@ -131,27 +131,3 @@ select {
     text-align: justify;
     padding: 10px;
 }
-
-/* LIGHTBOX */
-
-.lightbox {
-    z-index: 99;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #166269;
-}
-
-.lightbox h1 {
-    text-align: center;
-    margin-top: 50px;
-    color: #fff;
-}
-
-.tancar {
-    position:absolute;
-    top: 20px;
-    right: 20px;
-}
