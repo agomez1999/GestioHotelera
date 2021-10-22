@@ -35,47 +35,59 @@
 
         while ($row = mysqli_fetch_array($result)){
             if ($counter % 2 == 0) {
+                //SECCIÓ GRIS
+
                 echo "<div class='p2-gray-body-row'>
-            <div class='body-border'>
+                    <div class='body-border'>";
+                //SLIDER
 
-                <div id='carouselExampleIndicators"; echo $row['id']; echo "' class='carousel slide' data-ride='carousel'>
-                <ol class='carousel-indicators'>
-                    <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='0' class='active'></li>
-                    <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='1'></li>
-                    <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='2'></li>
-                </ol>
-                <div class='carousel-inner'>
-                    <div class='carousel-item active'>
-                    <img class='d-block w-100' src='"; echo $row["img1"]; echo "' alt='First slide'>
-                    </div>
-                    <div class='carousel-item'>
-                    <img class='d-block w-100' src='"; echo $row["img2"]; echo "' alt='Second slide'>
-                    </div>
-                    <div class='carousel-item'>
-                    <img class='d-block w-100' src='"; echo $row["img3"]; echo "' alt='Third slide'>
-                    </div>
-                </div>
-                <a class='carousel-control-prev' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='prev'>
-                    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                    <span class='sr-only'>Previous</span>
-                </a>
-                <a class='carousel-control-next' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='next'>
-                    <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                    <span class='sr-only'>Next</span>
-                </a>
-                </div>
-            </div>
+                echo "<div id='carouselExampleIndicators"; echo $row['id']; echo "' class='carousel slide' data-ride='carousel'>
+                    <ol class='carousel-indicators'>
+                        <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='0' class='active'></li>
+                        <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='1'></li>
+                        <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='2'></li>
+                    </ol>
+                    <div class='carousel-inner'>";
+                    //IMATGES SLIDER
 
-            <div class='body-border'>
+                    echo "<div class='carousel-item active'>
+                        <img class='d-block w-100' src='"; echo $row["img1"]; echo "' alt='First slide'>
+                        </div>
+                        <div class='carousel-item'>
+                        <img class='d-block w-100' src='"; echo $row["img2"]; echo "' alt='Second slide'>
+                        </div>
+                        <div class='carousel-item'>
+                        <img class='d-block w-100' src='"; echo $row["img3"]; echo "' alt='Third slide'>
+                        </div>
+                    </div>";
+                    //FLETXETES SLIDER
+    
+                    echo "<a class='carousel-control-prev' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='prev'>
+                        <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                        <span class='sr-only'>Previous</span>
+                    </a>
+                    <a class='carousel-control-next' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='next'>
+                        <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                        <span class='sr-only'>Next</span>
+                    </a>
+                    </div>
+                </div>";
+                //TEXT INFO HABITACIÓ
+
+            echo "<div class='body-border'>
                 <h2 class='rooms-title'>Habitació "; echo $row["tipus"]; echo "</h2>
                 <p>"; echo $row["descripcio"]; echo "</p>
                 <a href='#' class='a' id='obrir"; echo $row['id']; echo "'><span>More info</span></a>    
-            </div>
-            <div id='lightbox"; echo $row['id']; echo "'' class='lightbox'>
+            </div>";
+            //LIGHTBOX
+
+            echo "<div id='lightbox"; echo $row['id']; echo "'' class='lightbox'>
                 <h1>Contingut lightbox "; echo $row['id']; echo "</h1>
                 <a href='#' id='tancar"; echo $row['id']; echo "' class='tancar'><i class='fas fa-times fa-3x'></i></a>
             </div>
             </div>";
+            //SCRIPT LIGHTBOX
+
             echo "<script>
             $('#lightbox"; echo $row['id']; echo "').hide();
             $('#obrir"; echo $row['id']; echo "').click(function() {
@@ -88,25 +100,35 @@
             $counter++;
             
             } else {
+                //SECCIÓ BLAVA
+
                 echo "<div class='p2-green-body-row'>
-            <div class='body-border'>
-                <h2 class='rooms-title'>Habitació "; echo $row["tipus"]; echo "</h2>
+            <div class='body-border'>";
+            //TEXT INFO HABITACIÓ
+                
+                echo "<h2 class='rooms-title'>Habitació "; echo $row["tipus"]; echo "</h2>
                 <p>"; echo $row["descripcio"]; echo "</p>
                 <a href='#' class='a1' id='obrir"; echo $row['id']; echo "'><span>More info</span></a>   
-            </div>
-            <div id='lightbox"; echo $row['id']; echo "'' class='lightbox'>
+            </div>";
+            //LIGHTBOX
+
+            echo "<div id='lightbox"; echo $row['id']; echo "'' class='lightbox'>
                 <h1>Contingut lightbox "; echo $row['id']; echo "</h1>
                 <a href='#' id='tancar"; echo $row['id']; echo "' class='tancar'><i class='fas fa-times fa-3x'></i></a>
             </div>
-            <div class='body-border'>
-            <div id='carouselExampleIndicators"; echo $row['id']; echo "'' class='carousel slide' data-ride='carousel'>
+            <div class='body-border'>";
+            //SLIDER
+
+            echo "<div id='carouselExampleIndicators"; echo $row['id']; echo "'' class='carousel slide' data-ride='carousel'>
             <ol class='carousel-indicators'>
                 <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='0' class='active'></li>
                 <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='1'></li>
                 <li data-target='#carouselExampleIndicators"; echo $row['id']; echo "'' data-slide-to='2'></li>
             </ol>
-            <div class='carousel-inner'>
-                <div class='carousel-item active'>
+            <div class='carousel-inner'>";
+            //SLIDER IMATGES
+
+            echo "<div class='carousel-item active'>
                 <img class='d-block w-100' src='"; echo $row["img1"]; echo "' alt='First slide'>
                 </div>
                 <div class='carousel-item'>
@@ -115,8 +137,10 @@
                 <div class='carousel-item'>
                 <img class='d-block w-100' src='"; echo $row["img3"]; echo "' alt='Third slide'>
                 </div>
-            </div>
-            <a class='carousel-control-prev' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='prev'>
+            </div>";
+            //SLIDER FLETXETES
+
+            echo "<a class='carousel-control-prev' href='#carouselExampleIndicators"; echo $row['id']; echo "'' role='button' data-slide='prev'>
                 <span class='carousel-control-prev-icon' aria-hidden='true'></span>
                 <span class='sr-only'>Previous</span>
             </a>
@@ -127,6 +151,7 @@
             </div>
             </div> 
             </div>";
+            //LIGHTBOX SCRIPT
             echo "<script>
             $('#lightbox"; echo $row['id']; echo "').hide();
             $('#obrir"; echo $row['id']; echo "').click(function() {
