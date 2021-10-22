@@ -16,11 +16,13 @@
         $query = "SELECT * FROM loginDB";
         $result = mysqli_query($conex, $query);
     ?>
-    <table>
+    <div id="container">
+    <table id="users-table">
         <tr>
-            <td>#</td>
-            <td>Usuari</td>
-            <td>Contrasenya</td>
+            <td class="title">#</td>
+            <td class="title">Usuari</td>
+            <td class="title">Contrasenya</td>
+            <td colspan="2" class='table-btn'><button id="add" class="green-btn" onclick='addRow()'><i class="far fa-plus-square"></i></button></td>
         </tr>
     <?php  
         while ($row = mysqli_fetch_array($result)){
@@ -28,12 +30,13 @@
                 <td>";echo $row["id"]; echo "</td>
                 <td>";echo $row["usuari"]; echo "</td>
                 <td>";echo $row["contrasenya"]; echo "</td>
-                <td><a id=''><i class='far fa-edit'></i></a></td>
-                <td><a><i class='far fa-trash-alt'></i></a></td>
+                <td class='table-btn'><button id='edit' onclick='editRow()'><i class='far fa-edit'></i></button></td>
+                <td class='table-btn'><button id='delete' onclick='deleteRow()'><i class='far fa-trash-alt'></i></button></td>
             </tr>";
         }
     ?>
     </table>
-    <a><i class="far fa-plus-square"></i></a>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
