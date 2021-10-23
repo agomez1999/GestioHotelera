@@ -1,6 +1,6 @@
 <?php
 
-    include "conex_db.php";
+    include "../conex_db.php";
 
     $id = $_GET['id'];
     $query = "DELETE FROM loginDB WHERE id = '".$id."'";

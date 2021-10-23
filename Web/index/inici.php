@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <link href="inici_style.css" rel="stylesheet" type="text/css">
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="../style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
@@ -26,13 +26,13 @@
 </head>
 <body>
     <?php
-        include "nav.php";
+        include "../nav.php";
     ?>
     <script>
      let nav = document.getElementById('home');
      nav.classList.add('active');
      </script>
-    <div class="slider-container c2 animated bounceInUp" style="background: url('Imatges/2.jpg'); background-repeat: no-repeat;">
+    <div class="slider-container c2 animated bounceInUp" style="background: url('../Imatges/2.jpg'); background-repeat: no-repeat;">
         <div class="slider-form">
               <div class="slider-column-items">
                 <h3 class="slider-form-items">Arrivada</h3>
@@ -75,7 +75,7 @@
         <div class="p1-body-container" id="body-container">
             <div class="p1-div1">
                 <h3>CONTROLEM EL PH DE LA TEVA AIGUA!</h3>
-                <a href="#body-container" id="obrir"><img src="Habitacions/Extras/24.jpg"></a>
+                <a href="#body-container" id="obrir"><img src="../Habitacions/Extras/24.jpg"></a>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, expedita.</p>
             </div>
             <div id="lightbox" class="lightbox">
@@ -84,7 +84,7 @@
             </div>
             <div class="p1-div1">
                 <h3>VISTES DE LA PARRA!</h3>
-                <a href="#body-container" id="obrir2"><img src="Habitacions/Extras/23.jpg"></a>
+                <a href="#body-container" id="obrir2"><img src="../Habitacions/Extras/23.jpg"></a>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, expedita.</p>
             </div>
             <div id="lightbox2" class="lightbox">
@@ -96,7 +96,7 @@
      <footer>
      </div>
     <?php
-        include "foot.php";
+        include "../foot.php";
     ?>
 </footer>
 <script>

@@ -5,16 +5,16 @@
     <div class="footer-container">
       <ul>
         <li>
-          <a href="inici.php">HOME</a>
+          <a href="../index/inici.php">HOME</a>
         </li>
         <li>
-          <a href="aboutus.php">ABOUT US</a>
+          <a href="../hotel/aboutus.php">ABOUT US</a>
         </li>
         <li>
-          <a href="rooms.php">ROOMS</a>
+          <a href="../rooms/rooms.php">ROOMS</a>
         </li>
         <li>
-          <a href="contact.php">CONTACT</a>
+          <a href="../contacte/contact.php">CONTACT</a>
         </li>
       </ul>
     <ul>

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Login/main.css" rel="stylesheet" type="text/css">
     <title>Hotel Trampolín</title>
 </head>
 <body>
 <?php
-    include "conex_db.php";
+    include "../conex_db.php";
 
     $id = $_GET['id'];
     $query = "SELECT * FROM loginDB WHERE id = '".$id."'";
@@ -17,15 +18,16 @@
 ?>
 <?php while ($fila = mysqli_fetch_assoc($consulta)) { ?>
     <div>
-    <form>
-        <input type="hidden" name="id" value="<?php echo $fila['id'] ?>" />
-        <label >Usuari:</label>
-        <input type="text" name="usrname" value="<?php echo $fila['usuari'] ?>">
-        <label >Contrasenya:</label>
-        <input type="text" name="passwd" value="<?php echo $fila['contrasenya'] ?>">
-        <input type="submit" value="Modificar">
-        
+
+    <form class="login" method="get">
+        <p>Edit</p>
+            <input type="hidden" name="id" value="<?php echo $fila['id'] ?>">
+            <input type="text" name="usrname" value="<?php echo $fila['usuari'] ?>">
+            <input type="text" name="passwd" value="<?php echo $fila['contrasenya'] ?>">
+            <input type="submit" class="send" value="Modify">
+            <a class="register-link" href="users.php">Back</a>
     </form>
+
     </div>
     <?php } ?>
 <?php 

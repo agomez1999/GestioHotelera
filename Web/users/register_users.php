@@ -2,7 +2,7 @@
     $user = $_POST['usrname'];
     $passwd = $_POST['passwd'];
 
-    include "conex_db.php";
+    include "../conex_db.php";
 
     if(strlen($user) > 2) {
         $isRegistred = "SELECT * FROM loginDB WHERE usuari = '$user'";

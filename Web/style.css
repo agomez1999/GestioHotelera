@@ -110,7 +110,7 @@ footer {
 
 a {
     color: #F5F5F5;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 /* LIGHTBOX */

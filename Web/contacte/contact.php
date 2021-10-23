@@ -17,7 +17,7 @@
 </header>
 <body>
     <?php
-        include "nav.php";
+        include "../nav.php";
     ?>
     <script>
      let nav = document.getElementById('contact');
@@ -73,7 +73,7 @@
 </body>
 <footer>
     <?php
-        include "foot.php";
+        include "../foot.php";
     ?>
 </footer>
 </html>

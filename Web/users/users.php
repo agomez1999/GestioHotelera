@@ -11,7 +11,8 @@
 </head>
 <body>
     <?php
-        include "conex_db.php";
+        include "../nav.php";
+        include "../conex_db.php";
 
         $query = "SELECT * FROM loginDB";
         $result = mysqli_query($conex, $query);
@@ -23,7 +24,7 @@
             <td class="title">#</td>
             <td class="title">Usuari</td>
             <td class="title">Contrasenya</td>
-            <td colspan="2" class='table-btn'><button id="add" class="green-btn" onclick='addRow()'><i class="far fa-plus-square"></i></button></td>
+            <td colspan="2" class='table-btn'><a id="add" href="crear-users.php" class="green-btn"><i class="far fa-plus-square"></i></a></td>
         </tr>
     <?php  
         while ($row = mysqli_fetch_array($result)){
