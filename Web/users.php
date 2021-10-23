@@ -15,6 +15,7 @@
 
         $query = "SELECT * FROM loginDB";
         $result = mysqli_query($conex, $query);
+        $nRow = mysqli_num_rows($result);
     ?>
     <div id="container">
     <table id="users-table">
@@ -26,15 +27,17 @@
         </tr>
     <?php  
         while ($row = mysqli_fetch_array($result)){
-        echo"<tr>
-                <td>";echo $row["id"]; echo "</td>
-                <td>";echo $row["usuari"]; echo "</td>
-                <td>";echo $row["contrasenya"]; echo "</td>
-                <td class='table-btn'><button id='edit' onclick='editRow()'><i class='far fa-edit'></i></button></td>
-                <td class='table-btn'><button id='delete' onclick='deleteRow()'><i class='far fa-trash-alt'></i></button></td>
-            </tr>";
-        }
-    ?>
+            ?>
+            <tr>
+                <td> <?php echo $row["id"] ?></td>
+                <td> <?php echo $row["usuari"] ?></td>
+                <td> <?php echo $row["contrasenya"] ?></td>
+                <td class='table-btn'><a id='edit' href="editar-users.php?id=<?php echo $row['id'] ?>"><i class='far fa-edit'></i></a></td>
+                <td class='table-btn'>
+                <a id='delete' href="eliminar-users.php?id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
+                </td>
+            </tr>
+     <?php } ?>
     </table>
     </div>
     <script type="text/javascript" src="script.js"></script>
