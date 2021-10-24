@@ -94,12 +94,6 @@
             </div>
         </div>
         <?php 
-        while($row = mysqli_fetch_array($result)) {
-            echo "<p>a";
-            echo $row["contrasenya"];
-            echo "</p>";
-            
-        }
         ?>
         <div class="p1-body-container" id="body-container">
             <div class="p1-div1">
