@@ -1,6 +1,7 @@
 <?php
     $user = $_POST['usrname'];
     $passwd = $_POST['passwd'];
+    $defaultRol = 3;
     session_start();
     $_SESSION['usrname'] = $user;
 
@@ -12,7 +13,7 @@
         $nRow = mysqli_num_rows($result);
 
         if($nRow < 1) {
-            $query = "INSERT INTO loginDB(usuari, contrasenya) VALUES ('$user','$passwd')";
+            $query = "INSERT INTO loginDB(usuari, contrasenya, rol) VALUES ('$user','$passwd', '$defaultRol')";
             $result = mysqli_query($conex, $query);
             ?>
             <?php

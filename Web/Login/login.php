@@ -11,10 +11,17 @@
     $query = "SELECT * FROM loginDB WHERE usuari = '$user' and contrasenya = '$passwd'";
     $result = mysqli_query($conex, $query);
 
+    $row = mysqli_fetch_array($result);
+
+    $return[] = $row['usrname'];
     $nRow = mysqli_num_rows($result);
 
+    $_SESSION['rol'] = $row[3];
+    $rol = $_SESSION['rol'];
+
     if ($nRow) {
-        header("location:../inici.php");
+        header("location:../index/inici.php?rol=$rol");
+        return $return;
     } else {
         ?>
         <?php

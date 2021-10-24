@@ -25,8 +25,29 @@
      </script>
 </head>
 <body>
-    <?php
-        include "../nav.php";
+    <?php 
+        include "conex_db.php";
+
+        if (isset($_SESSION)) {
+            session_destroy();
+        }
+
+        session_start();
+
+        $rol = $_SESSION["rol"];     
+        $user = $_SESSION['usrname'];
+
+        if (isset($_SESSION['rol'])) {
+            if ($rol != 1) {
+                include "../nav.php";
+            } else {
+                include "../adminNav.php";
+            }
+        } else {
+            include "../nav.php";
+        }
+
+        
     ?>
     <script>
      let nav = document.getElementById('home');
@@ -72,6 +93,14 @@
                 </div>
             </div>
         </div>
+        <?php 
+        while($row = mysqli_fetch_array($result)) {
+            echo "<p>a";
+            echo $row["contrasenya"];
+            echo "</p>";
+            
+        }
+        ?>
         <div class="p1-body-container" id="body-container">
             <div class="p1-div1">
                 <h3>CONTROLEM EL PH DE LA TEVA AIGUA!</h3>

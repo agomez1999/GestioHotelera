@@ -22,6 +22,7 @@
     <form class="login" method="get">
         <p>Edit</p>
             <input type="hidden" name="id" value="<?php echo $fila['id'] ?>">
+            <input type="number" name="rol" value="<?php echo $fila['rol'] ?>" max="3" min="1">
             <input type="text" name="usrname" value="<?php echo $fila['usuari'] ?>">
             <input type="text" name="passwd" value="<?php echo $fila['contrasenya'] ?>">
             <input type="submit" class="send" value="Modify">
@@ -34,8 +35,9 @@
     $id2 = $_GET['id'];
     $user = $_GET['usrname'];
     $passwd = $_GET['passwd'];
+    $rol = $_GET['rol'];
     if ($user!=null || $passwd!=null) {
-        $query2 = "UPDATE loginDB SET usuari='".$user."', contrasenya='".$passwd."' WHERE id='".$id2."'";
+        $query2 = "UPDATE loginDB SET usuari='".$user."', contrasenya='".$passwd."', rol='".$rol."' WHERE id='".$id2."'";
     mysqli_query($conex,$query2);
     if ($user = 1) {
         header("Location:users.php");

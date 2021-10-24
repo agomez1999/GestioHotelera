@@ -17,7 +17,26 @@
 </header>
 <body>
     <?php
-        include "../nav.php";
+        include "conex_db.php";
+
+        if (isset($_SESSION)) {
+            session_destroy();
+        }
+
+        session_start();
+
+        $rol = $_SESSION["rol"];     
+        $user = $_SESSION['usrname'];
+
+        if (isset($_SESSION['rol'])) {
+            if ($rol != 1) {
+                include "../nav.php";
+            } else {
+                include "../adminNav.php";
+            }
+        } else {
+            include "../nav.php";
+        }
     ?>
     <script>
      let nav = document.getElementById('contact');
