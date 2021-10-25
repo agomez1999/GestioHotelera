@@ -15,7 +15,7 @@
         <input type="hidden" name="id" value="<?php echo $fila['id'] ?>">
         <input type="text" name="usrname" value="<?php echo $fila['usuari'] ?>">
         <input type="text" name="passwd" value="<?php echo $fila['contrasenya'] ?>">
-        <input type="submit" class="send" value="Modify">
+        <input type="submit" class="send" value="Create">
         <a class="register-link" href="users.php">Back</a>
 </form>
 
