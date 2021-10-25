@@ -1,0 +1,88 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    font-;
+}
+
+.bad {
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.good {
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background: rgba(60, 179, 113, 0.5);
+}
+
+
+body {
+    background-color: rgb(242,239,231);
+}
+
+table {
+    border: 2px solid black;
+    border-radius: 2px;;
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+    background-color:rgb(242,239,231);
+}
+td {
+    border: 1px solid black;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+tbody {
+    background-color:#237f87;
+}
+
+.title{
+    font-size: 14px;
+    background-color:#166269;
+}
+
+.table-btn{
+
+}
+.green-btn{
+    width: 100%;
+    background-color:rgb(50,205,50,0.5);
+}
+#edit{
+    background-color: rgb(255,255,51,0.5);
+}
+#delete{
+    background-color: rgb(255,0,0,0.5);
+}
+.green-btn:hover{
+    width: 100%;
+    background-color:rgb(50,205,50,0.8);
+}
+#edit:hover{
+    background-color: rgb(255,255,51,0.8);
+}
+#delete:hover{
+    background-color: rgb(255,0,0,0.8);
+}
+td.table-btn {
+    width: 0%;
+}
+
+.add-users{
+    width: 70%;
+    border: 2px solid black;
+    border-radius: 2px;;
+    background-color:rgb(242,239,231);
+    margin:auto;
+}
+
+input{
+    width: 50%;;
+}
