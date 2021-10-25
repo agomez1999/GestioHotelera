@@ -7,7 +7,7 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../users/users_style.css" type="text/css">
-    <title>Hotel Trampolín | Users</title>
+    <title>Hotel Trampolín | Rooms</title>
 </head>
 <body>
     <?php
@@ -61,9 +61,9 @@ if (isset($_SESSION['rol'])) {
                 <td> <?php echo $row["img1"] ?></td>
                 <td> <?php echo $row["img2"] ?></td>
                 <td> <?php echo $row["img3"] ?></td>
-                <td class='table-btn'><a id='edit' href="editar-users.php?id=<?php echo $row['id'] ?>"><i class='far fa-edit'></i></a></td>
+                <td class='table-btn'><a id='edit' href="update-room.php?id=<?php echo $row['id'] ?>"><i class='far fa-edit'></i></a></td>
                 <td class='table-btn'>
-                <a id='delete' onclick="return confirm('Segur que vols eliminar aquest usuari?')" href="eliminar-users.php?id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
+                <a id='delete' onclick="return confirm('Segur que vols eliminar aquesta habitació?')" href="delete-room.php?id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
                 </td>
             </tr>
      <?php } ?>
