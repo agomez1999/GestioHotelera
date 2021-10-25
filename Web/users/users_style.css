@@ -1,6 +1,10 @@
 * {
     font-family: 'Quicksand', sans-serif;
-    font-;
+}
+
+i {
+    width: 100%;
+    height: 100%;
 }
 
 .bad {
@@ -43,14 +47,11 @@ tbody {
     background-color:#237f87;
 }
 
-.title{
+.title2{
     font-size: 14px;
     background-color:#166269;
 }
 
-.table-btn{
-
-}
 .green-btn{
     width: 100%;
     background-color:rgb(50,205,50,0.5);

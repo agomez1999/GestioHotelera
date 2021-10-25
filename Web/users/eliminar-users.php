@@ -6,5 +6,4 @@
     $query = "DELETE FROM loginDB WHERE id = '".$id."'";
     mysqli_query($conex, $query);
     header("location:users.php");
-
 ?>

@@ -25,10 +25,10 @@
     <div id="container">
     <table id="users-table">
         <tr>
-            <td class="title">#</td>
-            <td class="title">Usuari</td>
-            <td class="title">Contrasenya</td>
-            <td class="title">Rol</td>
+            <td class="title2">#</td>
+            <td class="title2">Usuari</td>
+            <td class="title2">Contrasenya</td>
+            <td class="title2">Rol</td>
             <td colspan="2" class='table-btn'><a id="add" href="crear-users.php" class="green-btn"><i class="far fa-plus-square"></i></a></td>
         </tr>
     <?php  
@@ -41,7 +41,7 @@
                 <td> <?php echo $row["rol"] ?></td>
                 <td class='table-btn'><a id='edit' href="editar-users.php?id=<?php echo $row['id'] ?>"><i class='far fa-edit'></i></a></td>
                 <td class='table-btn'>
-                <a id='delete' href="eliminar-users.php?id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
+                <a id='delete' onclick="return confirm('Segur que vols eliminar aquest usuari?')" href="eliminar-users.php?id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
                 </td>
             </tr>
      <?php } ?>

@@ -27,7 +27,7 @@
     $passwd = $_GET["passwd"];
 
     if ($user != null || $passwd != null) {
-        $query = "INSERT INTO loginDB(usuari, contrasenya) VALUES ('".$user."','".$passwd."')";
+        $query = "INSERT INTO loginDB(usuari, contrasenya, rol) VALUES ('".$user."','".$passwd."', 3)";
         mysqli_query($conex, $query);
         if ($user = 1) {
             header("Location:users.php");
