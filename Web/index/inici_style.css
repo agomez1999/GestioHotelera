@@ -43,25 +43,27 @@ body {
 }
 
 .hasDatepicker {
-    background: rgb(255,255,255,0);
-    border: solid 1px white;
+    background: rgb(255,255,255,0.1);
+    border: solid 3px white;
     border-radius: 2px;
     font-size: 14px;
     height: 42px;
     padding: 5px;
     width: 150px;
     color: white;
+    font-weight: bold;
 }
 
 select {
-    background: rgb(255,255,255,0);
-    border: solid 1px white;
+    background: rgba(150, 109, 109, 0.1);
+    border: solid 3px white;
     border-radius: 2px;
     font-size: 14px;
     height: 55px;
     padding: 5px;
     width: 150px;
     color: white;
+    font-weight: bold;
 }
 
 .slider-form-items {
