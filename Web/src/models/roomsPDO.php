@@ -47,4 +47,17 @@ class RoomsPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
+    public function delete($id)
+    {
+        $query = 'DELETE FROM habitacions WHERE id = :id';
+        $delete = $this->sql->prepare($query);
+        $result = $delete->execute([':id' => $id]);
+
+        if ($delete->errorCode() !== '00000') {
+            $err = $delete->errorInfo();
+            $code = $delete->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+    }
+
 }

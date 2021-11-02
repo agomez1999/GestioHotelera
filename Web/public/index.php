@@ -18,6 +18,7 @@ include "../src/controladors/CRUDhabitacions.php";
 include "../src/controladors/newRoom.php";
 include "../src/controladors/mNewRoom.php";
 include "../src/controladors/preview.php";
+include "../src/controladors/deleteHabitacions.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -62,6 +63,8 @@ if ($r === "dologin") {
     $resposta = ctrlmNewRoom($peticio, $resposta, $contenidor);
 } elseif ($r === "preview") {
     $resposta = ctrlPreview($peticio, $resposta, $contenidor);
+} elseif ($r === "deleteHabitacions") {
+    $resposta = ctrlDeleteHabitacions($peticio, $resposta, $contenidor);
 }
 
 $resposta->resposta();

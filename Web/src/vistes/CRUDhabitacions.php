@@ -40,7 +40,7 @@ include "nav.php";
                 <td> <?php echo $row["img3"] ?></td>
                 <td class='table-btn'><a id='edit' href="index.php?r=editRoom&id=<?php echo $row['id'] ?>"><i class='far fa-edit'></i></a></td>
                 <td class='table-btn'>
-                <a id='delete' onclick="return confirm('Segur que vols eliminar aquesta habitació?')" href="index.php?id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
+                <a id='delete' onclick="return confirm('Segur que vols eliminar aquesta habitació?')" href="index.php?r=deleteHabitacions&id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
                 </td>
             </tr>
      <?php } ?>
