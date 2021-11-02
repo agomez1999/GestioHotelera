@@ -15,6 +15,8 @@ include "../src/controladors/editUser.php";
 include "../src/controladors/mEditUser.php";
 include "../src/controladors/deleteUser.php";
 include "../src/controladors/CRUDhabitacions.php";
+include "../src/controladors/newRoom.php";
+include "../src/controladors/mNewRoom.php";
 include "../src/controladors/preview.php";
 
 include "../src/middleware/middleAdmin.php";
@@ -54,6 +56,10 @@ if ($r === "dologin") {
     $resposta = ctrlDeleteUser($peticio, $resposta, $contenidor);
 } elseif ($r === "CRUDhabitacions") {
     $resposta = ctrlCrudHabitacions($peticio, $resposta, $contenidor);
+} elseif ($r === "newRoom") {
+    $resposta = ctrlNewRoom($peticio, $resposta, $contenidor);
+} elseif ($r === "mNewRoom") {
+    $resposta = ctrlmNewRoom($peticio, $resposta, $contenidor);
 } elseif ($r === "preview") {
     $resposta = ctrlPreview($peticio, $resposta, $contenidor);
 }

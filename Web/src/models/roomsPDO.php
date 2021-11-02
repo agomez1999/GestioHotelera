@@ -34,4 +34,17 @@ class RoomsPDO
         }
         return $llistat;
     }
+    public function insert($tipus, $nom, $quantitat, $descripcio, $img1, $img2, $img3)
+    {
+        $query = 'INSERT INTO habitacions(tipus, nom, quantitat, descripcio, img1, img2, img3) VALUES (:tipus, :nom, :quantitat, :descripcio, :img1, :img2, :img3)';
+        $insert = $this->sql->prepare($query);
+        $result = $insert->execute([':tipus' => $tipus,':nom' => $nom,':quantitat' => $quantitat,':descripcio' => $descripcio,':img1' => $img1,':img2' => $img2,':img3' => $img3]);
+
+        if ($insert->errorCode() !== '00000') {
+            $err = $insert->errorInfo();
+            $code = $insert->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $insert->fetch(\PDO::FETCH_ASSOC);
+    }
 }
