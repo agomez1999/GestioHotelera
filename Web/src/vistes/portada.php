@@ -36,15 +36,15 @@
         <div class="slider-form">
               <div id="slide1" class="slider-column-items">
                 <h3 class="slider-form-items">Arrivada</h3>
-                <input type="text" id="arrivaldate" placeholder="01/05/1999">
+                <input type="text" id="arrivaldate" name="arrivaldate" placeholder="01/05/1999">
             </div>
             <div id="slide2" class="slider-column-items">
                 <h3 class="slider-form-items">Sortida</h3>
-                <input type="text" id="departuredate" placeholder="01/05/1999">
+                <input type="text" id="departuredate" name="departuredate" placeholder="01/05/1999">
             </div>
                 <div id="slide3" class="slider-column-items">
                 <h3 class="slider-form-items">Persones</h3>
-                    <select>
+                    <select name="nPersones">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -58,7 +58,7 @@
                     </select>
                 </div> 
                 <div id="slide4" class="slider-column-items">
-                    <a href="#" class="a2">Reservar</a>
+                    <a href="index.php?r=preview" class="a2">Reservar</a>
                 </div>
             </div>
         </div>

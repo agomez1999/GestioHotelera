@@ -9,7 +9,6 @@ function ctrlmEditUser($peticio, $resposta, $contenidor)
 
     $usuaris = new \Daw\UsuarisPDO($contenidor->config["db"]);
 
-    $actual = $usuaris->getUser($usuari);
     $consulta = $usuaris->update($id, $usuari, $pass, $rol);
 
     $resposta->redirect("location: index.php?r=CRUDusuaris");

@@ -48,6 +48,7 @@ class UsuarisPDO
             $code = $this->sql->errorCode();
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
+        
         return $llistat;
     }
 
