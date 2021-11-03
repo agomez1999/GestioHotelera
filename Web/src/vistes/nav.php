@@ -6,7 +6,7 @@
 <div class="header-container">
      <div>
 
-     <h3 class="title" style="margin=30px">Hotel Trampolín</h3>
+     <h3 class="title" style="margin:30px; font-weight:bold;">Hotel Trampolín</h3>
 
      <?php 
      if (isset($_SESSION["login"])) {
