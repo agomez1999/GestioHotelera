@@ -16,7 +16,7 @@
 
      <div class="dropdown login-text">
           <button class="dropbtn">
-               <?php echo $user ?>
+               <?php echo $user ?> <i class="fas fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
                <a class="dropdown-item" href="index.php?r=login">Canviar sessió</a>
