@@ -47,6 +47,21 @@ class RoomsPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
+
+    public function update($id, $tipo, $nom, $quantitat, $descripcio, $img1, $img2, $img3, $preu)
+    {
+        $query = 'UPDATE habitacions SET tipus = :tipo, nom = :nom, quantitat = :quantitat, descripcio = :descripcio, img1 = :img1, img2 = :img2, img3 = :img3, preu = :preu WHERE id = :id';
+        $update = $this->sql->prepare($query);
+        $result = $update->execute([':id' => $id, ':tipo' => $tipo, ':nom' => $nom, ':quantitat' => $quantitat, ':descripcio' => $descripcio, ':img1' => $img1, ':img2' => $img2, ':img3' => $img3, ':preu' => $preu]);
+
+        if ($update->errorCode() !== '00000') {
+            $err = $update->errorInfo();
+            $code = $update->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $update->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function delete($id)
     {
         $query = 'DELETE FROM habitacions WHERE id = :id';

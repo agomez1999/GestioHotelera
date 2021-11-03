@@ -10,11 +10,13 @@
 
      <?php 
      if (isset($_SESSION["login"])) {
+
+          $user = $_SESSION["login"]["usuari"]
      ?>
 
      <div class="dropdown login-text">
           <button class="dropbtn">
-               <?php echo print($_SESSION["login"]["usuari"]) ?>
+               <?php echo $user ?>
           </button>
           <div class="dropdown-content">
                <a class="dropdown-item" href="index.php?r=login">Canviar Sessió</a>
@@ -24,8 +26,6 @@
                <?php } } else { ?>
                     <a class="login-text" href="index.php?r=login">Iniciar sessió</a>
                     <?php } ?>
-                    
-                    
           </div>
      </div>
      
