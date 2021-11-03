@@ -19,7 +19,8 @@
                <?php echo $user ?>
           </button>
           <div class="dropdown-content">
-               <a class="dropdown-item" href="index.php?r=login">Canviar Sessió</a>
+               <a class="dropdown-item" href="index.php?r=login">Canviar sessió</a>
+               <a class="dropdown-item" href="index.php?r=closeSession">Tancar sessió</a>
                <?php if ($_SESSION["login"]["rol"] == 1) { ?>
                     <a class="dropdown-item" href="index.php?r=CRUDusuaris">Taula users</a>
                     <a class="dropdown-item" href="index.php?r=CRUDhabitacions">Taula habitacions</a>

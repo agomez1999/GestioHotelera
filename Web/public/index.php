@@ -21,6 +21,7 @@ include "../src/controladors/preview.php";
 include "../src/controladors/deleteHabitacions.php";
 include "../src/controladors/editHabitacions.php";
 include "../src/controladors/meditHabitacions.php";
+include "../src/controladors/closeSession.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -67,10 +68,12 @@ if ($r === "dologin") {
     $resposta = ctrlPreview($peticio, $resposta, $contenidor);
 } elseif ($r === "deleteHabitacions") {
     $resposta = ctrlDeleteHabitacions($peticio, $resposta, $contenidor);
-} elseif ($r === "edithabitacions") {
+} elseif ($r === "editHabitacions") {
     $resposta = ctrlEdithabitacions($peticio, $resposta, $contenidor); 
-} elseif ($r === "medithabitacions") {
+} elseif ($r === "meditHabitacions") {
     $resposta = ctrlmEdithabitacions($peticio, $resposta, $contenidor); 
+} elseif ($r === "closeSession") {
+    $resposta = ctrlCloseSession($peticio, $resposta, $contenidor); 
 }
 
 
