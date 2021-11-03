@@ -19,6 +19,8 @@ include "../src/controladors/newRoom.php";
 include "../src/controladors/mNewRoom.php";
 include "../src/controladors/preview.php";
 include "../src/controladors/deleteHabitacions.php";
+include "../src/controladors/editHabitacions.php";
+include "../src/controladors/meditHabitacions.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -65,7 +67,12 @@ if ($r === "dologin") {
     $resposta = ctrlPreview($peticio, $resposta, $contenidor);
 } elseif ($r === "deleteHabitacions") {
     $resposta = ctrlDeleteHabitacions($peticio, $resposta, $contenidor);
+} elseif ($r === "edithabitacions") {
+    $resposta = ctrlEdithabitacions($peticio, $resposta, $contenidor); 
+} elseif ($r === "medithabitacions") {
+    $resposta = ctrlmEdithabitacions($peticio, $resposta, $contenidor); 
 }
+
 
 $resposta->resposta();
 
