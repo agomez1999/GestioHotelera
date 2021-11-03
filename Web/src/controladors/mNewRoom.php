@@ -9,10 +9,11 @@ function ctrlmNewRoom($peticio, $resposta, $contenidor)
     $img1 = $peticio->get(INPUT_POST, "img1");
     $img2 = $peticio->get(INPUT_POST, "img2");
     $img3 = $peticio->get(INPUT_POST, "img3");
+    $preu = $peticio->get(INPUT_POST, "preu");
 
     $habitacions = new \Daw\RoomsPDO($contenidor->config["db"]);
 
-    $consulta = $habitacions->insert($tipus, $nom, $quantitat, $descripcio, $img1, $img2, $img3);
+    $consulta = $habitacions->insert($tipus, $nom, $quantitat, $descripcio, $img1, $img2, $img3, $preu);
 
     $resposta->redirect("location: index.php?r=CRUDhabitacions");
     

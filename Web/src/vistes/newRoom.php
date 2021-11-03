@@ -16,6 +16,7 @@
             <input type="text" name="img1" placeholder="img1">
             <input type="text" name="img2" placeholder="img2">
             <input type="text" name="img3" placeholder="img3">
+            <input type="text" name="preu" placeholder="Preu">
             <input type="submit" class="send" name="enviar" value="Add">
         </form>
  	</body>	 

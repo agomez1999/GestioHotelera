@@ -34,11 +34,11 @@ class RoomsPDO
         }
         return $llistat;
     }
-    public function insert($tipus, $nom, $quantitat, $descripcio, $img1, $img2, $img3)
+    public function insert($tipus, $nom, $quantitat, $descripcio, $img1, $img2, $img3, $preu)
     {
-        $query = 'INSERT INTO habitacions(tipus, nom, quantitat, descripcio, img1, img2, img3) VALUES (:tipus, :nom, :quantitat, :descripcio, :img1, :img2, :img3)';
+        $query = 'INSERT INTO habitacions(tipus, nom, quantitat, descripcio, img1, img2, img3, preu) VALUES (:tipus, :nom, :quantitat, :descripcio, :img1, :img2, :img3, :preu)';
         $insert = $this->sql->prepare($query);
-        $result = $insert->execute([':tipus' => $tipus,':nom' => $nom,':quantitat' => $quantitat,':descripcio' => $descripcio,':img1' => $img1,':img2' => $img2,':img3' => $img3]);
+        $result = $insert->execute([':tipus' => $tipus,':nom' => $nom,':quantitat' => $quantitat,':descripcio' => $descripcio,':img1' => $img1,':img2' => $img2,':img3' => $img3,':preu' => $preu]);
 
         if ($insert->errorCode() !== '00000') {
             $err = $insert->errorInfo();

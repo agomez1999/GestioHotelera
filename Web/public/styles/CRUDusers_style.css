@@ -56,10 +56,10 @@ tbody {
     width: 100%;
     background-color:rgb(50,205,50,0.5);
 }
-#edit{
+.edit{
     background-color: rgb(255,255,51,0.5);
 }
-#delete{
+.delete{
     background-color: rgb(255,0,0,0.5);
 }
 .green-btn:hover{

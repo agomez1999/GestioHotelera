@@ -25,7 +25,8 @@ include "nav.php";
             <td class="title2">Imatge 1</td>
             <td class="title2">Imatge 2</td>
             <td class="title2">Imatge 3</td>
-            <td colspan="2" class='table-btn'><a id="add" href="index.php?r=newRoom" class="green-btn"><i class="far fa-plus-square"></i></a></td>
+            <td class="title2">Preu</td>
+            <td colspan="2" class='table-btn' style="background-color:green"><a id="add" href="index.php?r=newRoom" class="green-btn"><i class="far fa-plus-square"></i></a></td>
         </tr>
     <?php  
         foreach($llistaHabitacions as $row) {
@@ -38,9 +39,10 @@ include "nav.php";
                 <td> <?php echo $row["img1"] ?></td>
                 <td> <?php echo $row["img2"] ?></td>
                 <td> <?php echo $row["img3"] ?></td>
-                <td class='table-btn'><a id='edit' href="index.php?r=editRoom&id=<?php echo $row['id'] ?>"><i class='far fa-edit'></i></a></td>
-                <td class='table-btn'>
-                <a id='delete' onclick="return confirm('Segur que vols eliminar aquesta habitació?')" href="index.php?r=deleteHabitacions&id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
+                <td> <?php echo $row["preu"] ?>€</td>
+                <td class='table-btn edit'><a id='edit' class="edit" href="index.php?r=editRoom&id=<?php echo $row['id'] ?>"><i class='far fa-edit'></i></a></td>
+                <td class='table-btn delete'>
+                <a id='delete' class="delete" onclick="return confirm('Segur que vols eliminar aquesta habitació?')" href="index.php?r=deleteHabitacions&id=<?php echo $row['id'] ?>"><i class='far fa-trash-alt'></i></a>
                 </td>
             </tr>
      <?php } ?>
