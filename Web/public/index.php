@@ -74,7 +74,7 @@ if ($r === "dologin") {
     $resposta = ctrlmEdithabitacions($peticio, $resposta, $contenidor); 
 } elseif ($r === "closeSession") {
     $resposta = ctrlCloseSession($peticio, $resposta, $contenidor); 
-}
+} 
 
 
 $resposta->resposta();
