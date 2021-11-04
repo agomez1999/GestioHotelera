@@ -33,18 +33,21 @@
      nav.classList.add('active');
      </script>
     <div class="slider-container c2 animated bounceInUp" style="background: url('../public/img/2.jpg'); background-repeat: no-repeat;">
+        <form method="post" action="index.php">
         <div class="slider-form">
               <div id="slide1" class="slider-column-items">
                 <h3 class="slider-form-items">Arrivada</h3>
-                <input type="text" id="arrivaldate" name="arrivaldate" placeholder="01/05/1999">
+                <input type="hidden" name="r" value="preview">
+                <input type="text" id="arrivaldate" name="arrivaldate" placeholder="01/05/1999" required>
             </div>
             <div id="slide2" class="slider-column-items">
                 <h3 class="slider-form-items">Sortida</h3>
-                <input type="text" id="departuredate" name="departuredate" placeholder="01/05/1999">
+                <input type="text" id="departuredate" name="departuredate" placeholder="01/05/1999" required>
             </div>
                 <div id="slide3" class="slider-column-items">
                 <h3 class="slider-form-items">Persones</h3>
-                    <select name="nPersones">
+                    <select name="nPersones" required>
+                    <option value="">-</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -58,10 +61,11 @@
                     </select>
                 </div> 
                 <div id="slide4" class="slider-column-items">
-                    <a href="index.php?r=preview" class="a2">Reservar</a>
+                    <input type="submit" class="a2" value="Reservar">
                 </div>
             </div>
         </div>
+        </form>
         <?php 
         ?>
         <div class="p1-body-container" id="body-container">

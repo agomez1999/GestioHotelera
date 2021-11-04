@@ -11,8 +11,14 @@
 <body>
     <?php include "nav.php" ?>
     <div class="grid-container">
-        <div><h1>Habitació 1</h1></div>
-        <div><h1>Habitació 2</h1></div>
+        <?php foreach($llistaHabitacions as $row) { ?>
+        <div>
+            <h1>Habitació <?php echo $row["nom"] ?></h1>
+            <img src="<?php echo $row["img1"] ?>" alt="">
+            <a href='#' class='a'><span>Veure habitació</span></a>  
+        </div>
+        <?php } ?>
     </div>
+<?php include "foot.php" ?>    
 </body>
 </html>
