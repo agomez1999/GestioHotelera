@@ -52,7 +52,7 @@ class RoomsPDO
     {
         $query = 'UPDATE habitacio SET Numero = :Numero, Tipo = :Tipo, Descripcio = :Descripcio, Serveis = :Serveis, Imatge1 = :Imatge1, Imatge2 = :Imatge2, Imatge3 = :Imatge3 WHERE Numero = :Numero';
         $update = $this->sql->prepare($query);
-        $result = $update->execute([':Numero' => $Numero,':Tipo' => $Tipo,':Descripcio' => $Descripcio,':Serveis' => $Serveis,':imatge1' => $imatge1,':imatge2' => $imatge2,':imatge3' => $imatge3]);
+        $result = $update->execute([':Numero' => $Numero,':Tipo' => $Tipo,':Descripcio' => $Descripcio,':Serveis' => $Serveis,':Imatge1' => $Imatge1,':Imatge2' => $Imatge2,':Imatge3' => $Imatge3]);
 
         if ($update->errorCode() !== '00000') {
             $err = $update->errorInfo();
