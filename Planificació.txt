@@ -18,17 +18,17 @@ Automatitzar l’alta de nous dominis al servidor de proves
 
 Etapa 3
 Hauríeu de tenir:
-Codi actualitzat amb la llibreria jQuery / jQuery-UI
-Gestió de preus.
+Codi actualitzat amb la llibreria jQuery / jQuery-UI ✓
+Gestió de preus. ✓
 Inici del motor de reserves
-El codi backend organitzat amb el patró MVC.
+El codi backend organitzat amb el patró MVC. ✓
 
 Etapa 4
 Hauríeu de tenir:
 Motor de reserves operatiu.
 El codi backend reorganitzat amb un patró MVC bàsic amb Middleware per controlar l’accés d’usuaris a accions restringides.
 Adaptació inicial a un disseny RWD (vista de mòbil).
-Efectes JS incorporats (Slider al HOME, imatges amb LightBox en la fitxa de detall d’una habitació).
+Efectes JS incorporats (Slider al HOME, imatges amb LightBox en la fitxa de detall d’una habitació). ✓
 
 Etapa 5
 Hauríeu de tenir:
