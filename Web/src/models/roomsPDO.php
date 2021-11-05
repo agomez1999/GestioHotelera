@@ -34,6 +34,24 @@ class RoomsPDO
         }
         return $llistat;
     }
+
+    public function selectAllRooms()
+    {
+        $query = 'select A.*, B.Tipo "Nom", B.Preu "Preu" from habitacio A JOIN tipoHabitacio B ON (A.Tipo = B.Id) group by A.Tipo';
+        $llistat = array();
+
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
+            $llistat[$habitacio["Numero"]] = $habitacio;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llistat;
+    }
+
     public function insert($Numero, $Tipo, $Descripcio, $Serveis, $Imatge1, $Imatge2, $Imatge3)
     {
         $query = 'INSERT INTO habitacio(Numero, Tipo, Descripcio, Serveis, Imatge1, Imatge2, Imatge3) VALUES (:Numero, :Tipo, :Descripcio, :Serveis, :Imatge1, :Imatge2, :Imatge3)';
