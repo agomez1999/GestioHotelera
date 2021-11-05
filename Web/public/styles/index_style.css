@@ -6,20 +6,13 @@
 
 /* Mobile device*/
 @media screen and (min-width: 768px){
-    .slider-form {
+    
+    .p1-body-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        z-index: 5;
-        align-items: center;
-        top: 0
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        width: 100%;
     }
-    .slide1 { grid-area: 1 / 1 / 2 / 2; }
-    .slide2 { grid-area: 1 / 2 / 2 / 3; }
-    .slide3 { grid-area: 2 / 1 / 3 / 3; }
-    .slide4 { grid-area: 3 / 1 / 4 / 3; }
   }
 
 /* Desktop device*/
