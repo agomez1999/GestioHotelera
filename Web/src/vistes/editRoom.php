@@ -8,17 +8,15 @@
  	<body>
         <form class="login" method="post" action="index.php?r=CRUDhabitacions">
         <p>Edit</p>
-            <input type="hidden" name="r" value="meditHabitacions">
-            <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-            <input type="text" name="tipo" placeholder="tipo">
-            <input type="text" name="nom" placeholder="nom">
-            <input type="number" name="quantitat" placeholder="quantitat" min="1">
-            <input type="text" name="descripcio" placeholder="descripcio">
-            <input type="text" name="img1" placeholder="img1">
-            <input type="text" name="img2" placeholder="img2">
-            <input type="text" name="img3" placeholder="img3">
-            <input type="text" name="preu" placeholder="Preu">
-            <input type="submit" class="send" name="enviar" value="Edit">
+            <input type="hidden" name="r" value="mNewRoom">
+            <input type="text" name="Numero" placeholder="<?php echo $_GET['Numero'] ?>">
+            <input type="text" name="Tipo" placeholder="Tipo">
+            <input type="number" name="Descripcio" placeholder="Descripcio">
+            <input type="text" name="Serveis" placeholder="Serveis">
+            <input type="text" name="Imatge1" placeholder="Imatge1">
+            <input type="text" name="Imatge2" placeholder="Imatge2">
+            <input type="text" name="Imatge3" placeholder="Imatge3">
+            <input type="submit" class="send" name="enviar" value="Add">
         </form>
  	</body>	 
 </html>
