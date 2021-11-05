@@ -3,7 +3,7 @@
 ::-moz-placeholder { /* Firefox 19+ */ color: white; } 
 :-ms-input-placeholder { color: white; }
 
-
+body, html { overflow-x:hidden; }
 /* Mobile device*/
 @media (max-width: 768px){
     
