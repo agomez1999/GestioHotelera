@@ -1,3 +1,68 @@
+/* Mobile device*/
+body, html { overflow-x:hidden; }
+@media (max-width: 768px){
+    
+    .p2-gray-body-row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        align-items: center;
+        background: rgb(242,239,231);
+    }
+    .p2-green-body-row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        align-items: center;
+        background: #166269;
+    }
+    .p2-green-body-row .body-border:nth-of-type(1){
+        order: 2;
+    }
+    .p2-green-body-row .body-border:nth-of-type(2){
+        order: 1;
+    }
+    .body-border p{
+        text-align: justify;
+    }
+    .rooms-title{
+        text-align: center;
+    }
+    .room-txt{
+        margin: 3%;
+    }
+    .a1{
+        margin: 2% auto;
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid white;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .a{
+        margin: 2% auto;
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid #166269;
+        text-transform: uppercase;
+        color: #166269;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+
+
+/* Desktop device*/
+@media (min-width: 769px){
 * {
     box-sizing: border-box;
 }
@@ -278,3 +343,4 @@ body {
     from {opacity: .4}
     to {opacity: 1}
   }
+}
