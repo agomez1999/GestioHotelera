@@ -20,11 +20,11 @@ class RoomsPDO
 
     public function selectAll()
     {
-        $query = 'select * from habitacions';
+        $query = 'select * from habitacio';
         $llistat = array();
 
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacions) {
-            $llistat[$habitacions["id"]] = $habitacions;
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
+            $llistat[$habitacio["id"]] = $habitacio;
         }
 
         if ($this->sql->errorCode() !== '00000') {
@@ -34,11 +34,11 @@ class RoomsPDO
         }
         return $llistat;
     }
-    public function insert($tipus, $nom, $quantitat, $descripcio, $img1, $img2, $img3, $preu)
+    public function insert($Numero, $Tipo, $Descripcio, $Serveis, $imatge1, $iamtge2, $imatge3)
     {
-        $query = 'INSERT INTO habitacions(tipus, nom, quantitat, descripcio, img1, img2, img3, preu) VALUES (:tipus, :nom, :quantitat, :descripcio, :img1, :img2, :img3, :preu)';
+        $query = 'INSERT INTO habitacio(Numero, Tipo, Descripcio, Serveis, imatge1, imatge2, imatge3) VALUES (:Numero, :Tipo, :Descripcio, :Serveis, :imatge1, :imatge2, :imatge3)';
         $insert = $this->sql->prepare($query);
-        $result = $insert->execute([':tipus' => $tipus,':nom' => $nom,':quantitat' => $quantitat,':descripcio' => $descripcio,':img1' => $img1,':img2' => $img2,':img3' => $img3,':preu' => $preu]);
+        $result = $insert->execute([':Numero' => $Numero,':Tipo' => $Tipo,':Descripcio' => $Descripcio,':Serveis' => $Serveis,':imatge1' => $imatge1,':imatge2' => $imatge2,':imatge3' => $imatge3]);
 
         if ($insert->errorCode() !== '00000') {
             $err = $insert->errorInfo();
@@ -48,11 +48,11 @@ class RoomsPDO
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function update($id, $tipo, $nom, $quantitat, $descripcio, $img1, $img2, $img3, $preu)
+    public function update($Numero, $Tipo, $Descripcio, $Serveis, $imatge1, $iamtge2, $imatge3)
     {
-        $query = 'UPDATE habitacions SET tipus = :tipo, nom = :nom, quantitat = :quantitat, descripcio = :descripcio, img1 = :img1, img2 = :img2, img3 = :img3, preu = :preu WHERE id = :id';
+        $query = 'UPDATE habitacio SET Numero = :Numero, Tipo = :Tipo, Descripcio = :Descripcio, Serveis = :Serveis, imatge1 = :imatge1, imatge2 = :imatge2, imatge3 = :imatge3 WHERE id = :id';
         $update = $this->sql->prepare($query);
-        $result = $update->execute([':id' => $id, ':tipo' => $tipo, ':nom' => $nom, ':quantitat' => $quantitat, ':descripcio' => $descripcio, ':img1' => $img1, ':img2' => $img2, ':img3' => $img3, ':preu' => $preu]);
+        $result = $update->execute([':Numero' => $Numero,':Tipo' => $Tipo,':Descripcio' => $Descripcio,':Serveis' => $Serveis,':imatge1' => $imatge1,':imatge2' => $imatge2,':imatge3' => $imatge3]);
 
         if ($update->errorCode() !== '00000') {
             $err = $update->errorInfo();
@@ -64,7 +64,7 @@ class RoomsPDO
 
     public function delete($id)
     {
-        $query = 'DELETE FROM habitacions WHERE id = :id';
+        $query = 'DELETE FROM habitacio WHERE id = :id';
         $delete = $this->sql->prepare($query);
         $result = $delete->execute([':id' => $id]);
 
