@@ -63,7 +63,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class='body-border'>
+                    <div class='body-border room-txt'>
                         <h2 class='rooms-title'>Habitació <?php echo $row['Nom'] ?></h2>
                         <p><?php echo $row['Descripcio'] ?></p>
                         <a href='#' class='a' id='obrir<?php echo $row['Numero'] ?>'><span>More info</span></a>    
@@ -88,7 +88,7 @@
             } else { ?>
 
                 <div class='p2-green-body-row'>
-                    <div class='body-border'>
+                    <div class='body-border room-txt'>
                         <h2 class='rooms-title'>Habitació <?php echo $row['Nom'] ?> </h2>
                         <p> <?php echo $row['Descripcio'] ?> </p>
                         <a href='#' class='a1' id='obrir<?php echo $row['Numero'] ?>'><span>More info</span></a>   
