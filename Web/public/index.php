@@ -22,6 +22,8 @@ include "../src/controladors/deleteHabitacions.php";
 include "../src/controladors/editHabitacions.php";
 include "../src/controladors/meditHabitacions.php";
 include "../src/controladors/closeSession.php";
+include "../src/controladors/editRoomType.php";
+include "../src/controladors/mEditRoomType.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -74,6 +76,10 @@ if ($r === "dologin") {
     $resposta = ctrlmEdithabitacions($peticio, $resposta, $contenidor); 
 } elseif ($r === "closeSession") {
     $resposta = ctrlCloseSession($peticio, $resposta, $contenidor); 
+} elseif ($r === "newRoomType") {
+    $resposta = ctrlEditRoomType($peticio, $resposta, $contenidor); 
+} elseif ($r === "mEditRoomType") {
+    $resposta = ctrlmEditRoomType($peticio, $resposta, $contenidor); 
 } 
 
 
