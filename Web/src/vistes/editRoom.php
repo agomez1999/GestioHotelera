@@ -9,9 +9,9 @@
         <form class="login" method="post" action="index.php?r=CRUDhabitacions">
         <p>Edit</p>
             <input type="hidden" name="r" value="mNewRoom">
-            <input type="text" name="Numero" placeholder="<?php echo $_GET['Numero'] ?>">
-            <input type="text" name="Tipo" placeholder="Tipo">
-            <input type="number" name="Descripcio" placeholder="Descripcio">
+            <input type="number" name="Numero" placeholder="<?php echo $_GET['Numero'] ?>">
+            <input type="number" name="Tipo" placeholder="Tipo">
+            <input type="text" name="Descripcio" placeholder="Descripcio">
             <input type="text" name="Serveis" placeholder="Serveis">
             <input type="text" name="Imatge1" placeholder="Imatge1">
             <input type="text" name="Imatge2" placeholder="Imatge2">
