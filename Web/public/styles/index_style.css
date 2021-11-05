@@ -5,7 +5,7 @@
 
 
 /* Mobile device*/
-@media screen and (min-width: 768px){
+@media (max-width: 768px){
     
     .p1-body-container {
         display: grid;
@@ -13,9 +13,19 @@
         gap: 10px;
         width: 100%;
     }
-  }
-
+}
 /* Desktop device*/
+@media (min-width: 769px){
+    
+    .p1-body-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap:10px;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+    }
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -142,15 +152,6 @@ select::placeholder{
     flex-direction: column;
     width: 100%;
     height: 60%;
-}
-
-.p1-body-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:10px;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
 }
 
 .p1-div1 {
