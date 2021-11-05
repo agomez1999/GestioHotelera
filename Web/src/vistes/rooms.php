@@ -36,28 +36,28 @@
             if ($counter % 2 == 0) { ?>
                     <div class='p2-gray-body-row'>
                     <div class='body-border'>
-                        <div id='carouselExampleIndicators<?php echo $row['id'] ?>' class='carousel slide' data-ride='carousel'>
+                        <div id='carouselExampleIndicators<?php echo $row['Numero'] ?>' class='carousel slide' data-ride='carousel'>
                             <ol class='carousel-indicators'>
-                                <li data-target='#carouselExampleIndicators<?php echo $row['id'] ?>' data-slide-to='0' class='active'></li>
-                                <li data-target='#carouselExampleIndicators<?php echo $row['id'] ?>' data-slide-to='1'></li>
-                                <li data-target='#carouselExampleIndicators<?php echo $row['id'] ?>' data-slide-to='2'></li>
+                                <li data-target='#carouselExampleIndicators<?php echo $row['Numero'] ?>' data-slide-to='0' class='active'></li>
+                                <li data-target='#carouselExampleIndicators<?php echo $row['Numero'] ?>' data-slide-to='1'></li>
+                                <li data-target='#carouselExampleIndicators<?php echo $row['Numero'] ?>' data-slide-to='2'></li>
                             </ol>
                             <div class='carousel-inner'>
                                 <div class='carousel-item active'>
-                                    <img class='d-block w-100' src='<?php echo $row['img1'] ?>' alt='First slide'>
+                                    <img class='d-block w-100' src='<?php echo $row['Imatge1'] ?>' alt='First slide'>
                                 </div>
                                 <div class='carousel-item'>
-                                    <img class='d-block w-100' src='<?php echo $row['img2'] ?>' alt='Second slide'>
+                                    <img class='d-block w-100' src='<?php echo $row['Imatge2'] ?>' alt='Second slide'>
                                 </div>
                                 <div class='carousel-item'>
-                                    <img class='d-block w-100' src='<?php echo $row['img3'] ?>' alt='Third slide'>
+                                    <img class='d-block w-100' src='<?php echo $row['Imatge3'] ?>' alt='Third slide'>
                                 </div>
                             </div>
-                            <a class='carousel-control-prev' href='#carouselExampleIndicators<?php echo $row['id'] ?>' role='button' data-slide='prev'>
+                            <a class='carousel-control-prev' href='#carouselExampleIndicators<?php echo $row['Numero'] ?>' role='button' data-slide='prev'>
                                 <span class='carousel-control-prev-icon' aria-hidden='true'></span>
                                 <span class='sr-only'>Previous</span>
                             </a>
-                            <a class='carousel-control-next' href='#carouselExampleIndicators<?php echo $row['id'] ?>' role='button' data-slide='next'>
+                            <a class='carousel-control-next' href='#carouselExampleIndicators<?php echo $row['Numero'] ?>' role='button' data-slide='next'>
                                 <span class='carousel-control-next-icon' aria-hidden='true'></span>
                                 <span class='sr-only'>Next</span>
                             </a>
@@ -65,22 +65,22 @@
                     </div>
                     <div class='body-border'>
                         <h2 class='rooms-title'>Habitació <?php echo $row['nom'] ?></h2>
-                        <p><?php echo $row['descripcio'] ?></p>
-                        <a href='#' class='a' id='obrir<?php echo $row['id'] ?>'><span>More info</span></a>    
+                        <p><?php echo $row['Descripcio'] ?></p>
+                        <a href='#' class='a' id='obrir<?php echo $row['Numero'] ?>'><span>More info</span></a>    
                     </div>
-                    <div id='lightbox<?php echo $row['id'] ?>' class='lightbox'>
-                        <h1>Contingut lightbox <?php echo $row['id'] ?></h1>
-                        <a href='#' id='tancar<?php echo $row['id'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
+                    <div id='lightbox<?php echo $row['Numero'] ?>' class='lightbox'>
+                        <h1>Contingut lightbox <?php echo $row['Numero'] ?></h1>
+                        <a href='#' id='tancar<?php echo $row['Numero'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
                     </div>
                 </div>
 
                 <script>
-                    $('#lightbox<?php echo $row['id'] ?>').hide();
-                    $('#obrir<?php echo $row['id'] ?>').click(function() {
-                        $('#lightbox<?php echo $row['id'] ?>').show('slow');
+                    $('#lightbox<?php echo $row['Numero'] ?>').hide();
+                    $('#obrir<?php echo $row['Numero'] ?>').click(function() {
+                        $('#lightbox<?php echo $row['Numero'] ?>').show('slow');
                     });
-                    $('#tancar<?php echo $row['id'] ?>').click(function() {
-                        $('#lightbox<?php echo $row['id'] ?>').hide('slow');
+                    $('#tancar<?php echo $row['Numero'] ?>').click(function() {
+                        $('#lightbox<?php echo $row['Numero'] ?>').hide('slow');
                     });
                 </script>
                 <?php $counter++;
@@ -90,36 +90,36 @@
                 <div class='p2-green-body-row'>
                     <div class='body-border'>
                         <h2 class='rooms-title'>Habitació <?php echo $row['nom'] ?> </h2>
-                        <p> <?php echo $row['descripcio'] ?> </p>
-                        <a href='#' class='a1' id='obrir<?php echo $row['id'] ?>'><span>More info</span></a>   
+                        <p> <?php echo $row['Descripcio'] ?> </p>
+                        <a href='#' class='a1' id='obrir<?php echo $row['Numero'] ?>'><span>More info</span></a>   
                     </div>
-                    <div id='lightbox<?php echo $row['id'] ?>' class='lightbox'>
-                        <h1>Contingut lightbox <?php echo $row['id'] ?></h1>
-                        <a href='#' id='tancar<?php echo $row['id'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
+                    <div id='lightbox<?php echo $row['Numero'] ?>' class='lightbox'>
+                        <h1>Contingut lightbox <?php echo $row['Numero'] ?></h1>
+                        <a href='#' id='tancar<?php echo $row['Numero'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
                     </div>
                     <div class='body-border'>
-                        <div id='carouselExampleIndicators<?php echo $row['id'] ?>' class='carousel slide' data-ride='carousel'>
+                        <div id='carouselExampleIndicators<?php echo $row['Numero'] ?>' class='carousel slide' data-ride='carousel'>
                             <ol class='carousel-indicators'>
-                                <li data-target='#carouselExampleIndicators<?php echo $row['id'] ?>' data-slide-to='0' class='active'></li>
-                                <li data-target='#carouselExampleIndicators<?php echo $row['id'] ?>' data-slide-to='1'></li>
-                                <li data-target='#carouselExampleIndicators<?php echo $row['id'] ?>' data-slide-to='2'></li>
+                                <li data-target='#carouselExampleIndicators<?php echo $row['Numero'] ?>' data-slide-to='0' class='active'></li>
+                                <li data-target='#carouselExampleIndicators<?php echo $row['Numero'] ?>' data-slide-to='1'></li>
+                                <li data-target='#carouselExampleIndicators<?php echo $row['Numero'] ?>' data-slide-to='2'></li>
                             </ol>
                             <div class='carousel-inner'>
                                 <div class='carousel-item active'>
-                                    <img class='d-block w-100' src='<?php echo $row['img1'] ?>' alt='First slide'>
+                                    <img class='d-block w-100' src='<?php echo $row['Imatge1'] ?>' alt='First slide'>
                                 </div>
                                 <div class='carousel-item'>
-                                    <img class='d-block w-100' src='<?php echo $row['img2'] ?>' alt='Second slide'>
+                                    <img class='d-block w-100' src='<?php echo $row['Imatge2'] ?>' alt='Second slide'>
                                 </div>
                                 <div class='carousel-item'>
-                                    <img class='d-block w-100' src='<?php echo $row['img3'] ?>' alt='Third slide'>
+                                    <img class='d-block w-100' src='<?php echo $row['Imatge3'] ?>' alt='Third slide'>
                                 </div>
                             </div>
-                            <a class='carousel-control-prev' href='#carouselExampleIndicators<?php echo $row['id'] ?>' role='button' data-slide='prev'>
+                            <a class='carousel-control-prev' href='#carouselExampleIndicators<?php echo $row['Numero'] ?>' role='button' data-slide='prev'>
                                 <span class='carousel-control-prev-icon' aria-hidden='true'></span>
                                 <span class='sr-only'>Previous</span>
                             </a>
-                            <a class='carousel-control-next' href='#carouselExampleIndicators<?php echo $row['id'] ?>' role='button' data-slide='next'>
+                            <a class='carousel-control-next' href='#carouselExampleIndicators<?php echo $row['Numero'] ?>' role='button' data-slide='next'>
                                 <span class='carousel-control-next-icon' aria-hidden='true'></span>
                                 <span class='sr-only'>Next</span>
                             </a>
@@ -127,12 +127,12 @@
                     </div> 
                 </div>
          <script>
-            $('#lightbox<?php echo $row['id'] ?>').hide();
-            $('#obrir<?php echo $row['id'] ?>').click(function() {
-                $('#lightbox<?php echo $row['id'] ?>').show('slow');
+            $('#lightbox<?php echo $row['Numero'] ?>').hide();
+            $('#obrir<?php echo $row['Numero'] ?>').click(function() {
+                $('#lightbox<?php echo $row['Numero'] ?>').show('slow');
             });
-            $('#tancar<?php echo $row['id'] ?>').click(function() {
-                $('#lightbox<?php echo $row['id'] ?>').hide('slow');
+            $('#tancar<?php echo $row['Numero'] ?>').click(function() {
+                $('#lightbox<?php echo $row['Numero'] ?>').hide('slow');
             });
             </script>
         <?php    $counter++;

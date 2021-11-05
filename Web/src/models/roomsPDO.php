@@ -93,6 +93,21 @@ class RoomsPDO
         return $llistatType;
     }
 
+    public function getRoomType($Id)
+    {
+        $query = 'select * from tipoHabitacio where Id = :Id;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':Id' => $Id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function insertRoomType($Id, $Tipo, $Preu)
     {
         $query = 'INSERT INTO tipoHabitacio(Id, Tipo, Preu) VALUES (:Id, :Tipo, :Preu)';
