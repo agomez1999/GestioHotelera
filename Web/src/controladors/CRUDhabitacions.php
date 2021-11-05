@@ -11,12 +11,12 @@ function ctrlCrudHabitacions($peticio, $resposta, $contenidor)
     $resposta->set('llistaHabitacions', $llistaHabitacions);
     $resposta->set('llistaHabitacionsTipus', $llistaHabitacionsTipus);
 
-    if (isset($_SESSION["login"])) {
-        if ($_SESSION["login"]["rol"] == 1)
+    if (isset($_SESSION["login"]) && $_SESSION["login"]["rol"] == 1) {
             $resposta->SetTemplate("CRUDhabitacions.php");
             return $resposta;
     } else {
         $resposta->redirect("location: index.php?r=login");
+            return $resposta;
     }
 
     
