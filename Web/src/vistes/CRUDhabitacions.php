@@ -30,7 +30,7 @@ include "nav.php";
                 <td> <?php echo $row2["Id"] ?></td>
                 <td> <?php echo $row2["Tipo"] ?></td>
                 <td> <?php echo $row2["Preu"] ?></td>
-                <td class='table-btn edit'><a id='edit2' class="edit" href="index.php?r=newRoomType&id=<?php echo $row['Id'] ?>"><i class='far fa-edit'></i></a></td>
+                <td class='table-btn edit'><a id='edit2' class="edit" href="index.php?r=newRoomType&id=<?php echo $row2['Id'] ?>"><i class='far fa-edit'></i></a></td>
                 <td class='table-btn delete'>
                 <a id='delete2' class="delete" onclick="return confirm('Segur que vols eliminar aquesta habitació?')" href="index.php?r=deleteHabitacions&id=<?php echo $row['Id'] ?>"><i class='far fa-trash-alt'></i></a>
                 </td>
