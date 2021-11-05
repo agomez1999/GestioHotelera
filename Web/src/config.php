@@ -15,5 +15,6 @@ require_once "../src/emeset/contenidor.php";
 
 require_once "../src/models/usuarisPDO.php";
 require_once "../src/models/roomsPDO.php";
+require_once "../src/models/reservesPDO.php";
 
 ?>

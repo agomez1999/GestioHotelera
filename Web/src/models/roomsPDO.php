@@ -75,4 +75,61 @@ class RoomsPDO
         }
     }
 
+    // TAULA TIPO HABITACIÓ
+    public function selectRoomType()
+    {
+        $query = 'select * from tipoHabitacio';
+        $llistatType = array();
+
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacions) {
+            $llistatType[$habitacions["id"]] = $habitacions;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llistatType;
+    }
+
+    public function insertRoomType($Id, $Tipo, $Preu)
+    {
+        $query = 'INSERT INTO tipoHabitacio(Id, Tipo, Preu) VALUES (:Id, :Tipo, :Preu)';
+        $insert = $this->sql->prepare($query);
+        $result = $insert->execute([':Id' => $Id,':Tipo' => $Tipo,':Preu' => $Preu]);
+
+        if ($insert->errorCode() !== '00000') {
+            $err = $insert->errorInfo();
+            $code = $insert->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $insert->fetch(\PDO::FETCH_ASSOC);
+    }
+    public function updateRoomType($Id, $Tipo, $Preu)
+    {
+        $query = 'UPDATE tipoHabitacio SET Tipo = :Tipo, Preu = :Preu WHERE Id = :Id';
+        $update = $this->sql->prepare($query);
+        $result = $update->execute([':id' => $id, ':tipo' => $tipo, ':nom' => $nom, ':quantitat' => $quantitat, ':descripcio' => $descripcio, ':img1' => $img1, ':img2' => $img2, ':img3' => $img3, ':preu' => $preu]);
+
+        if ($update->errorCode() !== '00000') {
+            $err = $update->errorInfo();
+            $code = $update->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $update->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function deleteRoomType($Id)
+    {
+        $query = 'DELETE FROM tipoHabitacio WHERE Id = :Id';
+        $delete = $this->sql->prepare($query);
+        $result = $delete->execute([':Id' => $Id]);
+
+        if ($delete->errorCode() !== '00000') {
+            $err = $delete->errorInfo();
+            $code = $delete->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+    }
 }
