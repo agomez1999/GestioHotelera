@@ -9,9 +9,9 @@
      <form class="login" method="post" action="index.php">
      <p>Add</p>
             <input type="hidden" name="r" value="mNewRoom">
-            <input type="text" name="Numero" placeholder="Numero">
-            <input type="text" name="Tipo" placeholder="Tipo">
-            <input type="number" name="Descripcio" placeholder="Descripcio">
+            <input type="number" name="Numero" placeholder="Numero">
+            <input type="number" name="Tipo" placeholder="Tipo">
+            <input type="text" name="Descripcio" placeholder="Descripcio">
             <input type="text" name="Serveis" placeholder="Serveis">
             <input type="text" name="Imatge1" placeholder="Imatge1">
             <input type="text" name="Imatge2" placeholder="Imatge2">
