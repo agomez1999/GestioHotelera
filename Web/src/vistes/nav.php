@@ -29,7 +29,6 @@
                     <?php } ?>
           </div>
      </div>
-     
      </div>
      <div class="header-nav">
           <a id="home" href="index.php">Inici</a>

@@ -8,7 +8,7 @@ function ctrlPreview($peticio, $resposta, $contenidor)
 
     $habitacions = new \Daw\RoomsPDO($contenidor->config["db"]);
 
-    $llistaHabitacions = $habitacions->selectAll();
+    $llistaHabitacions = $habitacions->selectAllRooms();
 
     $resposta->set('llistaHabitacions', $llistaHabitacions);
 
