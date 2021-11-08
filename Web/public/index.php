@@ -28,7 +28,6 @@ include "../src/controladors/newRoomType.php";
 include "../src/controladors/mNewRoomType.php";
 include "../src/controladors/deleteRoomType.php";
 include "../src/controladors/manteniment.php";
-include "../src/controladors/ctrlAdmin.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -58,7 +57,7 @@ if ($r === "dologin") {
 } elseif ($r === "contact") {
     $resposta = ctrlContact($peticio, $resposta, $contenidor);
 } elseif ($r === "CRUDusuaris") {
-    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlAdmin");
+    $resposta = middleCRUDusuaris($peticio, $resposta, $contenidor, "ctrlCrudUsuaris");
 } elseif ($r === "editUser") {
     $resposta = ctrlEditUser($peticio, $resposta, $contenidor);
 } elseif ($r === "mEditUser") {
@@ -66,7 +65,7 @@ if ($r === "dologin") {
 } elseif ($r === "deleteUser") {
     $resposta = ctrlDeleteUser($peticio, $resposta, $contenidor);
 } elseif ($r === "CRUDhabitacions") {
-    $resposta = ctrlCrudHabitacions($peticio, $resposta, $contenidor);
+    $resposta = middleCRUDhabitacions($peticio, $resposta, $contenidor, "ctrlCrudHabitacions");
 } elseif ($r === "newRoom") {
     $resposta = ctrlNewRoom($peticio, $resposta, $contenidor);
 } elseif ($r === "mNewRoom") {

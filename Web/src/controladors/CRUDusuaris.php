@@ -9,13 +9,6 @@ function ctrlCrudUsuaris($peticio, $resposta, $contenidor)
 
     $resposta->set('llistaUsuaris', $llistaUsuaris);
 
-    if (isset($_SESSION["login"])) {
-        if ($_SESSION["login"]["rol"] == 1)
-            $resposta->SetTemplate("CRUDusuaris.php");
-            return $resposta;
-    } else {
-        $resposta->redirect("location: index.php?r=login");
-    }
-
-    
+    $resposta->SetTemplate("CRUDusuaris.php");
+    return $resposta;
 }
