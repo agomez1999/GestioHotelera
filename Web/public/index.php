@@ -59,37 +59,37 @@ if ($r === "dologin") {
 } elseif ($r === "CRUDusuaris") {
     $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlCrudUsuaris");
 } elseif ($r === "editUser") {
-    $resposta = ctrlEditUser($peticio, $resposta, $contenidor);
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEditUser");
 } elseif ($r === "mEditUser") {
-    $resposta = ctrlmEditUser($peticio, $resposta, $contenidor);
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEditUser");
 } elseif ($r === "deleteUser") {
-    $resposta = ctrlDeleteUser($peticio, $resposta, $contenidor);
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlDeleteUser");
 } elseif ($r === "CRUDhabitacions") {
     $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlCrudHabitacions");
 } elseif ($r === "newRoom") {
-    $resposta = ctrlNewRoom($peticio, $resposta, $contenidor);
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlNewRoom");
 } elseif ($r === "mNewRoom") {
-    $resposta = ctrlmNewRoom($peticio, $resposta, $contenidor);
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmNewRoom");
 } elseif ($r === "preview") {
     $resposta = ctrlPreview($peticio, $resposta, $contenidor);
 } elseif ($r === "deleteHabitacions") {
-    $resposta = ctrlDeleteHabitacions($peticio, $resposta, $contenidor);
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlDeleteHabitacions");
 } elseif ($r === "editHabitacions") {
-    $resposta = ctrlEdithabitacions($peticio, $resposta, $contenidor); 
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEdithabitacions"); 
 } elseif ($r === "meditHabitacions") {
-    $resposta = ctrlmEdithabitacions($peticio, $resposta, $contenidor); 
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEdithabitacions"); 
 } elseif ($r === "closeSession") {
     $resposta = ctrlCloseSession($peticio, $resposta, $contenidor); 
 } elseif ($r === "EditRoomType") {
-    $resposta = ctrlEditRoomType($peticio, $resposta, $contenidor); 
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEditRoomType"); 
 } elseif ($r === "mEditRoomType") {
-    $resposta = ctrlmEditRoomType($peticio, $resposta, $contenidor); 
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEditRoomType"); 
 } elseif ($r === "newRoomType") {
-    $resposta = ctrlNewRoomType($peticio, $resposta, $contenidor); 
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlNewRoomType"); 
 } elseif ($r === "mNewRoomType") {
-    $resposta = ctrlmNewRoomType($peticio, $resposta, $contenidor); 
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmNewRoomType"); 
 } elseif ($r === "deleteRoomType") {
-    $resposta = ctrlDeleteRoomType($peticio, $resposta, $contenidor); 
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlDeleteRoomType"); 
 } elseif ($r === "manteniment") {
     $resposta = ctrlManteniment($peticio, $resposta, $contenidor); 
 } 
