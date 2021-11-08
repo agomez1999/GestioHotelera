@@ -29,7 +29,6 @@
                     <?php } ?>
           </div>
      </div>
-     
      </div>
 
      <div class="topnav">
