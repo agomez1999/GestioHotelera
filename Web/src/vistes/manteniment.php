@@ -4,7 +4,7 @@
      <meta charset="UTF-8" />
      <title>Hotel Trampolín</title>
      <!-- CSS -->
-     <link rel="stylesheet" href="../public/styles/mant_style.css" type="text/css">
+     <link rel="stylesheet" href="../public/styles/mant.css" type="text/css">
 
 </head>
 <body>
@@ -12,14 +12,10 @@
     include "nav.php";
 ?>
  
- <img class='d-block w-100 bob' src='../public/img/bob.jpg' alt='Third slide'>
+ <div class="mant">
+    <img class='d-block w-100 bob' src='../public/img/Habitacions/Extras/bob2.gif'>
+</div>
 
-
-<footer>
-    <?php
-        include "foot.php";
-    ?>
-</footer>
 
 <script src="script.js">
 

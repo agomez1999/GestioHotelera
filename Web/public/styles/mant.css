@@ -1,8 +1,6 @@
-*{
-    background-color: white;
+body{
+    background: rgb(242,239,231);
 }
 .bob{
-    width: 70%;
-    height: auto;
-    margin:auto;
+    width: 100%;
 }
