@@ -1,6 +1,6 @@
 <?php
 
-function middleAdmin($peticio, $resposta, $contenidor, $next)
+function ctrlAdmin($peticio, $resposta, $contenidor)
 {
     $login = $peticio->get("SESSION", "login");
     $logat = $peticio->get("SESSION", "logat");
@@ -10,7 +10,7 @@ function middleAdmin($peticio, $resposta, $contenidor, $next)
     if ($logat) {
         if ($_SESSION["login"]["rol"] == 1) {
             // EN CAS DE SER ADMIN
-            $resposta = $next($peticio, $resposta, $contenidor);
+            $resposta->redirect("index.php?r=CRUDusuaris");
         }
         else {
             // EN CAS DE NO SER ADMIN
@@ -19,5 +19,3 @@ function middleAdmin($peticio, $resposta, $contenidor, $next)
     }
     return $resposta;
 }
-
-?>

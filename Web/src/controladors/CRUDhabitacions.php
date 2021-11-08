@@ -2,7 +2,6 @@
 
 function ctrlCrudHabitacions($peticio, $resposta, $contenidor)
 {
-
     $habitacions = new \Daw\RoomsPDO($contenidor->config["db"]);
 
     $llistaHabitacions = $habitacions->selectAll();
@@ -18,6 +17,4 @@ function ctrlCrudHabitacions($peticio, $resposta, $contenidor)
         $resposta->redirect("location: index.php?r=login");
             return $resposta;
     }
-
-    
 }

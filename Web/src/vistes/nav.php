@@ -2,7 +2,6 @@
 <link href="../public/styles/style_mobile.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="header-container">
      <div>
@@ -34,7 +33,7 @@
      </div>
      <div class="header-nav">
           <a id="home" href="index.php">Inici</a>
-          <a id="hotel" href="index.php?r=hotel">Hotel</a>
+          <a id="hotel" href="index.php?r=manteniment">Hotel</a>
           <a id="rooms" href="index.php?r=rooms">Habitacions</a>
           <a id="contact" href="index.php?r=contact">Contacte</a>
      </div>
