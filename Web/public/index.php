@@ -57,7 +57,7 @@ if ($r === "dologin") {
 } elseif ($r === "contact") {
     $resposta = ctrlContact($peticio, $resposta, $contenidor);
 } elseif ($r === "CRUDusuaris") {
-    $resposta = middleCRUDusuaris($peticio, $resposta, $contenidor, "ctrlCrudUsuaris");
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlCrudUsuaris");
 } elseif ($r === "editUser") {
     $resposta = ctrlEditUser($peticio, $resposta, $contenidor);
 } elseif ($r === "mEditUser") {
@@ -65,7 +65,7 @@ if ($r === "dologin") {
 } elseif ($r === "deleteUser") {
     $resposta = ctrlDeleteUser($peticio, $resposta, $contenidor);
 } elseif ($r === "CRUDhabitacions") {
-    $resposta = middleCRUDhabitacions($peticio, $resposta, $contenidor, "ctrlCrudHabitacions");
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlCrudHabitacions");
 } elseif ($r === "newRoom") {
     $resposta = ctrlNewRoom($peticio, $resposta, $contenidor);
 } elseif ($r === "mNewRoom") {
