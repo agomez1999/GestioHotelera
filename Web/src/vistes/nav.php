@@ -30,7 +30,6 @@
           </div>
      </div>
      </div>
-
      <div class="topnav">
           <div id="myLinks" class="header-nav">
                <a id="home" href="index.php">Inici</a>

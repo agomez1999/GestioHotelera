@@ -3,6 +3,8 @@
 <head>
      <meta charset="UTF-8" />
      <title>Hotel Trampolín</title>
+     <!-- FONT AWESOME -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
      <!-- CSS -->
      <link rel="stylesheet" href="../public/styles/mant.css" type="text/css">
      <link rel="stylesheet" href="../public/styles/style.css" type="text/css">
