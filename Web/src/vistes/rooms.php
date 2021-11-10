@@ -69,8 +69,14 @@
                         <a href='#' class='a' id='obrir<?php echo $row['Numero'] ?>'><span>More info</span></a>    
                     </div>
                     <div id='lightbox<?php echo $row['Numero'] ?>' class='lightbox'>
-                        <h1>Contingut lightbox <?php echo $row['Numero'] ?></h1>
-                        <a href='#' id='tancar<?php echo $row['Numero'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
+                        <h1>Habitacio <?php echo $row['Nom'] ?></h1>
+                        <a href='#carouselExampleIndicators<?php echo $row['Numero'] ?>' id='tancar<?php echo $row['Numero'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
+                        <p class="room-extras"> <?php echo $row['Serveis'] ?> </p>
+                        <div class='room-extras-img'>
+                            <img src="../public/img/Habitacions/Extras/coffe.jpg" alt="Coffe Machine">
+                            <img src="../public/img/Habitacions/Extras/safe.jpg" alt="Safe">
+                            <img src="../public/img/Habitacions/Extras/minibar.jpg" alt="Minibar">
+                        </div>
                     </div>
                 </div>
 
@@ -94,8 +100,14 @@
                         <a href='#' class='a1' id='obrir<?php echo $row['Numero'] ?>'><span>More info</span></a>   
                     </div>
                     <div id='lightbox<?php echo $row['Numero'] ?>' class='lightbox'>
-                        <h1>Contingut lightbox <?php echo $row['Numero'] ?></h1>
-                        <a href='#' id='tancar<?php echo $row['Numero'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
+                    <h1>Habitacio <?php echo $row['Nom'] ?></h1>
+                        <a href='#carouselExampleIndicators<?php echo $row['Numero'] ?>' id='tancar<?php echo $row['Numero'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
+                        <p class="room-extras"> <?php echo $row['Serveis'] ?> </p>
+                        <div class='room-extras-img'>
+                            <img src="../public/img/Habitacions/Extras/coffe.jpg" alt="Coffe Machine">
+                            <img src="../public/img/Habitacions/Extras/safe.jpg" alt="Safe">
+                            <img src="../public/img/Habitacions/Extras/minibar.jpg" alt="Minibar">
+                        </div>
                     </div>
                     <div class='body-border'>
                         <div id='carouselExampleIndicators<?php echo $row['Numero'] ?>' class='carousel slide' data-ride='carousel'>

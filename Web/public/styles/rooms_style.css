@@ -250,6 +250,16 @@ body {
     text-align: center;
 }
 
+.room-extras{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.room-extras-img{
+    display: flex;
+    flex-direction: row;
+}
+
 /* ROOMS - SLIDER */
 
 .slideshow-container {
