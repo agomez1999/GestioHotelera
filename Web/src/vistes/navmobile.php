@@ -1,5 +1,5 @@
-<link href="../public/styles/style.css" rel="stylesheet" type="text/css">
 
+<link href="../public/styles/style_mobile.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,12 +31,23 @@
      </div>
      </div>
 
-     <div class="topnav">
-          <div id="myLinks" class="header-nav">
-               <a id="home" href="index.php">Inici</a>
-               <a id="hotel" href="index.php?r=manteniment">Hotel</a>
-               <a id="rooms" href="index.php?r=rooms">Habitacions</a>
-               <a id="contact" href="index.php?r=contact">Contacte</a>
-          </div>
-     </div>
+     <div class="topnav" id="myTopnav">
+        <a id="home" href="index.php">Home</a>
+        <a id="hotel" href="index.php?r=manteniment">Hotel</a>
+        <a id="rooms" href="index.php?r=rooms">Habitacions</a>
+        <a id="contact" href="index.php?r=contact">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
 </div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <link href="../public/styles/index_style.css" rel="stylesheet" type="text/css">
-<link href="../public/styles/style.css" rel="stylesheet" type="text/css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
@@ -24,9 +24,12 @@
      </script>
 </head>
 <body>
-    <?php 
-        include "nav.php";
-     ?>
+    
+
+    
+        <?php include "navmobile.php";?>
+     
+
     <script>
      let nav = document.getElementById('home');
      nav.classList.add('active');

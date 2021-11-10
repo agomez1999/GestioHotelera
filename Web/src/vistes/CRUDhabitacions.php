@@ -12,7 +12,7 @@
 <body>
     <?php
 
-include "nav.php";
+include "navmobile.php";
 
     ?>
     <div id="container">

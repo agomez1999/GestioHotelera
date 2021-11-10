@@ -13,10 +13,16 @@ body, html { overflow-x:hidden; }
         gap: 10px;
         width: 100%;
     }
+    .container125{
+        display: none;
+    }
 }
 /* Desktop device*/
 @media (min-width: 769px){
-    
+    .container124{
+        display: none;
+    }
+
     .p1-body-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

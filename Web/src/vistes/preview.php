@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include "nav.php" ?>
+    <?php include "navmobile.php" ?>
     <div class="grid-container">
         <?php foreach($llistaHabitacions as $row) { ?>
         <div>
