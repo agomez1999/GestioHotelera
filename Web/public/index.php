@@ -28,6 +28,7 @@ include "../src/controladors/newRoomType.php";
 include "../src/controladors/mNewRoomType.php";
 include "../src/controladors/deleteRoomType.php";
 include "../src/controladors/manteniment.php";
+include "../src/controladors/showRooms.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -92,7 +93,9 @@ if ($r === "dologin") {
     $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlDeleteRoomType"); 
 } elseif ($r === "manteniment") {
     $resposta = ctrlManteniment($peticio, $resposta, $contenidor); 
-} 
+} elseif ($r === "showRoom") {
+    $resposta = ctrlshowRoom($peticio, $resposta, $contenidor); 
+}
 
 
 $resposta->resposta();
