@@ -40,11 +40,11 @@
               <div id="slide1" class="slider-column-items">
                 <h3 class="slider-form-items">Arrivada</h3>
                 <input type="hidden" name="r" value="preview">
-                <input type="text" id="arrivaldate" name="arrivaldate" placeholder="01/05/1999" required>
+                <input type="text" id="arrivaldate" name="arrivaldate" placeholder="01/05/1999" autocomplete="off" spellcheck="false" required>
             </div>
             <div id="slide2" class="slider-column-items">
                 <h3 class="slider-form-items">Sortida</h3>
-                <input type="text" id="departuredate" name="departuredate" placeholder="01/05/1999" required>
+                <input type="text" id="departuredate" name="departuredate" placeholder="01/05/1999" autocomplete="off" spellcheck="false" required>
             </div>
                 <div id="slide3" class="slider-column-items">
                 <h3 class="slider-form-items">Persones</h3>

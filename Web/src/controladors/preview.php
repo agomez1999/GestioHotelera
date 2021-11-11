@@ -7,17 +7,8 @@ function ctrlPreview($peticio, $resposta, $contenidor)
     $persones = $peticio->get(INPUT_POST, "nPersones");
 
     $habitacions = new \Daw\RoomsPDO($contenidor->config["db"]);
-    
-    if ($persones == 1) { // CAS 1 PERSONA
-        $nReserves = $habitacions->selectIndividualDispoRoom();
-        $nReserves = $nReserves["Reserves"];
-        if($nReserves < 3) { // COMPROVAR SI HI HA HABITACIONS LLIURES
-            $llistaHabitacions = $habitacions->selectIndividualRoom(); // MOSTRAR HABITACIONS DISPONIBLES
-            $resposta->set('llistaHabitacions', $llistaHabitacions);
-        } else {
-            $resposta->setSession("Missatge", "No hi ha cap habitació disponible en aquestes dates."); // MISSATGE EN CAS DE NO QUEDAR HABITACIONS
-        }
-    } else if ($persones == 2) { // CAS 2 PERSONES
+
+    if ($persones == 1 || $persones == 2) { // CAS 2 PERSONES
         
         $tipo = $habitacions->getType();
         $nTipo = count($tipo);
@@ -38,7 +29,6 @@ function ctrlPreview($peticio, $resposta, $contenidor)
                 echo nl2br("Tipus: " . $i . " no disponible \n");
             }
         }
-        die();
 
     } else if ($persones == 3 || $persones == 4) {
         $nReserves = $habitacions->selectIndividualDispoRoom();
