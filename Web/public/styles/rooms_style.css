@@ -57,6 +57,13 @@ body, html { overflow-x:hidden; }
         font-size: 20px;
         cursor: pointer;
     }
+    .room-extras-img img {
+        width: 31%;
+        margin: auto;
+        box-shadow: 3px 3px 1px #212529a6;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 
 
@@ -66,6 +73,7 @@ body, html { overflow-x:hidden; }
 * {
     box-sizing: border-box;
 }
+
 
 body {
     background: rgb(242,239,231);
@@ -258,6 +266,12 @@ body {
 .room-extras-img{
     display: flex;
     flex-direction: row;
+    
+}
+.room-extras-img img {
+    width: 31%;
+    margin: auto;
+    box-shadow: 3px 3px 1px #212529a6;
 }
 
 /* ROOMS - SLIDER */

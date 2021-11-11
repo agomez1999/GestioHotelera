@@ -34,6 +34,17 @@
     ul {
         padding: 0;
     }
+    .lightbox{
+        z-index: 99;
+        height: 66%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #166269;
+        box-shadow: 3px 3px 1px #000000a3;
+        padding: 10px;
+    }
 }
 @media (min-width: 769px){
 * {
@@ -204,14 +215,15 @@ a {
 
 /* LIGHTBOX */
 
-.lightbox {
+.lightbox{
     z-index: 99;
-    height: 100%;
+    height: 35%;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     background: #166269;
+    box-shadow: 3px 3px 1px #000000a3;
 }
 
 .lightbox h1 {

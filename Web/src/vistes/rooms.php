@@ -69,8 +69,8 @@
                         <a href='#' class='a' id='obrir<?php echo $row['Numero'] ?>'><span>More info</span></a>    
                     </div>
                     <div id='lightbox<?php echo $row['Numero'] ?>' class='lightbox'>
-                        <h1>Habitacio <?php echo $row['Nom'] ?></h1>
                         <a href='#carouselExampleIndicators<?php echo $row['Numero'] ?>' id='tancar<?php echo $row['Numero'] ?>' class='tancar'><i class='fas fa-times fa-3x'></i></a>
+                        <h1>Habitacio <?php echo $row['Nom'] ?></h1>
                         <p class="room-extras"> <?php echo $row['Serveis'] ?> </p>
                         <div class='room-extras-img'>
                             <img src="../public/img/Habitacions/Extras/coffe.jpg" alt="Coffe Machine">
