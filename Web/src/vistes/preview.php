@@ -11,11 +11,11 @@
 <body>
     <?php include "navmobile.php" ?>
     <div class="grid-container">
-        <?php foreach($llistaHabitacions as $row) { ?>
+        <?php foreach($Disponibles as $row) { ?>
         <div>
             <h1>Habitació <?php echo $row["Nom"] ?></h1>
             <img src="<?php echo $row["Imatge1"] ?>" alt="">
-            <a href='#' class='a'><span>Veure habitació</span></a>  
+            <a href='index.php?r=showRoom&id=<?php echo $row["Tipo"] ?>' class='a'><span>Veure habitació</span></a>  
         </div>
         <?php } ?>
     </div>

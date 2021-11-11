@@ -264,7 +264,7 @@ class RoomsPDO
 
     public function getRooms() 
     {
-        $query = 'SELECT *, COUNT(*) AS Num FROM habitacio GROUP BY Tipo';
+        $query = 'SELECT A.*, COUNT(A.Tipo) AS Num, B.Tipo AS Nom FROM habitacio A JOIN tipoHabitacio B ON(A.Tipo = B.Id) GROUP BY A.Tipo';
         $llistat = array();
 
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
@@ -291,23 +291,6 @@ class RoomsPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
         return $result->fetch(\PDO::FETCH_ASSOC);
-    }
-
-    public function selectRoomPreview($tipo)
-    {
-        $query = 'SELECT A.*, B.Tipo "Nom", B.Preu "Preu" from habitacio A JOIN tipoHabitacio B ON (A.Tipo = B.Id) WHERE A.Tipo = :Tipo group by A.Tipo';
-        $llistat = array();
-
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
-            $llistat[$habitacio["Numero"]] = $habitacio;
-        }
-
-        if ($this->sql->errorCode() !== '00000') {
-            $err = $this->sql->errorInfo();
-            $code = $this->sql->errorCode();
-            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-        }
-        return $llistat;
     }
 
 }

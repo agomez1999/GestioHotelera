@@ -11,23 +11,15 @@ function ctrlPreview($peticio, $resposta, $contenidor)
     if ($persones == 1 || $persones == 2) { // CAS 1 i 2 PERSONES
         
         $tipo = $habitacions->getRooms();
-        $nTipo = count($tipo);
-        $Type = array(); // ARRAY AMB ELS TIPUS DE HABITACIONS
         $Dispo = array();
-        $nReserves = array(); // ARRAY AMB EL NUMERO DE RESERVES PER TIPUS D'HABITACIÓ
         $Disponibles = [];
         foreach ($tipo as $actual) {
             $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
 
             if ($Dispo["Reserves"] < $actual["Num"]) {
                 $Disponibles[] = $actual;
-                echo nl2br("Tipus: " . $i . " disponible \n");
-            } else {
-                echo nl2br("Tipus: " . $i . " no disponible \n");
             }
         }
-        print_r($Disponibles);
-        die();
     } else if ($persones == 3 || $persones == 4) {
         $nReserves = $habitacions->selectIndividualDispoRoom();
         $nReserves = $nReserves["Reserves"];
