@@ -166,105 +166,11 @@ class RoomsPDO
         }
     }
 
-    // MOSTRAR X HABITACIONS
-
-    public function selectIndividualRoom()
-    {
-        $query = 'SELECT A.*, B.Tipo "Nom", B.Preu "Preu" from habitacio A JOIN tipoHabitacio B ON (A.Tipo = B.Id) WHERE A.Tipo = 1 group by A.Tipo';
-        $llistat = array();
-
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
-            $llistat[$habitacio["Numero"]] = $habitacio;
-        }
-
-        if ($this->sql->errorCode() !== '00000') {
-            $err = $this->sql->errorInfo();
-            $code = $this->sql->errorCode();
-            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-        }
-        return $llistat;
-    }
-
-    public function selectDoubleRoom()
-    {
-        $query = 'SELECT A.*, B.Tipo "Nom", B.Preu "Preu" from habitacio A JOIN tipoHabitacio B ON (A.Tipo = B.Id) WHERE A.Tipo = 2 group by A.Tipo';
-        $llistat = array();
-
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
-            $llistat[$habitacio["Numero"]] = $habitacio;
-        }
-
-        if ($this->sql->errorCode() !== '00000') {
-            $err = $this->sql->errorInfo();
-            $code = $this->sql->errorCode();
-            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-        }
-        return $llistat;
-    }
-
-    public function selectDoubleViewsRoom()
-    {
-        $query = 'SELECT A.*, B.Tipo "Nom", B.Preu "Preu" from habitacio A JOIN tipoHabitacio B ON (A.Tipo = B.Id) WHERE A.Tipo = 3 group by A.Tipo';
-        $llistat = array();
-
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
-            $llistat[$habitacio["Numero"]] = $habitacio;
-        }
-
-        if ($this->sql->errorCode() !== '00000') {
-            $err = $this->sql->errorInfo();
-            $code = $this->sql->errorCode();
-            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-        }
-        return $llistat;
-    }
-
-    // COMPROVAR SI HI HA HABITACIONS DISPONIBLES
-
-    public function selectIndividualDispoRoom()
-    {
-        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 1';
-        $nReserves = $this->sql->query($query, \PDO::FETCH_ASSOC);
-
-        if ($this->sql->errorCode() !== '00000') {
-            $err = $this->sql->errorInfo();
-            $code = $this->sql->errorCode();
-            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-        }
-        return $nReserves->fetch(\PDO::FETCH_ASSOC);
-    }
-
-    public function selectDoubleDispoRoom()
-    {
-        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 2';
-        $nReserves = $this->sql->query($query, \PDO::FETCH_ASSOC);
-
-        if ($this->sql->errorCode() !== '00000') {
-            $err = $this->sql->errorInfo();
-            $code = $this->sql->errorCode();
-            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-        }
-        return $nReserves->fetch(\PDO::FETCH_ASSOC);
-    }
-
-    public function selectDoubleViewsDispoRoom()
-    {
-        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 3';
-        $nReserves = $this->sql->query($query, \PDO::FETCH_ASSOC);
-
-        if ($this->sql->errorCode() !== '00000') {
-            $err = $this->sql->errorInfo();
-            $code = $this->sql->errorCode();
-            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-        }
-        return $nReserves->fetch(\PDO::FETCH_ASSOC);
-    }
-
     // TOQUE 10/11/2021 NIT
 
     public function getRooms() 
     {
-        $query = 'SELECT A.*, COUNT(A.Tipo) AS Num, B.Tipo AS Nom FROM habitacio A JOIN tipoHabitacio B ON(A.Tipo = B.Id) GROUP BY A.Tipo';
+        $query = 'SELECT A.*, COUNT(A.Tipo) AS Num, B.Tipo AS Nom, B.nOcupants, B.Preu FROM habitacio A JOIN tipoHabitacio B ON(A.Tipo = B.Id) GROUP BY A.Tipo';
         $llistat = array();
 
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
