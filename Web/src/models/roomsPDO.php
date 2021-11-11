@@ -126,11 +126,11 @@ class RoomsPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function insertRoomType($Id, $Tipo, $Preu)
+    public function insertRoomType($Id, $Tipo, $nOcupants, $Preu)
     {
-        $query = 'INSERT INTO tipoHabitacio(Id, Tipo, Preu) VALUES (:Id, :Tipo, :Preu)';
+        $query = 'INSERT INTO tipoHabitacio(Id, Tipo, nOcupants, Preu) VALUES (:Id, :Tipo, :nOcupants, :Preu)';
         $insert = $this->sql->prepare($query);
-        $result = $insert->execute([':Id' => $Id,':Tipo' => $Tipo,':Preu' => $Preu]);
+        $result = $insert->execute([':Id' => $Id,':Tipo' => $Tipo,':nOcupants' => $nOcupants, ':Preu' => $Preu]);
 
         if ($insert->errorCode() !== '00000') {
             $err = $insert->errorInfo();
@@ -139,11 +139,11 @@ class RoomsPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
-    public function updateRoomType($Id, $Tipo, $Preu)
+    public function updateRoomType($Id, $Tipo, $nOcupants, $Preu)
     {
-        $query = 'UPDATE tipoHabitacio SET Tipo = :Tipo, Preu = :Preu WHERE Id = :Id';
+        $query = 'UPDATE tipoHabitacio SET Tipo = :Tipo, nOcupants = :nOcupants, Preu = :Preu WHERE Id = :Id';
         $update = $this->sql->prepare($query);
-        $result = $update->execute([':Id' => $Id, ':Tipo' => $Tipo, ':Preu' => $Preu]);
+        $result = $update->execute([':Id' => $Id, ':Tipo' => $Tipo, ':nOcupants' => $nOcupants, ':Preu' => $Preu]);
 
         if ($update->errorCode() !== '00000') {
             $err = $update->errorInfo();
@@ -262,9 +262,9 @@ class RoomsPDO
 
     // TOQUE 10/11/2021 NIT
 
-    public function getType() 
+    public function getRooms() 
     {
-        $query = 'SELECT Tipo FROM habitacio GROUP BY Tipo';
+        $query = 'SELECT *, COUNT(*) AS Num FROM habitacio GROUP BY Tipo';
         $llistat = array();
 
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
@@ -300,7 +300,6 @@ class RoomsPDO
 
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
             $llistat[$habitacio["Numero"]] = $habitacio;
-            return $llistat;
         }
 
         if ($this->sql->errorCode() !== '00000') {
@@ -308,6 +307,7 @@ class RoomsPDO
             $code = $this->sql->errorCode();
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
+        return $llistat;
     }
 
 }
