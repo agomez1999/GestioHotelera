@@ -49,6 +49,11 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
+    display:flex;
+  }
+
+  .dropbtn i {
+      margin-left: 5px;
   }
   
   .dropdown {

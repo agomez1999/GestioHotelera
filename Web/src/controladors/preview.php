@@ -18,23 +18,28 @@ function ctrlPreview($peticio, $resposta, $contenidor)
             $resposta->setSession("Missatge", "No hi ha cap habitació disponible en aquestes dates."); // MISSATGE EN CAS DE NO QUEDAR HABITACIONS
         }
     } else if ($persones == 2) { // CAS 2 PERSONES
-        $_nReservesI = $habitacions->selectIndividualDispoRoom();
-        $nReservesI = $_nReservesI["Reserves"];
-        $_nReservesD = $habitacions->selectDoubleDispoRoom();
-        $nReservesD = $_nReservesD["Reserves"];
-        $_nReservesDV = $habitacions->selectDoubleViewsDispoRoom();
-        $nReservesDV = $_nReservesDV["Reserves"];
-        if($nReservesI < 3) { // COMPROVAR SI HI HA HABITACIONS INDIVIDUALS LLIURES
-            $llistaHabitacionsI = $habitacions->selectIndividualRoom();
-        } else if ($nReservesD < 3){ // COMPROVAR SI HI HA HABITACIONS DOBLES LLIURES
-            $llistaHabitacionsD = $habitacions->selectDoubleRoom();
-        } else if ($nReservesDV < 3) { // COMPROVAR SI HI HA HABITACIONS DOBLES AMB VISTES LLIURES
-            $llistaHabitacionsDV = $habitacions->selectDoubleViewsRoom();
-        } else {
-            $resposta->setSession("Missatge", "No hi ha cap habitació disponible en aquestes dates."); // MISSATGE EN CAS DE NO QUEDAR HABITACIONS
+        
+        $tipo = $habitacions->getType();
+        $nTipo = count($tipo);
+        $Type = array(); // ARRAY AMB ELS TIPUS DE HABITACIONS
+        $Dispo = array();
+        $nReserves = array(); // ARRAY AMB EL NUMERO DE RESERVES PER TIPUS D'HABITACIÓ
+
+        for ($i = 1; $i < $nTipo + 1; $i++) {
+            $Type[$i] = $tipo[$i]["Tipo"];
+            $Dispo[$i] = $habitacions->selectDispoRoom($i);
+            $nReserves[$i] = $Dispo[$i]["Reserves"];
+
+            if ($nReserves[$i] < 3) {
+                //$llistaHabitacions = $habitacions->selectRoomPreview($i);
+                //$resposta->set('llistaHabitacions', $llistaHabitacions);
+                echo nl2br("Tipus: " . $i . " disponible \n");
+            } else {
+                echo nl2br("Tipus: " . $i . " no disponible \n");
+            }
         }
-        $llistaHabitacions = array_merge($llistaHabitacionsI, $llistaHabitacionsD, $llistaHabitacionsDV); // AJUNTEM TOTES LES HABITACIONS A UN MATEIX ARRAY
-        $resposta->set('llistaHabitacions', $llistaHabitacions);
+        die();
+
     } else if ($persones == 3 || $persones == 4) {
         $nReserves = $habitacions->selectIndividualDispoRoom();
         $nReserves = $nReserves["Reserves"];

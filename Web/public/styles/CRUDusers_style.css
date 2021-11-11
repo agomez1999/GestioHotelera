@@ -1,5 +1,6 @@
 * {
     font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
 }
 
 i {
@@ -86,4 +87,12 @@ td.table-btn {
 
 input{
     width: 50%;;
+}
+
+.dropbtn {
+    display: flex;
+}
+
+.dropbtn i {
+    margin-left: 5px;
 }

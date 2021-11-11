@@ -34,9 +34,8 @@ Etapa 5
 Hauríeu de tenir:
 Gestió de reserves.
 Enviament de confirmacions en PDF.
-Disseny responsive funcional per a dispositius mòbils.
+Disseny responsive funcional per a dispositius mòbils. ✓
 Definir rols.  Els usuaris normals podran accedir a la seva reserva i el seu perfil, els administradors podran gestionar les reserves, habitacions….
-Utilitzar certificats SSL en el servidor de proves per assegurar les comunicacions. 
 
 Etapa 6
 Hauríeu de tenir:

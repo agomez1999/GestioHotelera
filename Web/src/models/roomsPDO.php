@@ -223,7 +223,7 @@ class RoomsPDO
 
     public function selectIndividualDispoRoom()
     {
-        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 1 GROUP BY TipoHabitacio';
+        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 1';
         $nReserves = $this->sql->query($query, \PDO::FETCH_ASSOC);
 
         if ($this->sql->errorCode() !== '00000') {
@@ -236,7 +236,7 @@ class RoomsPDO
 
     public function selectDoubleDispoRoom()
     {
-        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 2 GROUP BY TipoHabitacio';
+        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 2';
         $nReserves = $this->sql->query($query, \PDO::FETCH_ASSOC);
 
         if ($this->sql->errorCode() !== '00000') {
@@ -249,7 +249,7 @@ class RoomsPDO
 
     public function selectDoubleViewsDispoRoom()
     {
-        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 3 GROUP BY TipoHabitacio';
+        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = 3';
         $nReserves = $this->sql->query($query, \PDO::FETCH_ASSOC);
 
         if ($this->sql->errorCode() !== '00000') {
@@ -259,4 +259,55 @@ class RoomsPDO
         }
         return $nReserves->fetch(\PDO::FETCH_ASSOC);
     }
+
+    // TOQUE 10/11/2021 NIT
+
+    public function getType() 
+    {
+        $query = 'SELECT Tipo FROM habitacio GROUP BY Tipo';
+        $llistat = array();
+
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
+            $llistat[$habitacio["Tipo"]] = $habitacio;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llistat;
+    }
+
+    public function selectDispoRoom($tipo)
+    {
+        $query = 'SELECT COUNT(TipoHabitacio) "Reserves" FROM reserves WHERE TipoHabitacio = :tipo';
+        $result = $this->sql->prepare($query);
+        $nReserves = $result->execute([':tipo' => $tipo]);
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $result->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function selectRoomPreview($tipo)
+    {
+        $query = 'SELECT A.*, B.Tipo "Nom", B.Preu "Preu" from habitacio A JOIN tipoHabitacio B ON (A.Tipo = B.Id) WHERE A.Tipo = :Tipo group by A.Tipo';
+        $llistat = array();
+
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $habitacio) {
+            $llistat[$habitacio["Numero"]] = $habitacio;
+            return $llistat;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+    }
+
 }

@@ -10,11 +10,7 @@
     <title>Hotel Trampolín | Rooms</title>
 </head>
 <body>
-    <?php
-
-include "navmobile.php";
-
-    ?>
+    <?php include "navmobile.php"; ?>
     <div id="container">
     <table id="users-table">
         <tr>
