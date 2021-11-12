@@ -22,8 +22,9 @@
                <a class="dropdown-item" href="index.php?r=login">Canviar sessió</a>
                <a class="dropdown-item" href="index.php?r=closeSession">Tancar sessió</a>
                <?php if ($_SESSION["login"]["rol"] == 1) { ?>
-                    <a class="dropdown-item" href="index.php?r=CRUDusuaris">Taula users</a>
-                    <a class="dropdown-item" href="index.php?r=CRUDhabitacions">Taula habitacions</a>
+                    <a class="dropdown-item" href="index.php?r=CRUDusuaris">Gestió users</a>
+                    <a class="dropdown-item" href="index.php?r=CRUDhabitacions">Gestió habitacions</a>
+                    <a class="dropdown-item" href="index.php?r=CRUDreserves">Gestió reserves</a>
                <?php } } else { ?>
                     <a class="login-text" href="index.php?r=login">Iniciar sessió</a>
                     <?php } ?>

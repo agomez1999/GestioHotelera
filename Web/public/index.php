@@ -29,6 +29,10 @@ include "../src/controladors/mNewRoomType.php";
 include "../src/controladors/deleteRoomType.php";
 include "../src/controladors/manteniment.php";
 include "../src/controladors/showRooms.php";
+include "../src/controladors/CRUDreserves.php";
+include "../src/controladors/deleteReserva.php";
+include "../src/controladors/editReserva.php";
+include "../src/controladors/mEditReserva.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -95,8 +99,15 @@ if ($r === "dologin") {
     $resposta = ctrlManteniment($peticio, $resposta, $contenidor); 
 } elseif ($r === "showRoom") {
     $resposta = ctrlshowRoom($peticio, $resposta, $contenidor); 
+} elseif ($r === "CRUDreserves") {
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlCrudReserves"); 
+} elseif ($r === "deleteReserva") {
+    $resposta = ctrlDeleteReserva($peticio, $resposta, $contenidor); 
+} elseif ($r === "editReserva") {
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEditReserva"); 
+} elseif ($r === "meditReserva") {
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEditReserva"); 
 }
-
 
 $resposta->resposta();
 

@@ -193,6 +193,13 @@ select::placeholder{
     padding: 10px;
 }
 
+/* MISSATGES ERROR i OK */
 
-
-
+.bad {
+    width: 100%;
+    position: absolute;
+    background:rgba(252, 57, 57, 0.671);
+    top: 45px;
+    z-index: 100;
+    text-align: center;
+}

@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<!-- JQUERY MISSATGE AMB EFECTE FADE -->
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <html>
 <head>
      <meta charset="UTF-8" />
@@ -107,6 +109,11 @@
     });
     $('#tancar2').click(function() {
         $('#lightbox2').hide('slow');
+    });
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".bad").fadeOut(1500);
+        },3000);
     });
 </script>
 <script href="script.js"></scrip>

@@ -6,6 +6,17 @@ function ctrlPreview($peticio, $resposta, $contenidor)
     $sortida = $peticio->get(INPUT_POST, "departuredate");
     $persones = $peticio->get(INPUT_POST, "nPersones");
 
+    $dies = strtotime($sortida) - strtotime($arrivada);
+    echo $dies;
+    die();
+
+    if (!($arrivada < $sortida)) {
+        echo "<h2 class='bad'>La data d'entrada no pot ser més gran que la de sortida</h2>";
+        $resposta->SetTemplate("portada.php");
+
+        return $resposta;
+    } 
+
     $habitacions = new \Daw\RoomsPDO($contenidor->config["db"]);
         
         $tipo = $habitacions->getRooms();
