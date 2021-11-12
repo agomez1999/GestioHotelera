@@ -18,8 +18,13 @@ body {
     justify-items: center;
     width: 100%;;
 }
+.roomtxt {
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+    margin-right: 15px;
+}
 
-.grid-container div {
+.grid-container .body-border {
     margin: 50px auto;
     justify-content: center;
     align-items: center;
@@ -100,4 +105,3 @@ body {
     position: relative;
     z-index: 3;
 }
-
