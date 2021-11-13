@@ -10,9 +10,9 @@
         <p>Edit</p>
             <input type="hidden" name="r" value="mEditRoomType">
             <input type="hidden" name="Numero" value="<?php echo $_GET['id'] ?>">
-            <input type="text" name="Tipo" placeholder="Tipo">
-            <input type="text" name="nOcupants" placeholder="nOcupants">
-            <input type="number" name="Preu" placeholder="Preu">
+            <input type="text" name="Tipo" value="<?php echo $llistaHabitacions['Tipo'] ?>">
+            <input type="text" name="nOcupants" value="<?php echo $llistaHabitacions['nOcupants'] ?>">
+            <input type="number" name="Preu" value="<?php echo $llistaHabitacions['Preu'] ?>">
             <input type="submit" class="send" name="enviar" value="Edit">
         </form>
  	</body>	 

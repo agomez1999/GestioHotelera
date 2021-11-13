@@ -18,10 +18,14 @@
      <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
      <script>
      $( function() {
-     $( "#arrivaldate" ).datepicker();
+     $( "#arrivaldate" ).datepicker({
+        dateFormat: "yy-mm-dd"
+     });
      } );
      $( function() {
-     $( "#departuredate" ).datepicker();
+     $( "#departuredate" ).datepicker({
+        dateFormat: "yy-mm-dd"
+     });
      } );
      </script>
 </head>
@@ -42,11 +46,11 @@
               <div id="slide1" class="slider-column-items">
                 <h3 class="slider-form-items">Arrivada</h3>
                 <input type="hidden" name="r" value="preview">
-                <input type="text" id="arrivaldate" name="arrivaldate" placeholder="01/05/1999" autocomplete="off" spellcheck="false" required>
+                <input type="text" id="arrivaldate" name="arrivaldate" placeholder="yyyy/mm/dd" autocomplete="off" spellcheck="false" required>
             </div>
             <div id="slide2" class="slider-column-items">
                 <h3 class="slider-form-items">Sortida</h3>
-                <input type="text" id="departuredate" name="departuredate" placeholder="01/05/1999" autocomplete="off" spellcheck="false" required>
+                <input type="text" id="departuredate" name="departuredate" placeholder="yyyy/mm/dd" autocomplete="off" spellcheck="false" required>
             </div>
                 <div id="slide3" class="slider-column-items">
                 <h3 class="slider-form-items">Persones</h3>

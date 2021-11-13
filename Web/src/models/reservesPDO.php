@@ -35,6 +35,21 @@ class ReservesPDO
         return $llistat;
     }
 
+    public function getReservaById($Id)
+    {
+        $query = 'select * from reserves where Id=:Id;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':Id' => $Id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function delete($Id)
     {
         $query = 'DELETE FROM reserves WHERE Id = :Id';
@@ -60,5 +75,19 @@ class ReservesPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
         return $update->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function insert($Arrivada, $Sortida, $Persones, $Tipo)
+    {
+        $query = 'INSERT INTO reserves(Arrivada, Sortida, Persones, TipoHabitacio) VALUES (:Arrivada, :Sortida, :Persones, :TipoHabitacio)';
+        $insert = $this->sql->prepare($query);
+        $result = $insert->execute([':Arrivada' => $Arrivada,':Sortida' => $Sortida,':Persones' => $Persones, ':TipoHabitacio' => $Tipo]);
+
+        if ($insert->errorCode() !== '00000') {
+            $err = $insert->errorInfo();
+            $code = $insert->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $insert->fetch(\PDO::FETCH_ASSOC);
     }
 }

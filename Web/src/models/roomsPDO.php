@@ -166,6 +166,36 @@ class RoomsPDO
         }
     }
 
+    public function getRoomById($Numero)
+    {
+        $query = 'SELECT * FROM habitacio WHERE Numero=:Numero;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':Numero' => $Numero]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function getRoomTypeById($Id)
+    {
+        $query = 'select * from tipoHabitacio where Id=:Id;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':Id' => $Id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     // TOQUE 10/11/2021 NIT
 
     public function getRooms() 

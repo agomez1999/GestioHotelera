@@ -23,7 +23,7 @@
             <td class="title2">Sortida</td>
             <td class="title2">Persones</td>
             <td class="title2">Tipo habitació</td>
-            <td colspan="2" class='table-btn'><a id="add" href="index.php?r=signup" class="green-btn"><i class="far fa-plus-square"></i></a></td>
+            <td colspan="2" class='table-btn'><a id="add" href="index.php?r=newReserva" class="green-btn"><i class="far fa-plus-square"></i></a></td>
         </tr>
             <?php
             foreach($llistaReserves as $row) {

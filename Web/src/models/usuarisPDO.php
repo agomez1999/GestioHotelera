@@ -34,6 +34,21 @@ class UsuarisPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function getUserById($Id)
+    {
+        $query = 'select id, usuari, contrasenya, rol from loginDB where id=:id;';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $Id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function selectAll()
     {
         $query = 'select * from loginDB';

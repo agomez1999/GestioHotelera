@@ -33,6 +33,8 @@ include "../src/controladors/CRUDreserves.php";
 include "../src/controladors/deleteReserva.php";
 include "../src/controladors/editReserva.php";
 include "../src/controladors/mEditReserva.php";
+include "../src/controladors/newReserva.php";
+include "../src/controladors/mNewReserva.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -107,6 +109,10 @@ if ($r === "dologin") {
     $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEditReserva"); 
 } elseif ($r === "meditReserva") {
     $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEditReserva"); 
+} elseif ($r === "newReserva") {
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlNewReserva"); 
+} elseif ($r === "mNewReserva") {
+    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmNewReserva"); 
 }
 
 $resposta->resposta();

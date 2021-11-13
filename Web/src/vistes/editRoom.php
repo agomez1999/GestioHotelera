@@ -9,13 +9,13 @@
         <form class="login" method="post" action="index.php?r=CRUDhabitacions">
         <p>Edit</p>
             <input type="hidden" name="r" value="meditHabitacions">
-            <input type="hidden" name="Numero" value="<?php echo $_GET['id'] ?>">
-            <input type="number" name="Tipo" placeholder="Tipo">
-            <input type="text" name="Descripcio" placeholder="Descripcio">
-            <input type="text" name="Serveis" placeholder="Serveis">
-            <input type="text" name="Imatge1" placeholder="Imatge1">
-            <input type="text" name="Imatge2" placeholder="Imatge2">
-            <input type="text" name="Imatge3" placeholder="Imatge3">
+            <input type="number" name="Numero" value="<?php echo $_GET['id'] ?>">
+            <input type="number" name="Tipo" value="<?php echo $llistaHabitacions['Tipo'] ?>">
+            <input type="text" name="Descripcio" value="<?php echo $llistaHabitacions['Descripcio'] ?>">
+            <input type="text" name="Serveis" value="<?php echo $llistaHabitacions['Serveis'] ?>">
+            <input type="text" name="Imatge1" value="<?php echo $llistaHabitacions['Imatge1'] ?>">
+            <input type="text" name="Imatge2" value="<?php echo $llistaHabitacions['Imatge2'] ?>">
+            <input type="text" name="Imatge3" value="<?php echo $llistaHabitacions['Imatge3'] ?>">
             <input type="submit" class="send" name="enviar" value="Edit">
         </form>
  	</body>	 
