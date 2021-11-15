@@ -25,10 +25,12 @@ function ctrlPreview($peticio, $resposta, $contenidor)
         $Dispo = array();
         $Disponibles = [];
         $actual = [];
-
+        
         $reserva = $reserves->selectAll();
 
         foreach ($reserva as $res) { // LOOP PER COMPARAR CADA DATA AMB LES DATES DE LES RESERVES FETES
+            $counter = 0;
+            $ok = false;
             $dataArrivadaBD = $res["Arrivada"];
             $arrivadaBD = new DateTime($dataArrivadaBD);
             $dataSortidaBD = $res["Sortida"];
@@ -42,10 +44,13 @@ function ctrlPreview($peticio, $resposta, $contenidor)
                         }
                     }
                 } else {
-                    foreach ($tipo as $actual) {
-                        $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
-                        if ($actual["nOcupants"] >= $persones) {
-                            $Disponibles[] = $actual;
+                    $counter++;
+                    if ($counter == $diesDif) {
+                        foreach ($tipo as $actual) {
+                            $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
+                            if ($actual["nOcupants"] >= $persones) {
+                                $Disponibles[] = $actual;
+                            }
                         }
                     }
                 }

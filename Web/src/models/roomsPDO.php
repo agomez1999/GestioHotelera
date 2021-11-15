@@ -229,4 +229,18 @@ class RoomsPDO
         return $result->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function selectRoomByType($tipo)
+    {
+        $query = 'SELECT A.*, B.Tipo "Nom", B.nOcupants, B.Preu FROM habitacio A JOIN tipoHabitacio B ON(A.Tipo = B.Id) WHERE A.Tipo = :tipo';
+        $result = $this->sql->prepare($query);
+        $nReserves = $result->execute([':tipo' => $tipo]);
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $result->fetch(\PDO::FETCH_ASSOC);
+    }
+
 }
