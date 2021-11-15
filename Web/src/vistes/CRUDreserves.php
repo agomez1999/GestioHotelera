@@ -34,9 +34,9 @@
                 <td> <?php echo $row["Sortida"] ?></td>
                 <td> <?php echo $row["Persones"] ?></td>
                 <td> <?php echo $row["TipoHabitacio"] ?></td>
-                <td class='table-btn'><a id='edit' href="index.php?r=editReserva&id=<?php echo $row["Id"] ?>" class="green-btn"><i class='far fa-edit'></i></a></td>
+                <td class='table-btn'><a id='edit' href="index.php?r=editReserva&id=<?php echo $row["Id"] ?>" class="edit"><i class='far fa-edit'></i></a></td>
                 <td class='table-btn'>
-                <a id='delete' onclick="return confirm('Segur que vols eliminar aquesta reserva?')" href="index.php?r=deleteReserva&id=<?php echo $row['Id'] ?>"><i class='far fa-trash-alt'></i></a>
+                <a id='delete' onclick="return confirm('Segur que vols eliminar aquesta reserva?')" href="index.php?r=deleteReserva&id=<?php echo $row['Id'] ?>" class="delete"><i class='far fa-trash-alt'></i></a>
                 </td>
             </tr>
      <?php } ?>

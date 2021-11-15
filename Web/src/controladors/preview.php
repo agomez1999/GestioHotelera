@@ -19,23 +19,41 @@ function ctrlPreview($peticio, $resposta, $contenidor)
     $diesDif = $res->format("%a"); // DIES DE DIFERÈNCIA ENTRE DATES
 
     $habitacions = new \Daw\RoomsPDO($contenidor->config["db"]);
+    $reserves = new \Daw\ReservesPDO($contenidor->config["db"]);
         
         $tipo = $habitacions->getRooms();
         $Dispo = array();
         $Disponibles = [];
+        $actual = [];
 
-        for ($i = 0; $i < $diesDif; $i++) {
-            //echo $arrivada->format('Y-m-d');
-            // AQUI LA QUERY
-            $arrivada->modify('+1 day');
-        }
+        $reserva = $reserves->selectAll();
 
-        foreach ($tipo as $actual) {
-            $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
-            if ($Dispo["Reserves"] < $actual["Num"] && $actual["nOcupants"] >= $persones) {
-                    $Disponibles[] = $actual;
+        foreach ($reserva as $res) { // LOOP PER COMPARAR CADA DATA AMB LES DATES DE LES RESERVES FETES
+            $dataArrivadaBD = $res["Arrivada"];
+            $arrivadaBD = new DateTime($dataArrivadaBD);
+            $dataSortidaBD = $res["Sortida"];
+            $soritdaBD = new DateTime($dataSoritdaBD);
+            for ($i = 0; $i < $diesDif; $i++) { // LOOP PER VEURE CADA DIA ENTRE LES DATES SOLICITADES
+                if ($arrivada >= $arrivadaBD || $sortida < $sortidaDB) {
+                    foreach ($tipo as $actual) {
+                        $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
+                        if ($Dispo["Reserves"] < $actual["Num"] && $actual["nOcupants"] >= $persones) {
+                            $Disponibles[] = $actual;
+                        }
+                    }
+                } else {
+                    foreach ($tipo as $actual) {
+                        $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
+                        if ($actual["nOcupants"] >= $persones) {
+                            $Disponibles[] = $actual;
+                        }
+                    }
+                }
+                $arrivada->modify('+1 day');
             }
         }
+
+    $Disponibles = array_map("unserialize", array_unique(array_map("serialize", $Disponibles)));
 
     $resposta->set('Disponibles', $Disponibles);
 

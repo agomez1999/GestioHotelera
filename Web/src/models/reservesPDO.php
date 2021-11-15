@@ -24,7 +24,7 @@ class ReservesPDO
         $llistat = array();
 
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $reserves) {
-            $llistat[$reserves["Id"]] = $reserves;
+            $llistat[] = $reserves;
         }
 
         if ($this->sql->errorCode() !== '00000') {
@@ -35,7 +35,7 @@ class ReservesPDO
         return $llistat;
     }
 
-    public function getReservaById($Id)
+    public function getReservaById($Id) // CRUD | Autocomplete editar
     {
         $query = 'select * from reserves where Id=:Id;';
         $stm = $this->sql->prepare($query);
@@ -50,7 +50,7 @@ class ReservesPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function delete($Id)
+    public function delete($Id) // CRUD | Delete
     {
         $query = 'DELETE FROM reserves WHERE Id = :Id';
         $delete = $this->sql->prepare($query);
