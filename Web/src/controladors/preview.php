@@ -36,7 +36,7 @@ function ctrlPreview($peticio, $resposta, $contenidor)
             $dataSortidaBD = $res["Sortida"];
             $sortidaBD = new DateTime($dataSortidaBD);
             for ($i = 0; $i < $diesDif; $i++) { // LOOP PER VEURE CADA DIA ENTRE LES DATES SOLICITADES
-                if ($arrivada >= $arrivadaBD && $sortida <= $sortidaBD) { // SI LA ARRIVADA ÉS MÉS GRAN O IGUAL QUE QUALSEVOL ARRIVADA DE LA BD
+                if (($arrivada >= $arrivadaBD && $sortida <= $sortidaBD)) { // SI LA ARRIVADA ÉS MÉS GRAN O IGUAL QUE QUALSEVOL ARRIVADA DE LA BD
                     foreach ($tipo as $actual) {
                         $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
                         if ($Dispo["Reserves"] < $actual["Num"] && $actual["nOcupants"] >= $persones) { // MIREM DISPONIBILITAT

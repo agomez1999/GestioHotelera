@@ -53,6 +53,7 @@
         <div class='roomtxt'>
             <h2 class='rooms-title'>Habitació <?php echo $llistaHabitacions['Nom'] ?></h2>
             <p><?php echo $llistaHabitacions['Descripcio'] ?></p>
+            <p><?php echo $llistaHabitacions['Preu'] ?>€</p>
             <a href='#' class='a' id='obrir<?php echo $llistaHabitacions['Numero'] ?>'><span>Book Now</span></a>
         </div>
         
