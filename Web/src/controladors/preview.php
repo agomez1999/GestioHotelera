@@ -34,21 +34,21 @@ function ctrlPreview($peticio, $resposta, $contenidor)
             $dataArrivadaBD = $res["Arrivada"];
             $arrivadaBD = new DateTime($dataArrivadaBD);
             $dataSortidaBD = $res["Sortida"];
-            $soritdaBD = new DateTime($dataSoritdaBD);
+            $sortidaBD = new DateTime($dataSortidaBD);
             for ($i = 0; $i < $diesDif; $i++) { // LOOP PER VEURE CADA DIA ENTRE LES DATES SOLICITADES
-                if ($arrivada >= $arrivadaBD || $sortida < $sortidaDB) {
+                if ($arrivada >= $arrivadaBD && $sortida <= $sortidaBD) { // SI LA ARRIVADA ÉS MÉS GRAN O IGUAL QUE QUALSEVOL ARRIVADA DE LA BD
                     foreach ($tipo as $actual) {
                         $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
-                        if ($Dispo["Reserves"] < $actual["Num"] && $actual["nOcupants"] >= $persones) {
+                        if ($Dispo["Reserves"] < $actual["Num"] && $actual["nOcupants"] >= $persones) { // MIREM DISPONIBILITAT
                             $Disponibles[] = $actual;
                         }
                     }
                 } else {
                     $counter++;
-                    if ($counter == $diesDif) {
+                    if ($counter == $diesDif) { // EN CAS DE QUE EL CONTADOR SIGUI IGUAL AL LES NITS QUE ES VOLEN DORMIR
                         foreach ($tipo as $actual) {
                             $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
-                            if ($actual["nOcupants"] >= $persones) {
+                            if ($actual["nOcupants"] >= $persones) { // MIREM DISPONIBILITAT
                                 $Disponibles[] = $actual;
                             }
                         }
