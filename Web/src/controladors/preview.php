@@ -6,6 +6,9 @@ function ctrlPreview($peticio, $resposta, $contenidor)
     $sortida = $peticio->get(INPUT_POST, "departuredate");
     $persones = $peticio->get(INPUT_POST, "nPersones");
 
+    $resposta->set("arrivada",$arrivada);
+    $resposta->set("sortida",$sortida);
+
     if (!($arrivada < $sortida)) {
         echo "<h2 class='bad'>La data d'entrada no pot ser més tard que la de sortida</h2>";
         $resposta->SetTemplate("portada.php");
