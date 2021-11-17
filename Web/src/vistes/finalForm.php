@@ -16,40 +16,40 @@
         <div class="contact-form">
             <form action="">
                         <p>
-                            <label>Nom</label>
-                            <input type="text" name="Nom">
+                            <label for="nom">Nom</label>
+                            <input type="text" name="Nom" id="nom">
                         </p>
                         <p>
-                            <label>Cognom</label>
-                            <input type="email" name="Cognom">
+                            <label for="cognom">Cognom</label>
+                            <input type="text" name="Cognom" id="cognom">
                         </p>
                         <p>
-                            <label>Personal ID</label>
-                            <input type="tel" name="DNI/ID">
+                            <label for="dni">Personal ID</label>
+                            <input type="text" name="DNI/ID" id="dni">
                         </p>
                         <p>
-                            <label>Email</label>
-                            <input type="text" name="Email">
+                            <label for="mail">Email</label>
+                            <input type="email" name="Email" id="mail">
                         </p>
                         <p>
-                            <label>Targeta Bancaria</label>
-                            <input type="text" name="Targeta Bancaria">
+                            <label for="tb">Targeta Bancaria</label>
+                            <input type="text" name="Targeta Bancaria" id="tb">
                         </p>
                         <p>
-                            <label>C.P</label>
-                            <input type="text" name="codi postal">
+                            <label for="cp">C.P</label>
+                            <input type="text" name="codi postal" id="cp">
                         </p>
                         <p>
-                            <label>Poblacio</label>
-                            <input type="text" name="Poblacio">
+                            <label for="Poblacio">Poblacio</label>
+                            <input type="text" name="Poblacio" id="Poblacio">
                         </p>
                         <p>
-                            <label>Telefon</label>
-                            <input type="text" name="Telefon">
+                            <label for="Telefon">Telefon</label>
+                            <input type="tel" name="Telefon" id="Telefon">
                         </p>
                         <p class="block">
-                        <label>Missatge</label> 
-                            <textarea name="message" rows="3"></textarea>
+                        <label for="message">Missatge</label> 
+                            <textarea name="message" rows="3" id="message"></textarea>
                         </p>
                         <p class="block">
                             <button>
@@ -58,11 +58,15 @@
                         </p>
             </form>
         </div>
-        <div class="form2">
-            
-        </div>
     </div>
-        
+    <div class="form2">
+            <div class="form2-int">
+                <h1 class="roomtitle">Aqui nom de habitacio :)</h1>
+                <h2 class="resdate">From DATA XY to DAA YX</h2>
+                <h2 class="nocupants">Reservat per: X persones</h2>
+                <h1 class="fullprice">Total Price: 999€</h1>
+            </div>
+        </div>
     </div>
 <?php include "foot.php" ?>    
 </body>
