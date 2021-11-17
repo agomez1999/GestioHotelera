@@ -15,6 +15,7 @@
             <input type="number" name="Persones" value="<?php echo $llistaReserves['Persones'] ?>">
             <input type="number" name="Tipo" value="<?php echo $llistaReserves['TipoHabitacio'] ?>">
             <input type="submit" class="send" name="enviar" value="Edit">
+            <input type="reset" class="send" name="reset" value="Reset">
         </form>
  	</body>	 
 </html>

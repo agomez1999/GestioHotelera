@@ -16,6 +16,7 @@
             <input type="text" name="passwd" value="<?php echo $llistaUsuaris["contrasenya"]  ?>">
             <input type="number" name="rol" value="<?php echo $llistaUsuaris["rol"]  ?>" min="1" max="3">
             <input type="submit" class="send" name="enviar" value="Modify">
+            <input type="reset" class="send" name="reset" value="Reset">
         </form>
  	</body>	 
 </html>

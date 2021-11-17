@@ -17,6 +17,7 @@
             <input type="text" name="Imatge2" value="<?php echo $llistaHabitacions['Imatge2'] ?>">
             <input type="text" name="Imatge3" value="<?php echo $llistaHabitacions['Imatge3'] ?>">
             <input type="submit" class="send" name="enviar" value="Edit">
+            <input type="reset" class="send" name="reset" value="Reset">
         </form>
  	</body>	 
 </html>

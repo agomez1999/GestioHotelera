@@ -90,4 +90,47 @@ class ReservesPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
+
+    public function insertClient($nom, $cognom, $email, $tarjeta, $cp, $poblacio, $telefon, $dni, $missatge)
+    {
+        $query = 'INSERT INTO client(Nom, Cognom, Email, Tarjeta, CP, Poblacio, Telefon, DNI, Missatge) VALUES (:Nom, :Cognom, :Email, :Tarjeta, :CP, :Poblacio, :Telefon, :DNI, :Missatge)';
+        $insert = $this->sql->prepare($query);
+        $result = $insert->execute([':Nom' => $nom,':Cognom' => $cognom,':email' => $Email, ':Tarjeta' => $tarjeta, ':CP' => $cp, ':Poblacio' => $poblacio, ':Telefon' => $telefon, ':DNI' => $dni, ':Missatge' => $missatge]);
+        if ($insert->errorCode() !== '00000') {
+            $err = $insert->errorInfo();
+            $code = $insert->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $insert->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function insertReservaClient($IdClient, $IdReserva)
+    {
+        $query = 'INSERT INTO client(IdClient, IdReserva) VALUES (:IdClient, :IdReserva)';
+        $insert = $this->sql->prepare($query);
+        $result = $insert->execute([':IdClient' => $IdClient,':IdReserva' => $IdReserva]);
+        if ($insert->errorCode() !== '00000') {
+            $err = $insert->errorInfo();
+            $code = $insert->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $insert->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function selectClient()
+    {
+        $query = 'select * from client';
+        $llistat = array();
+
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $client) {
+            $llistat[] = $client;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llistat;
+    }
 }

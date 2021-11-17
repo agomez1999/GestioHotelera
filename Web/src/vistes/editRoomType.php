@@ -14,6 +14,7 @@
             <input type="text" name="nOcupants" value="<?php echo $llistaHabitacions['nOcupants'] ?>">
             <input type="number" name="Preu" value="<?php echo $llistaHabitacions['Preu'] ?>">
             <input type="submit" class="send" name="enviar" value="Edit">
+            <input type="reset" class="send" name="reset" value="Reset">
         </form>
  	</body>	 
 </html>
