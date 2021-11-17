@@ -12,39 +12,56 @@
     <?php include "navmobile.php" ?>
     <div class="grid-container">
 
-        <div class='body-border'>
-            <div id='carouselExampleIndicators<?php echo $llistaHabitacions['Numero'] ?>' class='carousel slide' data-ride='carousel'>
-                <ol class='carousel-indicators'>
-                    <li data-target='#carouselExampleIndicators<?php echo $llistaHabitacions['Numero'] ?>' data-slide-to='0' class='active'></li>
-                    <li data-target='#carouselExampleIndicators<?php echo $llistaHabitacions['Numero'] ?>' data-slide-to='1'></li>
-                    <li data-target='#carouselExampleIndicators<?php echo $llistaHabitacions['Numero'] ?>' data-slide-to='2'></li>
-                </ol>
-                <div class='carousel-inner'>
-                    <div class='carousel-item active'>
-                        <img class='d-block w-100' src='<?php echo $llistaHabitacions['Imatge1'] ?>' alt='First slide'>
-                    </div>
-                    <div class='carousel-item'>
-                        <img class='d-block w-100' src='<?php echo $llistaHabitacions['Imatge2'] ?>' alt='Second slide'>
-                    </div>
-                    <div class='carousel-item'>
-                        <img class='d-block w-100' src='<?php echo $llistaHabitacions['Imatge3'] ?>' alt='Third slide'>
-                    </div>
-                </div>
-                <a class='carousel-control-prev' href='#carouselExampleIndicators<?php echo $llistaHabitacions['Numero'] ?>' role='button' data-slide='prev'>
-                    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                    <span class='sr-only'>Previous</span>
-                </a>
-                <a class='carousel-control-next' href='#carouselExampleIndicators<?php echo $llistaHabitacions['Numero'] ?>' role='button' data-slide='next'>
-                    <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                    <span class='sr-only'>Next</span>
-                </a>
-            </div>
+    <div class="contact-wrapper">
+        <div class="contact-form">
+            <form action="">
+                        <p>
+                            <label>Nom</label>
+                            <input type="text" name="Nom">
+                        </p>
+                        <p>
+                            <label>Cognom</label>
+                            <input type="email" name="Cognom">
+                        </p>
+                        <p>
+                            <label>Personal ID</label>
+                            <input type="tel" name="DNI/ID">
+                        </p>
+                        <p>
+                            <label>Email</label>
+                            <input type="text" name="Email">
+                        </p>
+                        <p>
+                            <label>Targeta Bancaria</label>
+                            <input type="text" name="Targeta Bancaria">
+                        </p>
+                        <p>
+                            <label>C.P</label>
+                            <input type="text" name="codi postal">
+                        </p>
+                        <p>
+                            <label>Poblacio</label>
+                            <input type="text" name="Poblacio">
+                        </p>
+                        <p>
+                            <label>Telefon</label>
+                            <input type="text" name="Telefon">
+                        </p>
+                        <p class="block">
+                        <label>Missatge</label> 
+                            <textarea name="message" rows="3"></textarea>
+                        </p>
+                        <p class="block">
+                            <button>
+                                Enviar
+                            </button>
+                        </p>
+            </form>
         </div>
-        <div class='roomtxt'>
-            <h2 class='rooms-title'>Habitació <?php echo $llistaHabitacions['Nom'] ?></h2>
-            <p><?php echo $llistaHabitacions['Descripcio'] ?></p>
-            <a href='#' class='a' id='obrir<?php echo $llistaHabitacions['Numero'] ?>'><span>Book Now</span></a>
+        <div class="form2">
+            
         </div>
+    </div>
         
     </div>
 <?php include "foot.php" ?>    
