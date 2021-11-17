@@ -14,30 +14,30 @@
 
     <div class="contact-wrapper">
         <div class="contact-form">
-            <form action="">
+            <form method="post" action="index.php">
                         <p>
                             <label>Nom</label>
                             <input type="text" name="Nom">
                         </p>
                         <p>
                             <label>Cognom</label>
-                            <input type="email" name="Cognom">
+                            <input type="text" name="Cognom">
                         </p>
                         <p>
                             <label>Personal ID</label>
-                            <input type="tel" name="DNI/ID">
+                            <input type="text" name="DNI">
                         </p>
                         <p>
                             <label>Email</label>
-                            <input type="text" name="Email">
+                            <input type="mail" name="Email">
                         </p>
                         <p>
                             <label>Targeta Bancaria</label>
-                            <input type="text" name="Targeta Bancaria">
+                            <input type="number" name="Targeta">
                         </p>
                         <p>
                             <label>C.P</label>
-                            <input type="text" name="codi postal">
+                            <input type="number" name="Codi">
                         </p>
                         <p>
                             <label>Poblacio</label>
@@ -45,7 +45,7 @@
                         </p>
                         <p>
                             <label>Telefon</label>
-                            <input type="text" name="Telefon">
+                            <input type="tel" name="Telefon">
                         </p>
                         <p class="block">
                         <label>Missatge</label> 

@@ -70,55 +70,55 @@ if ($r === "dologin") {
 } elseif ($r === "contact") {
     $resposta = ctrlContact($peticio, $resposta, $contenidor);
 } elseif ($r === "CRUDusuaris") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlCrudUsuaris");
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlCrudUsuaris");
 } elseif ($r === "editUser") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEditUser");
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlEditUser");
 } elseif ($r === "mEditUser") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEditUser");
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlmEditUser");
 } elseif ($r === "deleteUser") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlDeleteUser");
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlDeleteUser");
 } elseif ($r === "CRUDhabitacions") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlCrudHabitacions");
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlCrudHabitacions");
 } elseif ($r === "newRoom") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlNewRoom");
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlNewRoom");
 } elseif ($r === "mNewRoom") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmNewRoom");
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlmNewRoom");
 } elseif ($r === "preview") {
     $resposta = ctrlPreview($peticio, $resposta, $contenidor);
 } elseif ($r === "deleteHabitacions") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlDeleteHabitacions");
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlDeleteHabitacions");
 } elseif ($r === "editHabitacions") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEdithabitacions"); 
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlEdithabitacions"); 
 } elseif ($r === "meditHabitacions") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEdithabitacions"); 
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlmEdithabitacions"); 
 } elseif ($r === "closeSession") {
     $resposta = ctrlCloseSession($peticio, $resposta, $contenidor); 
 } elseif ($r === "EditRoomType") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEditRoomType"); 
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlEditRoomType"); 
 } elseif ($r === "mEditRoomType") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEditRoomType"); 
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlmEditRoomType"); 
 } elseif ($r === "newRoomType") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlNewRoomType"); 
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlNewRoomType"); 
 } elseif ($r === "mNewRoomType") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmNewRoomType"); 
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlmNewRoomType"); 
 } elseif ($r === "deleteRoomType") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlDeleteRoomType"); 
+    $resposta = EditorCRUD($peticio, $resposta, $contenidor, "ctrlDeleteRoomType"); 
 } elseif ($r === "manteniment") {
     $resposta = ctrlManteniment($peticio, $resposta, $contenidor); 
 } elseif ($r === "showRoom") {
     $resposta = ctrlshowRoom($peticio, $resposta, $contenidor); 
 } elseif ($r === "CRUDreserves") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlCrudReserves"); 
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlCrudReserves"); 
 } elseif ($r === "deleteReserva") {
     $resposta = ctrlDeleteReserva($peticio, $resposta, $contenidor); 
 } elseif ($r === "editReserva") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlEditReserva"); 
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlEditReserva"); 
 } elseif ($r === "meditReserva") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmEditReserva"); 
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlmEditReserva"); 
 } elseif ($r === "newReserva") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlNewReserva"); 
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlNewReserva"); 
 } elseif ($r === "mNewReserva") {
-    $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmNewReserva"); 
+    $resposta = AdminCRUD($peticio, $resposta, $contenidor, "ctrlmNewReserva"); 
 } elseif ($r === "finalForm") {
     $resposta = ctrlfinalForm($peticio, $resposta, $contenidor); 
 } elseif ($r === "loginReservar") {
