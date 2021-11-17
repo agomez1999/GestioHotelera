@@ -36,6 +36,11 @@ include "../src/controladors/mEditReserva.php";
 include "../src/controladors/newReserva.php";
 include "../src/controladors/mNewReserva.php";
 include "../src/controladors/finalForm.php";
+include "../src/controladors/doSignupReservar.php";
+include "../src/controladors/dologinReservar.php";
+include "../src/controladors/signupReservar.php";
+include "../src/controladors/loginReservar.php";
+include "../src/controladors/isLoged.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -116,6 +121,16 @@ if ($r === "dologin") {
     $resposta = middleCRUD($peticio, $resposta, $contenidor, "ctrlmNewReserva"); 
 } elseif ($r === "finalForm") {
     $resposta = ctrlfinalForm($peticio, $resposta, $contenidor); 
+} elseif ($r === "loginReservar") {
+    $resposta = ctrlLoginReservar($peticio, $resposta, $contenidor); 
+} elseif ($r === "signupReservar") {
+    $resposta = ctrlSignupReservar($peticio, $resposta, $contenidor); 
+} elseif ($r === "dologinReservar") {
+    $resposta = ctrldoLoginReservar($peticio, $resposta, $contenidor); 
+} elseif ($r === "doSignupReservar") {
+    $resposta = ctrlDoSignupReservar($peticio, $resposta, $contenidor); 
+} elseif ($r === "isLoged") {
+    $resposta = ctrlIsLoged($peticio, $resposta, $contenidor); 
 }
 
 $resposta->resposta();
