@@ -6,6 +6,9 @@ function ctrlPreview($peticio, $resposta, $contenidor)
     $sortida = $peticio->get(INPUT_POST, "departuredate");
     $persones = $peticio->get(INPUT_POST, "nPersones");
 
+    $resposta->set("arrivada",$arrivada);
+    $resposta->set("sortida",$sortida);
+
     if (!($arrivada < $sortida)) {
         echo "<h2 class='bad'>La data d'entrada no pot ser més tard que la de sortida</h2>";
         $resposta->SetTemplate("portada.php");
@@ -36,7 +39,7 @@ function ctrlPreview($peticio, $resposta, $contenidor)
             $dataSortidaBD = $res["Sortida"];
             $sortidaBD = new DateTime($dataSortidaBD);
             for ($i = 0; $i < $diesDif; $i++) { // LOOP PER VEURE CADA DIA ENTRE LES DATES SOLICITADES
-                if ($arrivada >= $arrivadaBD && $sortida <= $sortidaBD) { // SI LA ARRIVADA ÉS MÉS GRAN O IGUAL QUE QUALSEVOL ARRIVADA DE LA BD
+                if (($arrivada >= $arrivadaBD && $sortida <= $sortidaBD)) { // SI LA ARRIVADA ÉS MÉS GRAN O IGUAL QUE QUALSEVOL ARRIVADA DE LA BD
                     foreach ($tipo as $actual) {
                         $Dispo = $habitacions->selectDispoRoom($actual["Tipo"]);
                         if ($Dispo["Reserves"] < $actual["Num"] && $actual["nOcupants"] >= $persones) { // MIREM DISPONIBILITAT

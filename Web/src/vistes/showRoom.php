@@ -53,9 +53,15 @@
         <div class='roomtxt'>
             <h2 class='rooms-title'>Habitació <?php echo $llistaHabitacions['Nom'] ?></h2>
             <p><?php echo $llistaHabitacions['Descripcio'] ?></p>
+            <p><?php echo $llistaHabitacions['Preu'] ?>€</p>
             <a href='index.php?r=finalForm&id=<?php echo $llistaHabitacions["Tipo"] ?>' class='a' id='obrir<?php echo $llistaHabitacions['Numero'] ?>'><span>Book Now</span></a>
+            <form action="index.php?r=preview">
+                <input type="hidden" name="r" value="preview">
+                <input type="hidden" name="arrivaldate" value="<?php echo $dA ?>">
+                <input type="hidden" name="departuredate" value="<?php echo $dS ?>">
+                <input type="submit" value="Back">
+            </form>
         </div>
-        
     </div>
 <?php include "foot.php" ?>    
 </body>
