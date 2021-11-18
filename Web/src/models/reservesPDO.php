@@ -213,4 +213,15 @@ class ReservesPDO
         }
         return $update->fetch(\PDO::FETCH_ASSOC);
     }
+
+    /*
+    $query = 'SELECT A.*, 
+                     C.*, 
+                     D.* 
+                     FROM client A 
+                     JOIN reserva_client B ON(A.Id = B.IdClient) 
+                     JOIN reserves C ON(C.Id = B.IdReserva) 
+                     JOIN tipoHabitacio D ON(C.TipoHabitacio = D.Id) 
+                     WHERE A.IdLogin = 2';
+    */
 }
