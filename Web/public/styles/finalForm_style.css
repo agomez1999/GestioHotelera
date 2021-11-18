@@ -1,3 +1,12 @@
+body {
+    box-sizing: border-box;
+    background: rgb(242,239,231);
+    line-height: 1.6;
+    font-family: 'Quicksand', sans-serif;
+    padding: 0;
+    margin: auto;
+}
+
 .grid-container {
     margin: 20px auto;
     display: grid;
@@ -65,4 +74,15 @@
     color: #fff;
     transition: background-color 1s ease-out;
     outline: 0;
+}
+.form2{
+    width: 100%;
+}
+.form2-int{
+    border: 1px solid black;
+    width: 90%;
+    height: 100%;
+}
+.form2-int h1, .form2-int h2{
+    font-family: 'Quicksand', sans-serif;
 }
