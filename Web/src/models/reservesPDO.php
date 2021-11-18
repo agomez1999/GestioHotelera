@@ -151,6 +151,21 @@ class ReservesPDO
         return $llistat;
     }
 
+    public function getLoginId($user)
+    {
+        $query = 'SELECT id "LoginId" FROM loginDB where usuari = :user';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':user' => $user]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function getReservaId()
     {
         $query = 'SELECT MAX(Id) "ReservaId" FROM reserves';
@@ -170,7 +185,7 @@ class ReservesPDO
 
     public function getReserva()
     {
-        $query = 'SELECT A.*, B.* FROM reserves A JOIN client B ON()';
+        $query = 'SELECT C.*, B.* FROM reserva_client A JOIN reserves B ON(A.IdReserva = B.Id) JOIN client C ON(C.Id = A.IdClient)';
         $llistat = array();
 
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $client) {
@@ -183,5 +198,19 @@ class ReservesPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
         return $llistat;
+    }
+
+    public function updateClient($IdLogin)
+    {
+        $query = 'UPDATE client SET IdLogin = :IdLogin ORDER BY Id DESC LIMIT 1';
+        $update = $this->sql->prepare($query);
+        $result = $update->execute([':IdLogin' => $IdLogin]);
+
+        if ($update->errorCode() !== '00000') {
+            $err = $update->errorInfo();
+            $code = $update->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $update->fetch(\PDO::FETCH_ASSOC);
     }
 }
