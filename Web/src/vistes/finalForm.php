@@ -14,7 +14,8 @@
 
     <div class="contact-wrapper">
         <div class="contact-form">
-            <form method="post" action="index.php">
+            <form method="post" action="index.php?r=sendFinalForm">
+                <input type="hidden" name="r" value="sendFinalForm">
                         <p>
                             <label>Nom</label>
                             <input type="text" name="Nom">
@@ -33,7 +34,7 @@
                         </p>
                         <p>
                             <label>Targeta Bancaria</label>
-                            <input type="number" name="Targeta">
+                            <input type="number" name="Tarjeta">
                         </p>
                         <p>
                             <label>C.P</label>
@@ -49,7 +50,7 @@
                         </p>
                         <p class="block">
                         <label>Missatge</label> 
-                            <textarea name="message" rows="3"></textarea>
+                            <textarea name="Missatge" rows="3"></textarea>
                         </p>
                         <p class="block">
                             <button>
