@@ -9,7 +9,7 @@
      <form class="login" method="post" action="index.php">
      <p>Register</p>
             <input type="hidden" name="r" value="doSignupReservar">
-            <input type="text" name="usrname" placeholder="Username">
+            <input type="text" name="usrname" placeholder="Nom">
             <input type="password" name="passwd" placeholder="Password">
             <input type="submit" class="send" name="enviar" value="Register">
         </form>

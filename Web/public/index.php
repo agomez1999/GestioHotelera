@@ -41,6 +41,7 @@ include "../src/controladors/dologinReservar.php";
 include "../src/controladors/signupReservar.php";
 include "../src/controladors/loginReservar.php";
 include "../src/controladors/isLoged.php";
+include "../src/controladors/sendFinalForm.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -131,6 +132,8 @@ if ($r === "dologin") {
     $resposta = ctrlDoSignupReservar($peticio, $resposta, $contenidor); 
 } elseif ($r === "isLoged") {
     $resposta = ctrlIsLoged($peticio, $resposta, $contenidor); 
+} elseif ($r === "sendFinalForm") {
+    $resposta = ctrlSendFinalForm($peticio, $resposta, $contenidor); 
 }
 
 $resposta->resposta();

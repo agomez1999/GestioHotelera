@@ -6,6 +6,10 @@ function ctrlPreview($peticio, $resposta, $contenidor)
     $sortida = $peticio->get(INPUT_POST, "departuredate");
     $persones = $peticio->get(INPUT_POST, "nPersones");
 
+    $resposta->setSession("Arrivada",$arrivada);
+    $resposta->setSession("Sortida",$sortida);
+    $resposta->setSession("Persones",$persones);
+
     $resposta->set("arrivada",$arrivada);
     $resposta->set("sortida",$sortida);
 

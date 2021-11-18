@@ -6,6 +6,8 @@ function ctrlshowRoom($peticio, $resposta, $contenidor)
     $dA = $peticio->get(INPUT_GET, "dA");
     $dS = $peticio->get(INPUT_GET, "dS");
 
+    $resposta->setSession("Tipo",$id);
+
     $habitacio = new \Daw\RoomsPDO($contenidor->config["db"]);
     $llistaHabitacions = $habitacio->selectRoomByType($id);
     $resposta->set('llistaHabitacions', $llistaHabitacions);

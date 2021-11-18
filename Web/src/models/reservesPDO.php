@@ -91,11 +91,11 @@ class ReservesPDO
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function insertClient($nom, $cognom, $email, $tarjeta, $cp, $poblacio, $telefon, $dni, $missatge)
+    public function insertClient($Nom, $Cognom, $Email, $Tarjeta, $CP, $Poblacio, $Telefon, $DNI, $Missatge)
     {
         $query = 'INSERT INTO client(Nom, Cognom, Email, Tarjeta, CP, Poblacio, Telefon, DNI, Missatge) VALUES (:Nom, :Cognom, :Email, :Tarjeta, :CP, :Poblacio, :Telefon, :DNI, :Missatge)';
         $insert = $this->sql->prepare($query);
-        $result = $insert->execute([':Nom' => $nom,':Cognom' => $cognom,':email' => $Email, ':Tarjeta' => $tarjeta, ':CP' => $cp, ':Poblacio' => $poblacio, ':Telefon' => $telefon, ':DNI' => $dni, ':Missatge' => $missatge]);
+        $result = $insert->execute([':Nom' => $Nom,':Cognom' => $Cognom,':Email' => $Email, ':Tarjeta' => $Tarjeta, ':CP' => $CP, ':Poblacio' => $Poblacio, ':Telefon' => $Telefon, ':DNI' => $DNI, ':Missatge' => $Missatge]);
         if ($insert->errorCode() !== '00000') {
             $err = $insert->errorInfo();
             $code = $insert->errorCode();
@@ -106,7 +106,7 @@ class ReservesPDO
 
     public function insertReservaClient($IdClient, $IdReserva)
     {
-        $query = 'INSERT INTO client(IdClient, IdReserva) VALUES (:IdClient, :IdReserva)';
+        $query = 'INSERT INTO reserva_client(IdClient, IdReserva) VALUES (:IdClient, :IdReserva)';
         $insert = $this->sql->prepare($query);
         $result = $insert->execute([':IdClient' => $IdClient,':IdReserva' => $IdReserva]);
         if ($insert->errorCode() !== '00000') {
@@ -132,5 +132,85 @@ class ReservesPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
         return $llistat;
+    }
+
+    public function getClientId()
+    {
+        $query = 'SELECT MAX(Id) "ClientId" FROM client';
+        $llistat = array();
+
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $client) {
+            $llistat[] = $client;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llistat;
+    }
+
+    public function getLoginId($user)
+    {
+        $query = 'SELECT id "LoginId" FROM loginDB where usuari = :user';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':user' => $user]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function getReservaId()
+    {
+        $query = 'SELECT MAX(Id) "ReservaId" FROM reserves';
+        $llistat = array();
+
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $client) {
+            $llistat[] = $client;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llistat;
+    }
+
+    public function getReserva()
+    {
+        $query = 'SELECT C.*, B.* FROM reserva_client A JOIN reserves B ON(A.IdReserva = B.Id) JOIN client C ON(C.Id = A.IdClient)';
+        $llistat = array();
+
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $client) {
+            $llistat[] = $client;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llistat;
+    }
+
+    public function updateClient($IdLogin)
+    {
+        $query = 'UPDATE client SET IdLogin = :IdLogin ORDER BY Id DESC LIMIT 1';
+        $update = $this->sql->prepare($query);
+        $result = $update->execute([':IdLogin' => $IdLogin]);
+
+        if ($update->errorCode() !== '00000') {
+            $err = $update->errorInfo();
+            $code = $update->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $update->fetch(\PDO::FETCH_ASSOC);
     }
 }
