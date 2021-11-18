@@ -214,14 +214,25 @@ class ReservesPDO
         return $update->fetch(\PDO::FETCH_ASSOC);
     }
 
-    /*
-    $query = 'SELECT A.*, 
-                     C.*, 
-                     D.* 
+    public function getReservaUser($IdLogin)
+    {
+        $query = 'SELECT A.Nom "NomClient", A.Cognom, A.Email, A.Tarjeta, A.CP, A.Poblacio, A.Telefon, A.DNI, A.Missatge, 
+                     C.Arrivada, C.Sortida, C.Persones, 
+                     D.Tipo "NomHabitacio", D.Preu
                      FROM client A 
                      JOIN reserva_client B ON(A.Id = B.IdClient) 
                      JOIN reserves C ON(C.Id = B.IdReserva) 
                      JOIN tipoHabitacio D ON(C.TipoHabitacio = D.Id) 
-                     WHERE A.IdLogin = 2';
-    */
+                     WHERE A.IdLogin = :IdLogin';
+                     
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':IdLogin' => $IdLogin]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
 }
