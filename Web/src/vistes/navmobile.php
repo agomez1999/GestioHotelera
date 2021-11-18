@@ -10,7 +10,6 @@
 
      <?php 
      if (isset($_SESSION["login"])) {
-
           $user = $_SESSION["login"]["usuari"]
      ?>
 
@@ -21,11 +20,14 @@
           <div class="dropdown-content">
                <a class="dropdown-item" href="index.php?r=login">Canviar sessió</a>
                <a class="dropdown-item" href="index.php?r=closeSession">Tancar sessió</a>
-               <?php if ($_SESSION["login"]["rol"] == 1) { ?>
-                    <a class="dropdown-item" href="index.php?r=CRUDusuaris">Gestió users</a>
+               <?php if ($_SESSION["login"]["rol"] != 3) { ?>
                     <a class="dropdown-item" href="index.php?r=CRUDhabitacions">Gestió habitacions</a>
+                    <?php if ($_SESSION["login"]["rol"] == 1) { ?>
+                    <a class="dropdown-item" href="index.php?r=CRUDusuaris">Gestió users</a>     
                     <a class="dropdown-item" href="index.php?r=CRUDreserves">Gestió reserves</a>
-               <?php } } else { ?>
+               <?php } 
+               } 
+          } else { ?>
                     <a class="login-text" href="index.php?r=login">Iniciar sessió</a>
                     <?php } ?>
           </div>
@@ -36,14 +38,14 @@
         <a id="home" href="index.php">Home</a>
         <a id="hotel" href="index.php?r=manteniment">Hotel</a>
         <a id="rooms" href="index.php?r=rooms">Habitacions</a>
-        <a id="contact" href="index.php?r=contact">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a id="contact" href="index.php?r=contact">Contacte</a>
+        <a href="javascript:void(0);" class="icon" onclick="DesplegableUsuari()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
 </div>
 <script>
-function myFunction() {
+function DesplegableUsuari() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
