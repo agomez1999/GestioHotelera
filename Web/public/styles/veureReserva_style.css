@@ -1,0 +1,35 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+}
+#container {
+    margin-top: 2%;
+}
+#users-table{
+    width:100%;
+    border-spacing: 0px 15px;
+}
+tbody{
+    text-align: center;
+    
+}
+.title {
+font-weight: bold;
+}
+.content {
+
+}
+#titles{
+height: 100%;
+background-color:#166269;
+}
+#tablecontent {
+height: 100px;
+background-color:#237f87;
+}
+.download img{
+    height: 100px;
+}
+.download:hover{
+    background-color:rgb(50,205,50,0.5);
+}

@@ -8,34 +8,39 @@
     <title>Document</title>
 </head>
 <body>
+<?php include "navmobile.php"; ?>
 <div id="container">
     <table id="users-table">
-        <tr>
+        <tr id="titles">
             <td class="title">Nom</td>
             <td class="title">Telefon</td>
             <td class="title">Correu</td>
             <td class="title">DNI</td>
             <td class="title">Habitacio</td>
             <td class="title">Preu</td>
+            <td></td>
         </tr>
-        <tr>
-            <td>Nom</td>
-            <td>Telefon</td>
-            <td>Correu</td>
-            <td>DNI</td>
-            <td>Habitacio</td>
-            <td>Preu</td>
+        <tr id="tablecontent">
+            <td class="content">Nom</td>
+            <td class="content">Telefon</td>
+            <td class="content">CorreuCorreuCorreuCorreu</td>
+            <td class="content">DNI</td>
+            <td class="content">Habitacio</td>
+            <td class="content">Preu</td>
+            <td class="content download"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></td>
+        </tr>
+        <tr id="tablecontent">
+            <td class="content">Nom</td>
+            <td class="content">Telefon</td>
+            <td class="content">CorreuCorreuCorreuCorreu</td>
+            <td class="content">DNI</td>
+            <td class="content">Habitacio</td>
+            <td class="content">Preu</td>
+            <td class="content download"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></td>
         </tr>
     </table>
 </div>
 </body>
 </html>
 
-<h3>Dades client:</h3>
-    <p>Nom: </p>
-    <p>Telefon: </p>
-    <p>Correu: </p>
-    <p>DNI: </p>
-    <h3>Dades habitació:</h3>
-    <p>Tipus</p>
-    <p>Preu</p>
+
