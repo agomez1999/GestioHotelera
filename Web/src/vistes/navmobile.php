@@ -20,6 +20,7 @@
           <div class="dropdown-content">
                <a class="dropdown-item" href="index.php?r=login">Canviar sessió</a>
                <a class="dropdown-item" href="index.php?r=closeSession">Tancar sessió</a>
+               <a class="dropdown-item" href="index.php?r=veureReserva">Veure la reserva</a>
                <?php if ($_SESSION["login"]["rol"] != 3) { ?>
                     <a class="dropdown-item" href="index.php?r=CRUDhabitacions">Gestió habitacions</a>
                     <?php if ($_SESSION["login"]["rol"] == 1) { ?>

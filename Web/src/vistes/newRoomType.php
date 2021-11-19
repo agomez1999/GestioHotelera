@@ -12,6 +12,7 @@
             <input type="number" name="Numero" placeholder="Numero">
             <input type="text" name="Tipo" placeholder="Tipo">
             <input type="number" name="nOcupants" placeholder="nOcupants">
+            <input type="number" name="metres" placeholder="Metres">
             <input type="number" name="Preu" placeholder="Preu">
             <input type="submit" class="send" name="enviar" value="Add">
         </form>

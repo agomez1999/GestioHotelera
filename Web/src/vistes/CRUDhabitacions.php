@@ -17,6 +17,7 @@
             <td class="title2">Id</td>
             <td class="title2">Tipo</td>
             <td class="title2">nº Ocupants</td>
+            <td class="title2">Metres</td>
             <td class="title2">Preu</td>
             <td colspan="2" class='table-btn' style="background-color:green"><a id="add2" href="index.php?r=newRoomType" class="green-btn"><i class="far fa-plus-square"></i></a></td>
         </tr>
@@ -27,6 +28,7 @@
                 <td> <?php echo $row2["Id"] ?></td>
                 <td> <?php echo $row2["Tipo"] ?></td>
                 <td> <?php echo $row2["nOcupants"] ?></td>
+                <td> <?php echo $row2["Metres"] ?></td>
                 <td> <?php echo $row2["Preu"] ?></td>
                 <td class='table-btn edit'><a id='edit2' class="edit" href="index.php?r=EditRoomType&id=<?php echo $row2['Id'] ?>"><i class='far fa-edit'></i></a></td>
                 <td class='table-btn delete'>

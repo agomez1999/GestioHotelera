@@ -12,6 +12,7 @@
             <input type="hidden" name="Numero" value="<?php echo $_GET['id'] ?>">
             <input type="text" name="Tipo" value="<?php echo $llistaHabitacions['Tipo'] ?>">
             <input type="text" name="nOcupants" value="<?php echo $llistaHabitacions['nOcupants'] ?>">
+            <input type="text" name="nOcupants" value="<?php echo $llistaHabitacions['Metres'] ?>">
             <input type="number" name="Preu" value="<?php echo $llistaHabitacions['Preu'] ?>">
             <input type="submit" class="send" name="enviar" value="Edit">
             <input type="reset" class="send" name="reset" value="Reset">

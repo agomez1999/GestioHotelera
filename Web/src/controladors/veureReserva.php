@@ -6,10 +6,8 @@ function ctrlveureReserva($peticio, $resposta, $contenidor)
 
     $reserva = new \Daw\ReservesPDO($contenidor->config["db"]);
     $dades = $reserva->getReservaUser($IdLogin);
-    echo $IdLogin;
-    print_r($dades);
-    die();
 
+    $resposta->set('dades', $dades);
     $resposta->SetTemplate("veureReserva.php");
     return $resposta;
 }

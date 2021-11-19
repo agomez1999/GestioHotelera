@@ -126,11 +126,11 @@ class RoomsPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function insertRoomType($Id, $Tipo, $nOcupants, $Preu)
+    public function insertRoomType($Id, $Tipo, $nOcupants, $Metres, $Preu)
     {
-        $query = 'INSERT INTO tipoHabitacio(Id, Tipo, nOcupants, Preu) VALUES (:Id, :Tipo, :nOcupants, :Preu)';
+        $query = 'INSERT INTO tipoHabitacio(Id, Tipo, nOcupants, Metres, Preu) VALUES (:Id, :Tipo, :nOcupants, :Metres, :Preu)';
         $insert = $this->sql->prepare($query);
-        $result = $insert->execute([':Id' => $Id,':Tipo' => $Tipo,':nOcupants' => $nOcupants, ':Preu' => $Preu]);
+        $result = $insert->execute([':Id' => $Id,':Tipo' => $Tipo,':nOcupants' => $nOcupants, ':Metres' => $Metres, ':Preu' => $Preu]);
 
         if ($insert->errorCode() !== '00000') {
             $err = $insert->errorInfo();
@@ -139,11 +139,11 @@ class RoomsPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
-    public function updateRoomType($Id, $Tipo, $nOcupants, $Preu)
+    public function updateRoomType($Id, $Tipo, $nOcupants, $Metres, $Preu)
     {
-        $query = 'UPDATE tipoHabitacio SET Tipo = :Tipo, nOcupants = :nOcupants, Preu = :Preu WHERE Id = :Id';
+        $query = 'UPDATE tipoHabitacio SET Tipo = :Tipo, nOcupants = :nOcupants, Metres = :Metres, Preu = :Preu WHERE Id = :Id';
         $update = $this->sql->prepare($query);
-        $result = $update->execute([':Id' => $Id, ':Tipo' => $Tipo, ':nOcupants' => $nOcupants, ':Preu' => $Preu]);
+        $result = $update->execute([':Id' => $Id, ':Tipo' => $Tipo, ':nOcupants' => $nOcupants, ':Metres' => $Metres, ':Preu' => $Preu]);
 
         if ($update->errorCode() !== '00000') {
             $err = $update->errorInfo();

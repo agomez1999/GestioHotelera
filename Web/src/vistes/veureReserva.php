@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../public/styles/veureReserva_style.css" type="text/css">
     <title>Document</title>
 </head>
@@ -21,21 +22,12 @@
             <td></td>
         </tr>
         <tr id="tablecontent">
-            <td class="content">Nom</td>
-            <td class="content">Telefon</td>
-            <td class="content">CorreuCorreuCorreuCorreu</td>
-            <td class="content">DNI</td>
-            <td class="content">Habitacio</td>
-            <td class="content">Preu</td>
-            <td class="content download"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></td>
-        </tr>
-        <tr id="tablecontent">
-            <td class="content">Nom</td>
-            <td class="content">Telefon</td>
-            <td class="content">CorreuCorreuCorreuCorreu</td>
-            <td class="content">DNI</td>
-            <td class="content">Habitacio</td>
-            <td class="content">Preu</td>
+            <td class="content"><?php echo $dades['NomClient'] . " " . $dades['Cognom'] ?></td>
+            <td class="content"><?php echo $dades["Telefon"] ?></td>
+            <td class="content"><?php echo $dades['Email'] ?></td>
+            <td class="content"><?php echo $dades['DNI'] ?></td>
+            <td class="content">Habitacio <?php echo $dades['NomHabitacio'] ?></td>
+            <td class="content"><?php echo $dades['Preu'] ?></td>
             <td class="content download"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></td>
         </tr>
     </table>
