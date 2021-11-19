@@ -31,6 +31,7 @@ include "../src/controladors/manteniment.php";
 include "../src/controladors/showRooms.php";
 include "../src/controladors/CRUDreserves.php";
 include "../src/controladors/deleteReserva.php";
+include "../src/controladors/deleteReservaUser.php";
 include "../src/controladors/editReserva.php";
 include "../src/controladors/mEditReserva.php";
 include "../src/controladors/newReserva.php";
@@ -137,6 +138,8 @@ if ($r === "dologin") {
     $resposta = ctrlSendFinalForm($peticio, $resposta, $contenidor); 
 } elseif ($r === "veureReserva") {
     $resposta = ctrlveureReserva($peticio, $resposta, $contenidor); 
+} elseif ($r === "deleteReservaUser") {
+    $resposta = ctrlDeleteReservaUser($peticio, $resposta, $contenidor); 
 }
 
 $resposta->resposta();

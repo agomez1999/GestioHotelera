@@ -30,10 +30,10 @@
             <td class="content"><?php echo $dades['DNI'] ?></td>
             <td class="content"><?php echo $dades['Arrivada'] ?></td>
             <td class="content"><?php echo $dades['Sortida'] ?></td>
-            <td class="content">Habitacio <?php echo $dades['NomHabitacio'] ?></td>
+            <td class="content"><?php echo $dades['NomHabitacio'] ?></td>
             <td class="content"><?php echo $dades['Preu'] ?></td>
             <td class="content download"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></td>
-            <td class="content"><a onclick="return confirm('Segur que vols eliminar aquesta reserva?')" href="index.php?r=deleteReserva&id=<?php echo $dades['IdReserva'] ?>"><i class='far fa-trash-alt'></i></a></td>
+            <td class="content"><a onclick="return confirm('Segur que vols eliminar aquesta reserva?')" href="index.php?r=deleteReservaUser&id=<?php echo $dades['IdReserva'] ?>"><i class='far fa-trash-alt'></i></a></td>
         </tr>
     </table>
 </div>
