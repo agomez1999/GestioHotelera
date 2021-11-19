@@ -30,7 +30,7 @@
             $arrivada = new DateTime($dades['Arrivada']);
             $sortida = new DateTime($dades['Sortida']);
             $res = $sortida->diff($arrivada);
-            $diesDif = $res->format("%a");
+            $diesDif = $res->format('%a');
             ?>
             <td class="content"><?php echo $dades['NomClient'] . " " . $dades['Cognom'] ?></td>
             <td class="content"><?php echo $dades["Telefon"] ?></td>
@@ -41,7 +41,7 @@
             <td class="content"><?php echo $dades['NomHabitacio'] ?></td>
             <td class="content"><?php echo $dades['Preu'] * $diesDif ?>€</td>
             <td class="content download"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></td>
-            <td class="content"><a href="">Cancelar</a></td>
+            <td class="content"><a onclick="return confirm('Segur que vols eliminar aquesta reserva?')" href="index.php?r=deleteReservaUser&id=<?php echo $dades['IdReserva'] ?>">Cancelar</a></td>
         </tr>
     </table>
 </div>
