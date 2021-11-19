@@ -217,7 +217,7 @@ class ReservesPDO
     public function getReservaUser($IdLogin)
     {
         $query = 'SELECT A.Nom "NomClient", A.Cognom, A.Email, A.Tarjeta, A.CP, A.Poblacio, A.Telefon, A.DNI, A.Missatge, 
-                     C.Arrivada, C.Sortida, C.Persones, 
+                     C.Arrivada, C.Sortida, C.Persones, C.Id "IdReserva",
                      D.Tipo "NomHabitacio", D.Preu
                      FROM client A 
                      JOIN reserva_client B ON(A.Id = B.IdClient) 
