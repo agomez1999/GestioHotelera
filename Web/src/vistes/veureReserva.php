@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../public/styles/veureReserva_style.css" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script type="text/javascript" type="text/javascript" src="../libs/jsPDF-master"></script>
     <title>Document</title>
 </head>
 <body>
@@ -40,7 +41,7 @@
             <td class="content"><?php echo $dades['Sortida'] ?></td>
             <td class="content"><?php echo $dades['NomHabitacio'] ?></td>
             <td class="content"><?php echo $dades['Preu'] * $diesDif ?>€</td>
-            <td class="content download"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></td>
+            <td class="content download"><a href="javascript:getpdf()"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></a></td>
             <td class="content"><a onclick="return confirm('Segur que vols eliminar aquesta reserva?')" href="index.php?r=deleteReservaUser&id=<?php echo $dades['IdReserva'] ?>">Cancelar</a></td>
         </tr>
     </table>
@@ -48,8 +49,12 @@
 </body>
 <script type="text/javascript">
 
+function getpdf() {
 
 var doc = new jsPDF();
+
+
+doc.setFontSize(22);
 
 doc.text(20, 20, 'Dades de la reserva:');
 doc.text(30, 30, 'Nom: <?php echo $dades['NomClient'] . " " . $dades['Cognom'] ?>');
@@ -59,9 +64,11 @@ doc.text(30, 60, 'DNI: <?php echo $dades['DNI'] ?>');
 doc.text(30, 70, 'Arrivada: <?php echo $dades['Arrivada'] ?>');
 doc.text(30, 80, 'Sortidam: <?php echo $dades['Sortida'] ?>');
 doc.text(30, 90, 'Tipus Habitacio: <?php echo $dades['NomHabitacio'] ?>');
-doc.text(30, 100, 'Preu: <?php echo $dades['Preu'] ?>');
+doc.text(30, 100, 'Preu: <?php echo $dades['Preu'] * $diesDif ?>€');
 
-doc.output('Reserva');
+doc.save("Reserva.pdf");
+
+}
 
 </script>
 </html>
