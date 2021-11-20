@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER REGISTRAR UN NOU USUARI QUAN S'ESTÀ FENT UNA RESERVA.
 function ctrlDoSignupReservar($peticio, $resposta, $contenidor)
 {
     $usuari = $peticio->get(INPUT_POST, "usrname");

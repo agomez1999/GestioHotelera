@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER REDIRECCIONAR A LA PAGINA SHOWROOMS.PHP
 function ctrlshowRoom($peticio, $resposta, $contenidor)
 {
     $id = $peticio->get(INPUT_GET, "id");

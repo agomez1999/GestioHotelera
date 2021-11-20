@@ -17,7 +17,7 @@ class RoomsPDO
             die('Ha fallat la connexió: ' . $e->getMessage());
         }
     }
-
+    // FUNCIÓ PER OBTENIR TOTES LES DADES DE LA HABITACIÓ
     public function selectAll()
     {
         $query = 'select * from habitacio';
@@ -34,7 +34,7 @@ class RoomsPDO
         }
         return $llistat;
     }
-
+    // FUNCIÓ PER SELECCIONAR TOTES LES DADES DE LES HABITACIONS I DELS TIPUS D'HABITACIÓ
     public function selectAllRooms()
     {
         $query = 'select A.*, B.Tipo "Nom", B.Preu "Preu" from habitacio A JOIN tipoHabitacio B ON (A.Tipo = B.Id) group by A.Tipo';
@@ -51,7 +51,7 @@ class RoomsPDO
         }
         return $llistat;
     }
-
+    // FUNCIÓ PER INSERTAR UNA NOVA HABITACIÓ
     public function insert($Numero, $Tipo, $Descripcio, $Serveis, $Imatge1, $Imatge2, $Imatge3)
     {
         $query = 'INSERT INTO habitacio(Numero, Tipo, Descripcio, Serveis, Imatge1, Imatge2, Imatge3) VALUES (:Numero, :Tipo, :Descripcio, :Serveis, :Imatge1, :Imatge2, :Imatge3)';
@@ -65,7 +65,7 @@ class RoomsPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER ACTUALITZAR UNA HABITACIÓ
     public function update($Numero, $Tipo, $Descripcio, $Serveis, $Imatge1, $Imatge2, $Imatge3)
     {
         $query = 'UPDATE habitacio SET Numero = :Numero, Tipo = :Tipo, Descripcio = :Descripcio, Serveis = :Serveis, Imatge1 = :Imatge1, Imatge2 = :Imatge2, Imatge3 = :Imatge3 WHERE Numero = :Numero';
@@ -79,7 +79,7 @@ class RoomsPDO
         }
         return $update->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER ELIMINAR UNA HABITACIÓ
     public function delete($Numero)
     {
         $query = 'DELETE FROM habitacio WHERE Numero = :Numero';
@@ -93,7 +93,7 @@ class RoomsPDO
         }
     }
 
-    // TAULA TIPO HABITACIÓ
+    // FUNCIÓ PER VEURE TOTES LES DADES DE LA TAULA TIPO HABITACIÓ
     public function selectRoomType()
     {
         $query = 'select * from tipoHabitacio';
@@ -110,7 +110,7 @@ class RoomsPDO
         }
         return $llistatType;
     }
-
+    // FUNCIÓ 
     public function getRoomType($Id)
     {
         $query = 'select * from tipoHabitacio where Id = :Id;';

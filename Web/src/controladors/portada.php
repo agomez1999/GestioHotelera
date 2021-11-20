@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER REDIRECCIONAR A LA PÀGINA D'INICI
 function ctrlPortada($peticio, $resposta, $contenidor)
 {
 

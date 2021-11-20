@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER REGISTRAR UN NOU USUARI
 function ctrlDoSignup($peticio, $resposta, $contenidor)
 {
     $usuari = $peticio->get(INPUT_POST, "usrname");

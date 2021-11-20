@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER CREAR UNA NOVA RESERVA
 function ctrlmNewReserva($peticio, $resposta, $contenidor)
 {
     $Arrivada = $peticio->get(INPUT_POST, "Arrivada");

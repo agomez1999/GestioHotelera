@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER ELIMINAR UNA RESERVA
 function ctrlDeleteReserva($peticio, $resposta, $contenidor)
 {
     $id = $peticio->get(INPUT_GET, "id");

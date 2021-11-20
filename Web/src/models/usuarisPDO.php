@@ -18,7 +18,7 @@ class UsuarisPDO
             die('Ha fallat la connexió: ' . $e->getMessage() . " $usuari");
         }
     }
-
+    // FUNCIÓ PER OBTENIR TOTES LES DADES D'UN USUARI EN CONCRET SEGONS EL NOM
     public function getUser($user)
     {
         $query = 'select id, usuari, contrasenya, rol from loginDB where usuari=:user;';
@@ -33,7 +33,7 @@ class UsuarisPDO
         
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER OBTENIR TOTES LES DADES D'UN USUARI EN CONCRET SEGONS L'ID
     public function getUserById($Id)
     {
         $query = 'select id, usuari, contrasenya, rol from loginDB where id=:id;';
@@ -48,7 +48,7 @@ class UsuarisPDO
         
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER AGAFAR TOTES LES DADES DE LA TAULA D'USUARIS
     public function selectAll()
     {
         $query = 'select * from loginDB';
@@ -66,7 +66,7 @@ class UsuarisPDO
         
         return $llistat;
     }
-
+    // FUNCIÓ PER INSERTAR UN NOU USUARI
     public function insert($user, $password)
     {
         $query = 'INSERT INTO loginDB(usuari, contrasenya, rol) VALUES (:user, :password, 3)';
@@ -80,7 +80,7 @@ class UsuarisPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER MODIFICAR UN USUARI EN CONCRET
     public function update($id, $user, $password, $rol)
     {
         $query = 'UPDATE loginDB SET usuari = :user, contrasenya = :password, rol = :rol WHERE id = :id';
@@ -94,7 +94,7 @@ class UsuarisPDO
         }
         return $update->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER ELIMINAR UN USUARI
     public function delete($id)
     {
         $query = 'DELETE FROM loginDB WHERE id = :id';

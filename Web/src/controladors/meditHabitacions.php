@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER EDITAR UNA HABITACIÓ
 function ctrlmEdithabitacions($peticio, $resposta, $contenidor)
 {
     $Numero = $peticio->get(INPUT_POST, "Numero");

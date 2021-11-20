@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER ELIMINAR UN TIPUS D'HABITACIÓ
 function ctrlDeleteRoomType($peticio, $resposta, $contenidor)
 {
     $Numero = $peticio->get(INPUT_GET, "id");

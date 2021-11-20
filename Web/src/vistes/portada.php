@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+<!-- CUSTOM CSS -->
 <link href="../public/styles/index_style.css" rel="stylesheet" type="text/css">
-
+<!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
@@ -12,16 +13,18 @@
      <title>Hotel Trampolín</title>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>jQuery UI Datepicker - Default functionality</title>
      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+     <!-- CALENDARI -->
      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
      <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
      <script>
+         // CALENDARI DATA ARRIVADA
      $( function() {
      $( "#arrivaldate" ).datepicker({
         dateFormat: "yy-mm-dd"
      });
      } );
+        // CALENDARI DATA SORTIDA
      $( function() {
      $( "#departuredate" ).datepicker({
         dateFormat: "yy-mm-dd"
@@ -98,7 +101,7 @@
     ?>
 </footer>
 <script>
-    //LIGHBOX 1
+    // LIGHBOX 1
     $('#lightbox').hide();
     $('#obrir').click(function() {
         $('#lightbox').show('slow');
@@ -106,7 +109,7 @@
     $('#tancar').click(function() {
         $('#lightbox').hide('slow');
     });
-    //LIGHBOX 2
+    // LIGHBOX 2
     $('#lightbox2').hide();
     $('#obrir2').click(function() {
         $('#lightbox2').show('slow');
@@ -114,12 +117,18 @@
     $('#tancar2').click(function() {
         $('#lightbox2').hide('slow');
     });
+    // OCULTAR CLASSE BAD
     $(document).ready(function() {
         setTimeout(function() {
             $(".bad").fadeOut(1500);
         },3000);
     });
+    // OCULTAR CLASSE GOOD
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".good").fadeOut(1500);
+        },3000);
+    });
 </script>
-<script href="script.js"></scrip>
 </body>
 </html>

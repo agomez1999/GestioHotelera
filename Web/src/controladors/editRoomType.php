@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER EDITAR UN TIPUS D'HABITACIÓ
 function ctrlEditRoomType($peticio, $resposta, $contenidor)
 {
     $id = $peticio->get(INPUT_GET, "id");

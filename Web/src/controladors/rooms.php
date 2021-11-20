@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER REDIRECCIONAR A ROOMS.PHP
 function ctrlRooms($peticio, $resposta, $contenidor)
 {
 

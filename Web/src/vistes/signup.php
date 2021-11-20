@@ -1,6 +1,7 @@
 <html>	 	 
  	<head>	 
- 	 	<title> Practice Web </title>
+ 	 	<title> Hotel Trampolín | Register</title>
+          <!-- CUSTOM CSS -->
           <link href="../public/styles/login_style.css" rel="stylesheet" type="text/css">
           <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">

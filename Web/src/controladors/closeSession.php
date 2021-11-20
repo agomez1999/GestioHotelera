@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER TANCAR SESSIÓ DE L'USUARI
 function ctrlCloseSession($peticio, $resposta, $contenidor)
 {
 

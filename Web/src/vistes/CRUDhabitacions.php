@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="../public/styles/CRUDusers_style.css" type="text/css">
-    <title>Hotel Trampolín | Rooms</title>
+    <title>Hotel Trampolín | CRUD Habiacions</title>
 </head>
 <body>
     <?php include "navmobile.php"; ?>

@@ -2,8 +2,8 @@
 <html>
 <head>
      <meta charset="UTF-8" />
-     <title>Hotel Trampolín</title>
-     <!-- CSS -->
+     <title>Hotel Trampolín | Habitacions</title>
+     <!-- CUSTOM CSS -->
      <link href="../style.css" rel="stylesheet" type="text/css">
      <link rel="stylesheet" href="../public/styles/rooms_style.css" type="text/css">
     <!-- BOOTSTRAP -->
@@ -15,6 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
      <link rel="stylesheet" href="/resources/demos/style.css">
+     <!-- LIGHTBOX -->
      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
      <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,6 +140,7 @@
                     </div> 
                 </div>
          <script>
+             // LIGHTBOX
             $('#lightbox<?php echo $row['Numero'] ?>').hide();
             $('#obrir<?php echo $row['Numero'] ?>').click(function() {
                 $('#lightbox<?php echo $row['Numero'] ?>').show('slow');
@@ -157,10 +159,6 @@
         include "foot.php";
     ?>
 </footer>
-
-<script src="script.js">
-
-</script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER EDITAR UN USUARI
 function ctrlmEditUser($peticio, $resposta, $contenidor)
 {
     $id = $peticio->get(INPUT_POST, "id");

@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <script type="text/javascript" type="text/javascript" src="../libs/jsPDF-master"></script>
+    <!-- EFECTE FADE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -26,49 +28,52 @@
             <td class="title">Preu</td>
             <td colspan="2" class="title"></td>
         </tr>
+        <?php foreach($dades as $row) { ?>
         <tr id="tablecontent">
-            <?php 
+            <?php
             $arrivada = new DateTime($dades['Arrivada']);
             $sortida = new DateTime($dades['Sortida']);
             $res = $sortida->diff($arrivada);
             $diesDif = $res->format('%a');
             ?>
-            <td class="content"><?php echo $dades['NomClient'] . " " . $dades['Cognom'] ?></td>
-            <td class="content"><?php echo $dades["Telefon"] ?></td>
-            <td class="content"><?php echo $dades['Email'] ?></td>
-            <td class="content"><?php echo $dades['DNI'] ?></td>
-            <td class="content"><?php echo $dades['Arrivada'] ?></td>
-            <td class="content"><?php echo $dades['Sortida'] ?></td>
-            <td class="content"><?php echo $dades['NomHabitacio'] ?></td>
-            <td class="content"><?php echo $dades['Preu'] * $diesDif ?>€</td>
-            <td class="content download"><a href="javascript:getpdf()"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></a></td>
-            <td class="content"><a onclick="return confirm('Segur que vols eliminar aquesta reserva?')" href="index.php?r=deleteReservaUser&id=<?php echo $dades['IdReserva'] ?>">Cancelar</a></td>
+            <td class="content"><?php echo $row['NomClient'] . " " . $row['Cognom'] ?></td>
+            <td class="content"><?php echo $row["Telefon"] ?></td>
+            <td class="content"><?php echo $row['Email'] ?></td>
+            <td class="content"><?php echo $row['DNI'] ?></td>
+            <td class="content"><?php echo $row['Arrivada'] ?></td>
+            <td class="content"><?php echo $row['Sortida'] ?></td>
+            <td class="content"><?php echo $row['NomHabitacio'] ?></td>
+            <td class="content"><?php echo $row['Preu'] ?>€/nit</td>
+            <td class="content download"><a href="javascript:getpdf<?= $row['IdReserva']?>()"><img src="../public/img/Habitacions/Extras/pdfdown.png" alt="Italian Trulli"></a></td>
+            <td class="content"><a onclick="return confirm('Segur que vols eliminar aquesta reserva?')" href="index.php?r=deleteReservaUser&id=<?php echo $row['IdReserva'] ?>">Cancelar</a></td>
         </tr>
+        <script type="text/javascript">
+
+        function getpdf<?= $row['IdReserva']?>() {
+        var doc = new jsPDF();
+        doc.setFontSize(22);
+
+        doc.text(20, 20, 'Dades de la reserva:');
+        doc.text(30, 30, 'Nom: <?php echo $row['NomClient'] . " " . $row['Cognom'] ?>');
+        doc.text(30, 40, 'Telefon: <?php echo $row['Telefon'] ?>');
+        doc.text(30, 50, 'Email: <?php echo $row['Email'] ?>');
+        doc.text(30, 60, 'DNI: <?php echo $row['DNI'] ?>');
+        doc.text(30, 70, 'Arrivada: <?php echo $row['Arrivada'] ?>');
+        doc.text(30, 80, 'Sortidam: <?php echo $row['Sortida'] ?>');
+        doc.text(30, 90, 'Tipus Habitacio: <?php echo $row['NomHabitacio'] ?>');
+        doc.text(30, 100, 'Preu: <?php echo $row['Preu']?>€/nit');
+        doc.save("Reserva.pdf");
+        }
+        </script>
+        <?php } ?>
     </table>
 </div>
 </body>
-<script type="text/javascript">
-
-function getpdf() {
-
-var doc = new jsPDF();
-
-
-doc.setFontSize(22);
-
-doc.text(20, 20, 'Dades de la reserva:');
-doc.text(30, 30, 'Nom: <?php echo $dades['NomClient'] . " " . $dades['Cognom'] ?>');
-doc.text(30, 40, 'Telefon: <?php echo $dades['Telefon'] ?>');
-doc.text(30, 50, 'Email: <?php echo $dades['Email'] ?>');
-doc.text(30, 60, 'DNI: <?php echo $dades['DNI'] ?>');
-doc.text(30, 70, 'Arrivada: <?php echo $dades['Arrivada'] ?>');
-doc.text(30, 80, 'Sortidam: <?php echo $dades['Sortida'] ?>');
-doc.text(30, 90, 'Tipus Habitacio: <?php echo $dades['NomHabitacio'] ?>');
-doc.text(30, 100, 'Preu: <?php echo $dades['Preu'] * $diesDif ?>€');
-
-doc.save("Reserva.pdf");
-
-}
-
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".good").fadeOut(1500);
+        },3000);
+    });
 </script>
 </html>

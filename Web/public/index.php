@@ -2,7 +2,7 @@
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include "../src/config.php";
-
+// INCLOGUEM TOTS ELS CONTROLADORS
 include "../src/controladors/portada.php";
 include "../src/controladors/login.php";
 include "../src/controladors/dologin.php";
@@ -44,7 +44,8 @@ include "../src/controladors/loginReservar.php";
 include "../src/controladors/isLoged.php";
 include "../src/controladors/sendFinalForm.php";
 include "../src/controladors/veureReserva.php";
-
+include "../src/controladors/sendContact.php";
+// INCLOGUEM EL MIDDLEWARE
 include "../src/middleware/middleAdmin.php";
 
 $r = "";
@@ -140,6 +141,8 @@ if ($r === "dologin") {
     $resposta = ctrlveureReserva($peticio, $resposta, $contenidor); 
 } elseif ($r === "deleteReservaUser") {
     $resposta = ctrlDeleteReservaUser($peticio, $resposta, $contenidor); 
+} elseif ($r === "sendContact") {
+    $resposta = ctrlSendContact($peticio, $resposta, $contenidor); 
 }
 
 $resposta->resposta();

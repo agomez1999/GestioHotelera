@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER CREAR UN NOU TIPUS D'HABITACIÓ
 function ctrlmNewRoomType($peticio, $resposta, $contenidor)
 {
     $Numero = $peticio->get(INPUT_POST, "Numero");

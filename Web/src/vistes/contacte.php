@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hotel Trampolín</title>
+    <title>Hotel Trampolín | Contacte</title>
     <link rel="stylesheet" href="../public/styles/contact_style.css">
     <!-- GOOGLE FONTs -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
@@ -29,7 +29,7 @@
 
         <div class="contact-wrapper">
             <div class="contact-form">
-                <form action="">
+                <form action="index.php?r=sendContact" method="post">
                     <p>
                         <label>Nom complet</label>
                         <input type="text" name="fullname">

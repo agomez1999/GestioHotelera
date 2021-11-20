@@ -1,4 +1,5 @@
 <?php
+// CONTROLADOR PER ENVIAR EL FORULARI DE RESERVA FINAL
 function ctrlSendFinalForm($peticio, $resposta, $contenidor)
 {
     $Nom = $peticio->get(INPUT_POST, "Nom");
@@ -27,10 +28,11 @@ function ctrlSendFinalForm($peticio, $resposta, $contenidor)
     $IdLogin = $IdLogin['LoginId'];
     $IdReserva = $IdReserva[0]['ReservaId'];
     $IdClient = $IdClient[0]['ClientId'];
-    $UpdateClient = $reserva->updateClient($IdLogin);
+    $UpdateClient = $reserva->updateClient($IdLogin); // LI ASSIGNEM L'ID DE LOGIN AL CLIENT PER A VINCULAR-LOS
     $InsertReservaClient = $reserva->insertReservaClient($IdClient, $IdReserva); // VINCULEM EL CLIENT AMB LA RESERVA
 
-    $resposta->SetTemplate("portada.php");
+    echo "<h2 class='good'>RESERVA REALITZADA CORRECTAMENT</h2>";
+    $resposta->redirect("location: index.php?r=veureReserva");
 
     return $resposta;
 }

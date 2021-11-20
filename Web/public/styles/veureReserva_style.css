@@ -16,9 +16,7 @@ tbody{
 .title {
 font-weight: bold;
 }
-.content {
 
-}
 #titles{
 height: 100%;
 background-color:#166269;
@@ -32,4 +30,13 @@ background-color:#237f87;
 }
 .download:hover{
     background-color:rgb(50,205,50,0.5);
+}
+
+.good {
+    width: 100%;
+    position: absolute;
+    background:rgba(70, 255, 33, 0.671);
+    top: 136px;
+    z-index: 100;
+    text-align: center;
 }

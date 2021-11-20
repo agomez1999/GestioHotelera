@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER CREAR UNA NOVA HABITACIÓ
 function ctrlmNewRoom($peticio, $resposta, $contenidor)
 {
     $Numero = $peticio->get(INPUT_POST, "Numero");

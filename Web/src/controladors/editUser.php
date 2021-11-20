@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER EDITAR UN USUARI
 function ctrlEditUser($peticio, $resposta, $contenidor)
 {
 

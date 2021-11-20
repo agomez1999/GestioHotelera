@@ -203,3 +203,12 @@ select::placeholder{
     z-index: 100;
     text-align: center;
 }
+
+.good {
+    width: 100%;
+    position: absolute;
+    background:rgba(70, 255, 33, 0.671);
+    top: 123.5px;
+    z-index: 100;
+    text-align: center;
+}

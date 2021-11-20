@@ -1,5 +1,5 @@
 <?php
-
+// FUNCIÓ PER CONTROLAR QUE L'USUARI ÉS ADMIN
 function AdminCRUD($peticio, $resposta, $contenidor, $next)
 {
     $login = $peticio->get("SESSION", "login");
@@ -21,7 +21,7 @@ function AdminCRUD($peticio, $resposta, $contenidor, $next)
     }
     return $resposta;
 }
-
+// FUNCIÓ PER CONTROLAR QUE L'USUARI ÉS EDITOR
 function EditorCRUD($peticio, $resposta, $contenidor, $next)
 {
     $login = $peticio->get("SESSION", "login");

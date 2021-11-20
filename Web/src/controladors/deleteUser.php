@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER ELIMINAR UN USUARI
 function ctrlDeleteUser($peticio, $resposta, $contenidor)
 {
     $id = $peticio->get(INPUT_GET, "id");

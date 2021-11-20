@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER EDITAR UNA HABITACIÓ
 function ctrlEdithabitacions($peticio, $resposta, $contenidor)
 {
     $id = $peticio->get(INPUT_GET, "id");

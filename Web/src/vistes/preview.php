@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- CUSTOM CSS -->
     <link href="../public/styles/style.css" rel="stylesheet" type="text/css">
     <link href="../public/styles/preview_style.css" rel="stylesheet" type="text/css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hotel Trampolín | Habitacions Disponibles</title>
 </head>
 <body>
     <?php include "navmobile.php"; ?>

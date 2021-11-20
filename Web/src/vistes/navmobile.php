@@ -1,6 +1,7 @@
-
+<!-- CUSTOM CSS -->
 <link href="../public/styles/style_mobile.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="header-container">
@@ -21,9 +22,9 @@
                <a class="dropdown-item" href="index.php?r=login">Canviar sessió</a>
                <a class="dropdown-item" href="index.php?r=closeSession">Tancar sessió</a>
                <a class="dropdown-item" href="index.php?r=veureReserva">Veure la reserva</a>
-               <?php if ($_SESSION["login"]["rol"] != 3) { ?>
+               <?php if ($_SESSION["login"]["rol"] != 3) { ?> <!-- EN CAS DEL ROL SER DIFERENT AL D'UN USUARI CLIENT -->
                     <a class="dropdown-item" href="index.php?r=CRUDhabitacions">Gestió habitacions</a>
-                    <?php if ($_SESSION["login"]["rol"] == 1) { ?>
+                    <?php if ($_SESSION["login"]["rol"] == 1) { ?> <!-- EN CAS DEL ROL SER DIFERENT AL D'UN USUARI ADMINISTRADOR -->
                     <a class="dropdown-item" href="index.php?r=CRUDusuaris">Gestió users</a>     
                     <a class="dropdown-item" href="index.php?r=CRUDreserves">Gestió reserves</a>
                <?php } 
@@ -45,6 +46,7 @@
         </a>
     </div>
 </div>
+<!-- SCRIPT PER A L'ACCIÓ DEL DESPLEGABLE -->
 <script>
 function DesplegableUsuari() {
   var x = document.getElementById("myTopnav");

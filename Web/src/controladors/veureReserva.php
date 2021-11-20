@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER REDIRECCIONAR A VEURERESERVA.PHP
 function ctrlveureReserva($peticio, $resposta, $contenidor)
 {
     $IdLogin = $_SESSION["login"]["id"];

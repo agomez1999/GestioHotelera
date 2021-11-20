@@ -1,25 +1,25 @@
 <?php
-
+// CONTROLADOR PER REDIRECCIONAR A PREVIEW.PHP
 function ctrlPreview($peticio, $resposta, $contenidor)
 {
     $arrivada = $peticio->get(INPUT_POST, "arrivaldate");
     $sortida = $peticio->get(INPUT_POST, "departuredate");
     $persones = $peticio->get(INPUT_POST, "nPersones");
-
+    // POSEM ALGUNES DADES A LA SESSIÓ PER TRACTAR-LES MÉS ENDEVANT
     $resposta->setSession("Arrivada",$arrivada);
     $resposta->setSession("Sortida",$sortida);
     $resposta->setSession("Persones",$persones);
 
     $resposta->set("arrivada",$arrivada);
     $resposta->set("sortida",$sortida);
-
+    // COMPROVEM QUE LA SORTIDA NO SIGUI MÉS PETITA QUE LA ENTRADA
     if (!($arrivada < $sortida)) {
         echo "<h2 class='bad'>La data d'entrada no pot ser més tard que la de sortida</h2>";
         $resposta->SetTemplate("portada.php");
 
         return $resposta;
     }
-
+    // CREEM DUES DATES PER A COMPARAR-LES
     $arrivada = new DateTime($arrivada);
     $sortida = new DateTime($sortida);
     $res = $sortida->diff($arrivada);
@@ -61,11 +61,11 @@ function ctrlPreview($peticio, $resposta, $contenidor)
                         }
                     }
                 }
-                $arrivada->modify('+1 day');
+                $arrivada->modify('+1 day'); // AUGMENTEM LA DATA UN DIA MÉS
             }
         }
 
-    $Disponibles = array_map("unserialize", array_unique(array_map("serialize", $Disponibles)));
+    $Disponibles = array_map("unserialize", array_unique(array_map("serialize", $Disponibles))); // AJUNTEM ELS DIFERENTS ARRAYS EN UN I SENSE REPETITS
 
     $resposta->set('Disponibles', $Disponibles);
 

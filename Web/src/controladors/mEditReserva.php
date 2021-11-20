@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER EDITAR UNA RESERVA
 function ctrlmEditReserva($peticio, $resposta, $contenidor)
 {
     $Id = $peticio->get(INPUT_POST, "Id");

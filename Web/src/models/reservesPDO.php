@@ -17,7 +17,7 @@ class ReservesPDO
             die('Ha fallat la connexió: ' . $e->getMessage());
         }
     }
-
+    // FUNCIÓ PER LLISTAR TOTES LES DADES DE LA TAULA RESERVES
     public function selectAll()
     {
         $query = 'select * from reserves';
@@ -34,8 +34,8 @@ class ReservesPDO
         }
         return $llistat;
     }
-
-    public function getReservaById($Id) // CRUD | Autocomplete editar
+    // CRUD | Autocomplete editar
+    public function getReservaById($Id) 
     {
         $query = 'select * from reserves where Id=:Id;';
         $stm = $this->sql->prepare($query);
@@ -49,8 +49,8 @@ class ReservesPDO
         
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
-
-    public function delete($Id) // CRUD | Delete
+    // CRUD | Delete
+    public function delete($Id) 
     {
         $query = 'DELETE FROM reserves WHERE Id = :Id';
         $delete = $this->sql->prepare($query);
@@ -62,7 +62,7 @@ class ReservesPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
     }
-
+    // CRUD | UPDATE
     public function update($Id, $Arrivada, $Sortida, $Persones, $Tipo)
     {
         $query = 'UPDATE reserves SET Id = :Id, Arrivada = :Arrivada, Sortida = :Sortida, Persones = :Persones, TipoHabitacio = :Tipo WHERE Id = :Id';
@@ -76,7 +76,7 @@ class ReservesPDO
         }
         return $update->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // CRUD | INSERT
     public function insert($Arrivada, $Sortida, $Persones, $Tipo)
     {
         $query = 'INSERT INTO reserves(Arrivada, Sortida, Persones, TipoHabitacio) VALUES (:Arrivada, :Sortida, :Persones, :TipoHabitacio)';
@@ -90,7 +90,7 @@ class ReservesPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // INSERTAR NOU CLIENT QUAN ES FA UNA RESERVA
     public function insertClient($Nom, $Cognom, $Email, $Tarjeta, $CP, $Poblacio, $Telefon, $DNI, $Missatge)
     {
         $query = 'INSERT INTO client(Nom, Cognom, Email, Tarjeta, CP, Poblacio, Telefon, DNI, Missatge) VALUES (:Nom, :Cognom, :Email, :Tarjeta, :CP, :Poblacio, :Telefon, :DNI, :Missatge)';
@@ -103,7 +103,7 @@ class ReservesPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER VINCULAR LA RESERVA AMB EL CLIENT DES DE LA TAULA RESERVA-CLIENT
     public function insertReservaClient($IdClient, $IdReserva)
     {
         $query = 'INSERT INTO reserva_client(IdClient, IdReserva) VALUES (:IdClient, :IdReserva)';
@@ -116,7 +116,7 @@ class ReservesPDO
         }
         return $insert->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER SELECCIONAR A TOTS ELS CLIENTS
     public function selectClient()
     {
         $query = 'select * from client';
@@ -133,7 +133,7 @@ class ReservesPDO
         }
         return $llistat;
     }
-
+    // FUNCIÓ PER AGAFAR L'ÚLTIM ID DEL CLIENT
     public function getClientId()
     {
         $query = 'SELECT MAX(Id) "ClientId" FROM client';
@@ -150,7 +150,7 @@ class ReservesPDO
         }
         return $llistat;
     }
-
+    // FUNCIÓ PER OBTENIR L'ID DEL USUARI QUE ESTÀ LOGAT
     public function getLoginId($user)
     {
         $query = 'SELECT id "LoginId" FROM loginDB where usuari = :user';
@@ -165,7 +165,7 @@ class ReservesPDO
         
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER OBTENIR L'ÚLTIM ID DE RESERVA
     public function getReservaId()
     {
         $query = 'SELECT MAX(Id) "ReservaId" FROM reserves';
@@ -182,7 +182,7 @@ class ReservesPDO
         }
         return $llistat;
     }
-
+    // FUNCIÓ PER OBTENIR LES DADES DE LA RESERVA
     public function getReserva()
     {
         $query = 'SELECT C.*, B.* FROM reserva_client A JOIN reserves B ON(A.IdReserva = B.Id) JOIN client C ON(C.Id = A.IdClient)';
@@ -199,7 +199,7 @@ class ReservesPDO
         }
         return $llistat;
     }
-
+    // FUNCIÓ PER VINCULAR UN CLIENT AMB ID DE LOGIN
     public function updateClient($IdLogin)
     {
         $query = 'UPDATE client SET IdLogin = :IdLogin ORDER BY Id DESC LIMIT 1';
@@ -213,7 +213,7 @@ class ReservesPDO
         }
         return $update->fetch(\PDO::FETCH_ASSOC);
     }
-
+    // FUNCIÓ PER OBTENIR TOTES LES DADES DE LA RESERVA I EL CLIENT
     public function getReservaUser($IdLogin)
     {
         $query = 'SELECT A.Nom "NomClient", A.Cognom, A.Email, A.Tarjeta, A.CP, A.Poblacio, A.Telefon, A.DNI, A.Missatge, 
@@ -228,11 +228,18 @@ class ReservesPDO
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':IdLogin' => $IdLogin]);
 
+        $llistat = [];
+        while ($reserva = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $llistaReserves[] = $reserva;
+        }
+
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
             $code = $stm->errorCode();
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
-        return $stm->fetch(\PDO::FETCH_ASSOC);
+
+
+        return $llistaReserves;
     }
 }

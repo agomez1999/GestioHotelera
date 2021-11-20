@@ -1,5 +1,5 @@
 <?php
-
+// CONTROLADOR PER FER LOGIN QUAN S'ESTÀ RESERVANT UNA HABITACIÓ
 function ctrldoLoginReservar($peticio, $resposta, $contenidor)
 {
     $usuari = $peticio->get(INPUT_POST, "usrname");
